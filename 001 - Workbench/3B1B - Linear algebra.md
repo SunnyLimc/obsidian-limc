@@ -20,6 +20,7 @@ in linear algebra perspective, a vector always will be rooted at the origin(åŽŸç
 		- think the vectors as points without an arrow if there is a collection of vector
 			- easy to understand with the concept of **`span`** above
 		- if there is three-dimension, linear combination will generate a flat that cutting through the origin
+		- the coordinate of x and y of one vector was stretch out with a specific number of scalar
 	- add an addition vector $a\vec{v}+b\vec{w}+c\vec{u}$ can get the whole three-dimension span
 		- if one of vectors located at which plane of `span` create by the other two ones, the `span` of those 3 vectors can only be a specific plane
-		- in other words, the third vec 
+		- in other words, if a third vector can be formed by scaling and adding other two vectors, then any two vectors can form another vector by scaling and adding, since the relationship of addition between them are fixed and no matter with any dimensions you add.
