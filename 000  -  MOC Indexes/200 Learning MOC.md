@@ -63,3 +63,7 @@ fusion 流水线优化
 ## Linear algebra
 
 [[3B1B - Linear algebra]]
+
+### Mu Li AI Learning
+
+[[Mu Li - Roadmap]]
