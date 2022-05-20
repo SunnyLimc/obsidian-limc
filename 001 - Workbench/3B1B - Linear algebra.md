@@ -10,3 +10,11 @@ in linear algebra perspective, a vector always will be rooted at the origin(原�
 	 - treat as scaling a vector with a scalars(标量)
 	 - as the same as mentioned above (treat x .. as two separate number line)
 
+- the description of vector depends on an implicit choice of what basis vectors we're using
+	- linear combination ($a\vec{v}+b\vec{w}$)
+		- fix one (scalars) and alter the other one you will draw a **straight** line
+		- alter both can represent every possible vector in the plane.
+			- except both of them are initially collinear (happen to line up)
+			- both vector zeroed (stuck at the origin)
+			- **all possible vectors that you can reach with linear combination called `span` of those 2 vectors**
+			
