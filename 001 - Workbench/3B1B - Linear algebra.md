@@ -37,13 +37,21 @@ in linear algebra perspective, a vector always will be rooted at the origin(åŽŸç
 	- You needn't know the transformation itself, for what bolded above.
 		- the whole thing you need to know the value of $\hat{i}$ and $\hat{j}$ that have been transformed.
 		
-		- ![[Pasted image 20220520195038.png | 400]]
-		- a transformation of anticlockwise rotate 90 degree (shear)$$ \begin{bmatrix}
+		- formula ![[Pasted image 20220520195038.png | 400]]
+		- a transformation of anticlockwise rotate 90 degree $$ \begin{bmatrix}
 	0 & -1 \\
 	1 & 0 
 	\end{bmatrix}   
 	\begin{bmatrix}
 	x \\
 	y 
-	\end{bmatrix}  $$
+	   \end{bmatrix} $$
+		- sheer: fix $\hat{i}$ and 45 degree clockwise rotate $\hat{j}$ 		   $$ \begin{bmatrix}
+	1 & 1 \\
+	0 & 1 
+	\end{bmatrix}   
+	\begin{bmatrix}
+	x \\
+	y 
+	   \end{bmatrix} $$
 		- if two transformed `i` and `j` in `matrix` are `Linearly dependent`, the `span` that transformation generate is a one-dimension line. It technically named `Linearly dependent columns`.
