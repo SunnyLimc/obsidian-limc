@@ -33,4 +33,17 @@ in linear algebra perspective, a vector always will be rooted at the origin(åŽŸç
 	- Principles
 		- Lines remain lines
 		- Origin remains fixed
-	- Grid lines remain parallel and evenly spaced
+	- Grid lines **remain parallel** and **evenly spaced**
+	- You needn't know the transformation itself, for what bolded above.
+		- the whole thing you need to know the value of $\hat{i}$ and $\hat{j}$ that have been transformed.
+		
+		- ![[Pasted image 20220520195038.png | 400]]
+		- a transformation of anticlockwise rotate 90 degree (shear)$$ \begin{bmatrix}
+	0 & -1 \\
+	1 & 0 
+	\end{bmatrix}   
+	\begin{bmatrix}
+	x \\
+	y 
+	\end{bmatrix}  $$
+		- if two transformed `i` and `j` in `matrix` are `Linearly dependent`, the `span` that transformation generate is a one-dimension line. It technically named `Linearly dependent columns`.
