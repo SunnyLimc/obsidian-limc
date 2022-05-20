@@ -9,3 +9,4 @@ in linear algebra perspective, a vector always will be rooted at the origin(原�
  - the scalar-multiplication
 	 - treat as scaling a vector with a scalars(标量)
 	 - as the same as mentioned above (treat x .. as two separate number line)
+
