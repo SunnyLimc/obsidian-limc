@@ -66,4 +66,6 @@ fusion 流水线优化
 
 ### Mu Li AI Learning
 
+#### from videos
+
 [[Mu Li - Roadmap]]
