@@ -59,3 +59,7 @@ fusion 流水线优化
 [[missing - vim]]
 
 [[missing - Data Wrangling]]
+
+## Linear algebra
+
+[[3B1B - Linear algebra]]

@@ -20,7 +20,7 @@ HBase is a [[NoSQL]] database, using [[MapReduce]] to process large amount of da
 		- 配置中心：数据发布和订阅
 		- 只存 root 表
 		- 剩下的交给客户端直接对region进行访问
-	- 根据行键值进行分区，如果行数量太大，则为该区域划分一个 region
+		- 根据行键值进行分区，如果行数量太大，则为该区域划分一个 region
 	- 使用 region 映射表来标识
 		- Unique Region ID
 		- Server ID
