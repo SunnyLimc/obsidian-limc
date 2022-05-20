@@ -27,4 +27,10 @@ in linear algebra perspective, a vector always will be rooted at the origin(原�
 		- in other other word: if three vectors are in the same line, the `span` of them is a line.
 		- if a vector that can not be form from any another (`one`, `two` .. `dimension - 1`), the dimension of `span` will increased, named with the terminology: `Linearly independent (线性无关)`  officially written as $\vec{u} \neq b\vec{w}+c\vec{u}$ in three dimension and $\vec{u} \neq a\vec{w}$ in two dimension
 		- a terminology to describe the situation that a redundant vector (two vector are in the same line) exist is: `Linearly dependent (线性相关)`
-		- the **`basis`** is a set of linearly independent vectors that can span the full space.
+		- the ** `basis` ** is a set of linearly independent vectors that can span the full space.
+
+- linear transformation
+	- Principles
+		- Lines remain lines
+		- Origin remains fixed
+	- Grid lines remain parallel and evenly spaced
