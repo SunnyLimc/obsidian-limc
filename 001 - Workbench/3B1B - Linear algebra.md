@@ -17,4 +17,9 @@ in linear algebra perspective, a vector always will be rooted at the origin(åŽŸç
 			- except both of them are initially collinear (happen to line up)
 			- both vector zeroed (stuck at the origin)
 			- **all possible vectors that you can reach with linear combination called `span` of those 2 vectors**
-			
+		- think the vectors as points without an arrow if there is a collection of vector
+			- easy to understand with the concept of **`span`** above
+		- if there is three-dimension, linear combination will generate a flat that cutting through the origin
+	- add an addition vector $a\vec{v}+b\vec{w}+c\vec{u}$ can get the whole three-dimension span
+		- if one of vectors located at which plane of `span` create by the other two ones, the `span` of those 3 vectors can only be a specific plane
+		- in other words, the third vec 
