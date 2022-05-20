@@ -24,3 +24,7 @@ in linear algebra perspective, a vector always will be rooted at the origin(原�
 	- add an addition vector $a\vec{v}+b\vec{w}+c\vec{u}$ can get the whole three-dimension span
 		- if one of vectors located at which plane of `span` create by the other two ones, the `span` of those 3 vectors can only be a specific plane
 		- in other words, if a third vector can be formed by scaling and adding other two vectors, then any two vectors can form another vector by scaling and adding, since the relationship of addition between them are fixed and no matter with any dimensions you add.
+		- in other other word: if three vectors are in the same line, the `span` of them is a line.
+		- if a vector that can not be form from any another exist one, the dimension of `span` will increased:  
+		- a terminology to describe the situation that a redundant vector (two vector are in the same line) exist is: `Linearly dependent (线性相关)`
+	
