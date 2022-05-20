@@ -1,0 +1,98 @@
+- Course Outline
+	- [[Query Planning]]
+	- [[Operator Execution]]
+	- [[Access Methods]]
+	- [[Buffer Pool Manager]]
+	- 👉 Disk Manager
+
+- move from volatile and non-volatile storage
+	- Volatile (Random Access Byte-Addressable), a directly storage
+		- CPU reg
+		- CPU caches
+		- --- 👆 15-721
+		- DRAM - 100ns
+	- Non-Volatile (Sequential Access Block-Addressable), pick pieces of blocks before storage
+		- SSD - 150000ns
+		- HDD
+		- Network Storage
+	- try to maximize the amount of data we can read that's sequential
+	- cache to avoid a long time read
+	- Exec Engine do quern on Buffer Pool (small than disk), and Buffer Pool do query on disk
+- `mmap` to store contents of file into process' address space, and OS responsible for moving data in and out of memory
+	- ![[Pasted image 20220515101915.png | 300]]
+	- if we need `write` rather than `read`, things become more complicated, OS need to know which page can be flushed to disk
+		- this is the problem that to be dealt with especially for concurrency
+		- hints
+			- `madvise`
+			- `mlock`
+			- `msync`
+
+
+How represents the Data in files on disk
+- storage manager
+	- schedule for reads and writes to improve spatial and temporal locality of pages
+	- organizes files as a collection of pages
+		- tracks data read/written
+		- tracks the available spaces
+- pages
+	- a page is fix size of block of data
+		- contains tuples and meta-data and etc.
+		- *do not mix page types*
+		- *require a page is self-contained*
+	- unique page ID
+		- use an layer to map page ids to physical locations
+	- page size (guaranteed by hardware)
+		- illustrate the time that the size can be handled with an **atomic** operation -> tolerance of truncating data
+		- (usually)
+		- hardware -> 4K
+		- OS -> 4K
+		- database -> 512B - 16KB
+		- (my understanding is) If the high-level want to use a larger page than the bottom-level provides, it needs addition overhead mitigation measure to ensure failsafe of `writing` (on contrary, you can read more sequential data with a single query and of course, `read` is safer than `write`), to prevent from `writing` queues out of order and getting a unexpected result.
+			- maybe **checksum** in each page for a faster matching, if any errors found, system will use **logs** to recover a particular transaction.
+	- architecture
+		- heap file
+			- outline
+				- unordered collection
+				- c / g / w / d
+				- support iterating
+			- track free space
+			- ways to implement it
+				- linked list
+					- HEADER for DATA and FREEPAGE
+					- each page keep track the number of free slots itself
+					- pic![[Pasted image 20220515113426.png | 200]]
+				- page directory
+					- pic ![[Pasted image 20220515113753.png | 150]]
+					- it need keep sync of the location and metadata of page inside a directory
+	- page consists of **header** and data
+		- page size
+		- checksum
+		- DBMS version
+		- transaction visibility
+		- compression information
+	- page layout (how page organize data)
+		- tuple-oriented
+			- keep tuples in sequence (BAD idea)
+				- insert tuple one after another, and track the number of tuples
+				- ~~**if you need to delete a tuple, you should move everything, or leave with a external fragmentation which can not be tracked**~~
+				- (correction) what he want to illustrate here is to demonstrate that a it have **serious drawbacks** if we just track the number of tuples, since the high-level needs to care about where the tuple it need are put. (if some tuple was deleted)
+			- slotted pages
+				- pic ![[Pasted image 20220515134440.png | 150]] 
+				- map slots to the **offset** of each tuples
+				- header keep track of # (slots) and the length of slots array
+				- grow from beginning to end, and end to beginning
+		- only the tuples of a same table will go to the same page
+		- record tuples
+			- `page_id + offset/slot`
+			- also a file location info
+			- and use these info to find page and slot of tuple
+	- tuple layout
+		- visibility info for concurrency control
+		- bit map for `NULL` values
+		- store high-level metadata (and low-level such as column info is useless)
+	- tuple data
+		- typically stored in order
+	- THE REASON that only same table of tuples will go to the same page is named DENORMALIZED
+		- we could simply concatenate (`pre join`) two table with adding a new field of metadata to prevent from expensive updates
+		- BUT, it will cause amount of I/O for common workload patterns, especially for reading
+		- so, it needs a trade-off when you design the system itself.

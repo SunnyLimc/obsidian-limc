@@ -1,0 +1,369 @@
+# missing
+
+### shell
+
+use `\` instead of quote can continue enter as a same parameter
+
+```bash
+echo Hello\ World
+# equal to
+echo "Hello World"
+```
+
+---
+`$PATH` sperate by colon `:`, the path will be searched in order
+
+```bash
+echo $PATH
+  /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib
+which vim                                                                                           
+  /usr/bin/vim
+```
+
+---
+
+- Working Directory
+	*   rmdir → remove empty dir, use it to keep a good habit
+	*   mkdir → `space` to create multi dir, or use excape `\` or quotes to make dirname include space
+
+```bash
+pwd
+# Print working directory
+
+cd
+# ~/ for home
+# . for current directory
+# .. for parent directory
+# - for prevously directory
+
+ls -l
+  -rwxr-xr-x 1  limc limc  1070 Nov  1 10:06 proxy.sh
+  drwxr-xr-x 7  limc limc  4096 Mar 21 09:25 work
+# -rwxr-xr-x 12 limc limc  4096 Jul  6 18:59 .oh-my-zsh
+# d means dir, l means link, - means file
+# rwx means read, write, execute
+# first column rwx means user privilege
+# second column means group privilege
+# third cloumn means everyone else privilege
+```
+
+---
+
+- Permission:
+	- User can choose group what they are
+	- only `root` user can change the owner of file
+	![[mZ6qv_8m20g8YPUC.png]]
+	- if you have a write previlege to a file but not to the directory, you **can't** remove the file but can empty the file. In opposite, you can remove it but can not write it (vim `:wq!` use this trick).
+	* if you want to exec a file, you need to get all its parent dir and parent parent etc **dir execute permission**.
+    - Otherwise, you won't even be able to access or remove the directory. (You can only list just subfolders in the directory).
+
+Help
+
+```bash
+man PAGE...
+```
+
+`...` → zero or one or more
+
+`[]` → optional
+
+Shortcut
+
+`ctrl + L`  → clear the console and go back to top
+
+Stream
+
+rewrite the input of the program with `< file`
+
+or rewrite the output of the program with `> file`
+
+```bash
+cat < hello.txt > hello2.txt
+# rewrite cat input file from hello.txt, and write file to hello2.txt
+```
+
+`< input` → rewrite input stream **from a file**
+
+`> output` → rewrite output stream **to a file** and **replace** it
+
+`>> output` → rewrite output stream **to a file** and **append** it
+
+```bash
+ls -l / | tail -n1 > ls.txt
+# write the last line of ls -l output to ls.txt
+echo "root privilege" | sudo tee root.txt
+# take the input from input stream and write it to the file and your screen
+```
+
+tream and write it to the file and your screen
+
+`input | output` → this named stream. It take \*\*left output result \*\*to the **right as input**. Most progrems in pipeline are run simultaneously
+
+> stream/input/output can apply to binary image, videos, chromecast too
+
+the progrem that actually write/read from/to stream is **the shell itself**, so `sudo` doesn't help this at all, and you may get `permission denied`, because the shell is not the program which `sudo` execute.
+
+sysFS
+
+`/sys` store the parameters of the running system **kernel** and you can edit it, it will take effect immediately.
+
+> You may need to be a root user before modify it. You will get `#` when you enter a root user, which `$` indicate the user is non-root.
+
+you can also use `tee` to achieve it.
+
+```bash
+# tee forwared input to it's output, and simultaneously print it to stdout(screen).
+echo 1060 | sudo tee brightness
+```
+
+variables and quote
+
+```bash
+# Right
+foo=bar
+echo $foo
+# Wrong (space)
+foo = bar # equal to invoke foo with parameter = and bar
+
+# " == '
+echo "World"
+echo 'World'
+echo "Value is $foo"
+  Value is bar
+echo 'Value is $foo'
+  Value is $foo 
+
+```
+
+function and `source` to shell
+
+`$0` refer to the name of the script, `$1`...`$9` also refer to the first through the ninth arg. `$@` get **all** the argumens for `for-in` loop
+
+`$?` get the error code from previous command.
+
+`$_` will get the last arg of previous command.
+
+`$#` get the count of args
+
+`$$` get the pid of the process
+
+> the **preserved arg**s mentioned before are also can be applied to shell
+
+```bash
+# mcd.sh
+mcd () {
+  mkdir -p "$1"
+  cd "$1" # $1 refer to the first arg pass from shell
+} # $2... also refer to the second through the ninth arg
+# $0 refer to the name of the script
+
+# shell
+source mcd.sh # load mcd.sh to shell (run script locally in the shell)
+mcd hello # the "hello" folder will be created and shell move into it
+
+```
+
+`!!` for previous command
+
+Error code
+
+function retrun `0` for no error. `1` for errors happened.
+
+Logical expression&#x20;
+
+```bash
+true
+echo $?
+  0
+
+false
+echo $?
+  1
+
+```
+
+```bash
+false || echo "Oops fail"
+# the "short-circuited" algorithm like the programming language
+# if the front is ture, the back will not be exectued
+
+```
+
+```bash
+true && echo "Success"
+
+false ; echo "This will always print"
+# you can use semicolon to concat the commands in a same line
+```
+
+Calculate expression
+
+use `$()` to exectue a command rather than serialize it
+
+```bash
+# you can storage a result from command to variable
+dr=$(pwd)
+echo $dr
+  /home/limc
+
+```
+
+use `<()` to save the execute result **list**(line by line) to a temporary file, to solve the problem that `|` can not solve
+
+```bash
+# concat ls and ls.. output
+diff <(ls dir1) <(ls dir2)
+
+```
+
+redirect another stream
+
+`2` is for stderr
+
+```bash
+# if we only care about the return value, we can redirect stdout and stderr to null
+grep foobar "$file" > /dev/null 2> /dev/null
+```
+
+run `test` in script
+
+```bash
+for file in "$@" do
+  grep foobar "$file" > /dev/null 2> /dev/null
+  if [[$? -eq 0]]; then # [[$? -eq 0]] the same as $(test $? -eq 0)
+    echo "successful"
+  fi
+done
+```
+
+regex match
+
+we can use `?` or `*` or `{...}` **etc** to do character match.
+
+you can also combine some of them to get a powerful shell.
+
+> you can press `TAB` to expand the command needed to exec
+
+```bash
+ls 1.*
+  1.sh 1.bash
+cat 1.*
+  /15 # from 1.sh
+  /22 # from 1.bash
+cat 1.??
+  /15 # from 1.sh
+cat 1.{,sh,bash} # leave comma itself empty to point to just empty (1.)
+  cat: 1.: No such file or directory
+  /15
+  /22
+```
+
+and bash has it's own regex-matching operator `=~`
+
+```bash
+set -- '12-34-5678' # set $1 to sample value
+
+kREGEX_DATE='^[0-9]{2}[-/][0-9]{2}[-/][0-9]{4}$' # note use of [0-9] to avoid \d
+[[ $1 =~ $kREGEX_DATE ]]
+echo $? # 0 with the sample value, i.e., a successful match
+```
+
+Set script execator (shebang)
+
+put it at the beginning of the file, so that the shell can identify it.
+
+```bash
+#!/usr/bin/python
+### or find it from env PATH ###
+#!/usr/bin/env python
+
+import sys
+for arg in reversed(sys.argv[1:]):
+  print(arg)
+```
+
+```bash
+./script.sh 1 2 3
+  3
+  2
+  1
+
+```
+
+Tool for check script
+
+you can use `shellcheck` to check the grammar and implicit problem of script.
+
+Locally vs not locally
+
+if you run script in bash `#!/usr/bin/bash`, the code will be executed in a new process, and all the environment changes inside it will never affect the shell.
+
+or you need to use `source` to run the script locally.
+
+A bloated `man` alternative
+
+you can use `tldr` to get brief example for programs
+
+Search you file with `find`&#x20;
+
+```bash
+tldr find
+    # - Run a command for each file (use {} within the command to access the filename):
+    # find {{root_path}} -name '{{*.ext}}' -exec {{wc -l {} }}\;
+find work/ -name '*.cc' -exec rm -l {} \;
+
+```
+
+use `fd` for regex match (alternative)
+
+```bash
+# the package packet named fd-find
+fdfind 'tcp(.*).cc' --exec ls -l
+
+```
+
+search all path in the system by `locate`
+
+```bash
+# you need to exec 'sudo updatedb' first
+locate libsponge
+```
+
+use `grep` or `rg` to do search inside a file
+
+```bash
+# recursive search the file insider the path
+grep -R include work/
+  ./work/TCP-Lab/apps/lab7.cc:#include "util.hh"
+  ./work/TCP-Lab/apps/lab7.cc:#include <cstdlib>
+  ./work/TCP-Lab/apps/lab7.cc:#include <iostream>
+  ./work/TCP-Lab/apps/lab7.cc:#include <thread>
+  ...
+
+```
+
+> use `rg` for faster search
+
+```bash
+# show the 5 lines around the result
+rg "#include" -t md work/ -C 5
+
+```
+
+Fancy matching `fzf`
+
+use `fzf` to get it. It will scan the whole output and match what you type, and show all of the line matched **in a screen**.
+
+shell `history`
+
+use `history` to show all the command previously exec in the shell
+
+press `CTRL + R` in shell can go through the history commands fast, press `CTRL + R` \*\*again \*\*to search next, and press `ENTER` to exec it.
+
+list path in a `tree` view
+
+use `tree` to get the tree list of current path
+
+use `broot` to walk through paths in a tree view
+
+also `nnn` can do this well
