@@ -76,3 +76,7 @@ In fact, the transformation (matrix) is by moving and scaling the axis, so it ne
 
 - we can get origin vector by undo transformation, the pattern of it called `inverse matrix`
 	- it's obviously that you **can't undo** a transformation which leads to dimension squishing
+		- $A^{-1}A\ \vec{x}=A^{-1}\ \vec{v}$
+		- but sometimes $\vec{v}$ come across to the same dimension as $\vec{x}$, solution is exist
+- we describe the dimension of spanning the columns of matrix as `column space`
+- you may noticed that if it's a non-full-rank transformation, dimensions are squished to a particular point. Vectors that lands on the $\vec{v}$ called (if $\vec{v}$ is zero, it terminology called `null space`), **it gives you all of the possible solutions to the equation**.
