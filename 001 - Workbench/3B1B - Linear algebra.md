@@ -61,7 +61,7 @@ in linear algebra perspective, a vector always will be rooted at the origin(åŽŸç
 		- read from right to left, since the closest function symbol always at the left of $x$
 	- apply $\hat{i}$ to matrix first and then apply $\hat{j}$
 
-In fact, the transformation is by moving and scaling the axis, so it needs the same vectors number as the dimensions to record the result of transformation.
+In fact, the transformation (matrix) is by moving and scaling the axis, so it needs the same vectors number as the dimensions to record the result of transformation.
 
 - the `determinant` of a transformation is the special scaling factor
 	- a factor that can be applied to **any** area transformation.
@@ -71,4 +71,7 @@ In fact, the transformation is by moving and scaling the axis, so it needs the s
 		- you can perfectly get two separate representing of 3D shape by rotating your left hand with left-handed rule
 	- you do not need to comprehend why $ad-bc$ can calculate the scalar of 2D 
 		- just a image to explain why![[Pasted image 20220522205434.png | 500]]
-	- an interesting fact: $\det(M_1M_2)=\det(M_1)\det(M_2)$, 
+	- an interesting fact: $\det(M_1M_2)=\det(M_1)\det(M_2)$
+		- **scaling is just a property of transformation**, so whatever scaling follow by transforming ($\det(M_1M_2)$), or just scaling ($\det(M_1)\det(M_2)$), both it represent the same thing -- do $M_1$ transform from the basic $\hat{i}\hat{j}\hat{k}$ follow by $M_2$
+
+- 
