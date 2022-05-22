@@ -63,3 +63,9 @@ in linear algebra perspective, a vector always will be rooted at the origin(åŽŸç
 
 In fact, the transformation is by moving and scaling the axis, so it needs the same vectors number as the dimensions to record the result of transformation.
 
+- the `determinant` of a transformation is the special scaling factor
+	- a factor that can be applied to **any** area transformation.
+	- if `det` is zero, means the result of transformation has squished to a smaller dimension
+		- at least two axes are located at a same line
+	- a negative `det` means to invert the orientation (in 3D you can give the judgement by left-handed rule)
+	
