@@ -60,4 +60,6 @@ in linear algebra perspective, a vector always will be rooted at the origin(åŽŸç
 	- written provisions
 		- read from right to left, since the closest function symbol always at the left of $x$
 	- apply $\hat{i}$ to matrix first and then apply $\hat{j}$
-	
+
+In fact, the transformation is by moving and scaling the axis, so it needs the same vectors number as the dimensions to record the result of transformation.
+
