@@ -69,4 +69,4 @@ In fact, the transformation is by moving and scaling the axis, so it needs the s
 		- at least two axes are located at a same line
 	- a negative `det` means to invert the orientation (in 3D you can give the judgement by left-handed rule)
 		- you can perfectly get two separate representing of 3D shape by rotating your left hand with left-handed rule
-	- 
+	- you do not need to comprehend why $ad-bc$ can calculate the scalar of 2D, 
