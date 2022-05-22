@@ -74,4 +74,5 @@ In fact, the transformation (matrix) is by moving and scaling the axis, so it ne
 	- an interesting fact: $\det(M_1M_2)=\det(M_1)\det(M_2)$
 		- **scaling is just a property of transformation**, so whatever scaling follow by transforming ($\det(M_1M_2)$), or just scaling ($\det(M_1)\det(M_2)$), both it represent the same thing -- do $M_1$ transform from the basic $\hat{i}\hat{j}\hat{k}$ follow by $M_2$
 
-- 
+- we can get origin vector by undo transformation, the pattern of it called `inverse matrix`
+	- it's obviously that you **can't undo** a transformation which leads to dimension squishing
