@@ -27,7 +27,7 @@ in linear algebra perspective, a vector always will be rooted at the origin(原�
 		- in other other word: if three vectors are in the same line, the `span` of them is a line.
 		- if a vector that can not be form from any another (`one`, `two` .. `dimension - 1`) vector(s), the dimension of `span` will increased by 1. This relationship named with the terminology: `Linearly independent (线性无关)`  officially written as $\vec{u} \neq b\vec{w}+c\vec{u}$ in three dimension and $\vec{u} \neq a\vec{w}$ in the case of two dimension
 		- a terminology to describe the situation that a redundant vector (two vector are in the same line) exist is: `Linearly dependent (线性相关)`
-		- the ** `basis` ** is a set of linearly independent vectors that can span the full space.
+		- the **`basis`** is a set of linearly independent vectors that can span the full space.
 
 - linear transformation
 	- Principles
@@ -79,8 +79,9 @@ In fact, the transformation (matrix) is by moving and scaling the axis, so it ne
 		- $A^{-1}A\ \vec{x}=A^{-1}\ \vec{v}$
 		- but sometimes $\vec{v}$ come across to the same dimension as $\vec{x}$, solution is exist
 - we describe the dimension of spanning the columns of matrix as `column space`
-- you may noticed that if it's a non-full-rank transformation, dimensions are squished to a particular point. Vectors that lands on the $\vec{v}$ called (if $\vec{v}$ is zero, it terminology called `null space`), **it gives you all of the possible solutions to the equation**.
-	 - this vector is still full-rank, since it's column space equals to the span of columns - the plane - it just map a 2D plane to 3D space - with 2 input (basis) vectors
+- you may noticed that if it's a non-full-rank transformation, dimensions are squished to a particular point. Vectors that lands on the $\vec{v}$ (if $\vec{v}$ is zero, it terminology called `null space`), **it gives you all of the possible solutions to the equation**.
+	- an important property: if a function (take one input and give one output) is **`linear`**, give a series of points that evenly spaced, they will **evenly spaced yet** after transformation.
+	- this vector is still full-rank, since it's column space equals to the span of columns - the plane - it just map a 2D plane to 3D space - with 2 input (basis) vectors
 $$ \begin{bmatrix}
 	2 & 0  \\
 	-1 & 1  \\
