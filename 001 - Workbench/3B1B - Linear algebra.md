@@ -129,5 +129,5 @@ $$ \begin{bmatrix}
 	$$
 		- the solution of $\vec{p}$ in one determinant is numerous, a bunch of evenly spaced vectors can mapping the same values to the axis perpendicular to $v$ and $w$
 		- the purpose of $det$ is to compute the volume of $v, w$ and $p$. Since it's `linear`, $det$ will evenly spaced for the same spacing
-		
+	- you may think $[x, y, z]$ is a transformation from space to line, 
 		
