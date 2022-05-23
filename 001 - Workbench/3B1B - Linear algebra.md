@@ -97,3 +97,4 @@ $$ \begin{bmatrix}
 
 - dot product
 	- sequence irrelevant
+	- we all know that $[u_x, v_x]$ is the transformation result of $[\hat{i}, \hat{j}]$, 
