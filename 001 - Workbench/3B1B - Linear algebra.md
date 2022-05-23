@@ -162,3 +162,4 @@ $$ \begin{bmatrix}
 - $A^{-1}$ is needless, comprehend what mentioned above is enough, *just restore it by multiple $A^{-1}$ if you no longer need mapping or need to simulate manipulation from others basic system*
 - so, how to translate a matrix?
 	- basically: (restore *(inverse)* basic system for others) *<-* (apply main transformation) *<-* (prepare transformation basic system for others) *<-* (other's vector)`
+	- terminologically: $A^{-1}MA$
