@@ -80,3 +80,17 @@ In fact, the transformation (matrix) is by moving and scaling the axis, so it ne
 		- but sometimes $\vec{v}$ come across to the same dimension as $\vec{x}$, solution is exist
 - we describe the dimension of spanning the columns of matrix as `column space`
 - you may noticed that if it's a non-full-rank transformation, dimensions are squished to a particular point. Vectors that lands on the $\vec{v}$ called (if $\vec{v}$ is zero, it terminology called `null space`), **it gives you all of the possible solutions to the equation**.
+	 - this vector is still full-rank, since it's column space equals to the span of columns - the plane - it just map a 2D plane to 3D space - with 2 input (basis) vectors
+$$ \begin{bmatrix}
+	2 & 0  \\
+	-1 & 1  \\
+	-2 & 1
+	\end{bmatrix}   
+	$$
+	- mapping from 3D to 2D, each vector of the 3 is the orientation of axis
+$$ \begin{bmatrix}
+	2 & 0 & 3 \\
+	-1 & 1 & 1 \\
+	\end{bmatrix}   
+	$$
+	
