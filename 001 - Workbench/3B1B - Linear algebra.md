@@ -104,3 +104,5 @@ $$ \begin{bmatrix}
 		- the axis can be put into the space since it's one-dimension and can be orientated represent in space 
 		- the purpose of this proof is to prove 👇
 	- and it result in that `dot product` is equals to `matrix multiplication`
+
+- cross product
