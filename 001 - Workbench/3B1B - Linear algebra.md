@@ -153,7 +153,12 @@ $$ \begin{bmatrix}
 	 - it's simple$$A\cdot\ [other's\ vec]=[ours\ vec]$$
 	- let's see what $A$ means
 		- A = use ours coordinate to represent other's basis vectors
-		- thinking about it takes our misconception of what other means (using same coordinate is our system), then transform it into the vector she really means 
-		- 👆 that's what A actually do
-	- or you may like to use $A^{-1}$ instead $$[other's\ vec]=A^{-1}\cdot\ [ours\ vec]$$
-	
+		- (Video) thinking about it takes our misconception of what other means (using same coordinate is our system), then transform it into the vector she really means 
+
+- ***The core idea of computation is applying basis system from left-one and doing the computing for right-one***
+	- it's something like recursion, if you need a left solution, you must calculate the right one first, until you finished all puzzles, it's what function is doing
+		- $f(f(f(f(n))))$
+	- so, it's reasonable to understand why $A\cdot[other's\ vec]$ make sense
+
+- $A^{-1}$ is needless, comprehend what mentioned above is enough
+
