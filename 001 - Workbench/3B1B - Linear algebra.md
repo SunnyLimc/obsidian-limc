@@ -163,3 +163,11 @@ $$ \begin{bmatrix}
 - so, how to translate a matrix?
 	- basically: (restore *(inverse)* basic system for others) *<-* (apply main transformation) *<-* (prepare transformation basic system for others) *<-* (other's vector)`
 	- terminologically: $A^{-1}MA$
+
+- eigenvalue & eigenvector
+	- outline
+		- eigenvector: the vector which keeps on it's origin span space after transformation (scaling is allowed)
+		- eigenvalue: the scale factor (with no scaling, the factor is $1$)
+	- a transformation may leads to diagonally zeroed if you do transformation with a new basis system that the axes are correspond to eigenvectors.
+		- if you find out the result of complications are something **regular** during exponential calculation, it implies that you should have a try 👆
+	- 
