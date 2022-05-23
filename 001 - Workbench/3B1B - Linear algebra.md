@@ -106,3 +106,28 @@ $$ \begin{bmatrix}
 	- and it result in that `dot product` is equals to `matrix multiplication`
 
 - cross product
+	- usually $\vec{v}\cdot\vec{w}=\vec{p}$ to calculate the $\vec{p}$ that perpendicular to $\vec{v}$ and $\vec{w}$, the sign of $\vec{p}$ indicate whether the vectors conforms to the right-hand rule
+	- actually, the formula is try to find a series of $\vec{p}$ that can express a certain determinant $$ \begin{bmatrix}
+	v_1 \\
+	v_2 \\
+	v_3 
+	\end{bmatrix}
+	\times
+	\begin{bmatrix}
+	w_1 \\
+	w_2 \\
+	w_3
+	\end{bmatrix}
+	=
+	\det{(
+	\begin{bmatrix}
+	\hat{i} & v_1  & w_1 \\
+	\hat{j} & v_2  & w_2  \\
+	\hat{k} & v_3  & w_3
+	\end{bmatrix}
+	)}  
+	$$
+		- the solution of $\vec{p}$ in one determinant is numerous, a bunch of evenly spaced vectors can mapping the same values to the axis perpendicular to $v$ and $w$
+		- the purpose of $det$ is to compute the volume of $v, w$ and $p$. Since it's `linear`, $det$ will evenly spaced for the same spacing
+		
+		
