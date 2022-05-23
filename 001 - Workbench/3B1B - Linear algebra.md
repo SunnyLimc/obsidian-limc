@@ -98,7 +98,7 @@ $$ \begin{bmatrix}
 - dot product
 	- sequence irrelevant
 	- we all know that $[u_x, u_y]$ is the transformation result of $[\hat{i}, \hat{j}]$ (1, 1), and in the case we want to calculate $u_x$, we should map $\hat{i}$ to the axis, the same true of $\hat{j}$ and then you can get $[u_x, u_y]$. And if your set $\hat{u}$ equals to 1, remap $\hat{u}$ to axis x and y, **You will wondrously finding that remapping $u_x$ and $u_y$ from $\hat{u}$ to $[x, y]$ are the same as to $[u_x, u_y]$.**
-	- so if you know the values of $[u_x, u_y]$, you can directly know the solution $(x ,y)$ of remapping form $\hat{u}$ to current $\begin{bmatrix} x \\ y \\ \end{bmatrix}$.
+	- so if you know the values of $[u_x, u_y]$, you can directly know the solution $(x ,y)$ of remapping form $\hat{u}$ to current $\begin{bmatrix} x \\ y \\ \end{bmatrix}$. we call it **`duality`**
 		- $v_x, v_y$ is technologically separate
 		- the result can be expressed numerically because it's one dimension
 		- the axis can be put into the space since it's one-dimension and can be orientated represent in space 
