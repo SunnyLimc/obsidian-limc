@@ -93,4 +93,6 @@ $$ \begin{bmatrix}
 	-1 & 1 & 1 \\
 	\end{bmatrix}   
 	$$
-	
+
+- dot product
+	- sequence irrelevant
