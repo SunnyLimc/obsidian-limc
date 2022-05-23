@@ -153,7 +153,7 @@ $$ \begin{bmatrix}
 	 - it's simple$$A\cdot\ [other's\ vec]=[ours\ vec]$$
 	- let's see what $A$ means
 		- A = use ours coordinate to represent other's basis vectors
-		- thinking about it takes our misconception of what other means (using same coordinate is our system), then transform it into the vector she really means
+		- thinking about it takes our misconception of what other means (using same coordinate is our system), then transform it into the vector she really means 
 		- 👆 that's what A actually do
 	- or you may like to use $A^{-1}$ instead $$[other's\ vec]=A^{-1}\cdot\ [ours\ vec]$$
-
+	
