@@ -141,7 +141,7 @@ $$ \begin{bmatrix}
 	)}  
 	$$
 		- the solution of $\vec{p}$ in one determinant is numerous, a bunch of evenly spaced vectors can mapping the same values to the axis perpendicular to $v$ and $w$
-		- the purpose of $det$ is to compute the volume of $v, w$ and $p$. Since it's `linear`, $det$ will evenly spaced for the same spacing
+		- the purpose of $det$ is to compute the volume of $v, w$ and $p$. Since it's `linear`, $det$ will evenly spaced for the same spacing #review-needing 
 	- you may think $[x, y, z]$ is do a transformation from space to line, since it takes a input and produce a **numerical output** and you **can use a linear multiplication to convert the function** $[p_1, p_2, p_3]$, and because of duality that proved above, the transformation can finally represent by a vector $\begin{bmatrix} p_1 \\ p_2 \\ p_3 \end{bmatrix}$
 		- and with the formula we can know
 			- $p_{1}=v_{2} \cdot w_{3}-v_{3} \cdot w_{2}$ 
@@ -157,9 +157,10 @@ $$ \begin{bmatrix}
 		- *(my thought) thinking about it prepare the translation environment for others' vector, if you do not have the correct code of mapping, the manipulation will never make sense.*
 - ***The core idea (only available for translation) of computation is applying basis system from left-one so and doing the computing for right-one which likes simulate others manipulation from our basis system***
 	- Consider it's **basis system calculation** your viewing with a formula **without** any lower ranking object (the lower object must be appear on right). otherwise, look at it the same way as above 👆
+		- Although nothing mentioned, do NOT ignore the first translation is for the basis system $\begin{bmatrix} 1 & 0 \\ 0 & 1\end{bmatrix}$
 	- whatever what the inner value is, the result always lies on ours axes but with the meaning that formula itself given
 - **And,** it's something like recursion, if you need a left solution, you must calculate the right one first, until you finished all puzzles, it's what function is doing
-	- $f(f(f(f(n))))$ -> $f(N)$, which $N$ means a object with a lower ranking, and $f(N)$ do translation to gets it's intuitive result in ours basis system
+	- $f(f(f(f(n))))\ \rightarrow \ f(N)$, which $N$ means a object with a lower ranking, and $f(N)$ do translation to gets it's intuitive result in ours basis system
 	- so, it's reasonable to understand why $A\cdot[other's\ vec]$ make sense
 	- $A^{-1}$ is needless, comprehend what mentioned above is enough, *just restore it by multiple $A^{-1}$ if you no longer need mapping or need to simulate our manipulation from others basic system*
 - **Say something may cross the line** #caution #review-needing
@@ -174,6 +175,7 @@ $$ \begin{bmatrix}
 - eigenvalue & eigenvector
 	- outline
 		- eigenvector: the vector which keeps on it's origin span space after transformation (scaling is allowed), the rotation axis of translation
+			- it exist and only exist when $A\vec{v}=\lambda\vec{v}\rightarrow (A-\lambda I)\vec{v}=0$ (a set of vectors, equals to $\lambda$ times $\vec{v}$ after translation, the eigenvectors, can be calculated by figured out eigenvalue $\lambda$, **and** any  ) is true
 		- eigenvalue: the scale factor (with no scaling, the factor is $1$)
 	- a transformation may leads to diagonally zeroed if you do transformation with a new basis system that the axes are correspond to eigenvectors.
 		- Explanation: eigenvector is the rotation axes of transformation, if we oriented apply basis system for translation (rather than apply $\hat{i}$ and $\hat{j}$), 
