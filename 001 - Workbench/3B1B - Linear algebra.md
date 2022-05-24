@@ -176,7 +176,7 @@ $$ \begin{bmatrix}
 		- eigenvector: the vector which keeps on it's origin span space after transformation (scaling is allowed), the rotation axis of translation
 		- eigenvalue: the scale factor (with no scaling, the factor is $1$)
 	- a transformation may leads to diagonally zeroed if you do transformation with a new basis system that the axes are correspond to eigenvectors.
-		- Explanation: eigenvector
+		- Explanation: eigenvector is the rotation axes of transformation, if we oriented apply basis system for translation (rather than apply $\hat{i}$ and $\hat{j}$), 
 		- if you find out the result of complications are something **regular** during exponential calculation, it implies that you should have a try 👆
 		- and use the regular observation push the missing results
 		- exist or not depends on whether your available eigenvector enough to span to whole space
