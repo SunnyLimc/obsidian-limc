@@ -46,7 +46,7 @@ in linear algebra perspective, a vector always will be rooted at the origin(åŽŸç
 	x \\
 	y 
 	   \end{bmatrix} $$
-		- shear: fix $\hat{i}$ and 45 degree clockwise rotate $\hat{j}$ 		   $$ \begin{bmatrix}
+		- sheer: fix $\hat{i}$ and 45 degree clockwise rotate $\hat{j}$ 		   $$ \begin{bmatrix}
 	1 & 1 \\
 	0 & 1 
 	\end{bmatrix}   
@@ -156,7 +156,6 @@ $$ \begin{bmatrix}
 		- (Video) thinking about it takes our misconception of what other means (using same coordinate is our system), then transform it into the vector she really means
 		- *(my thought) thinking about it prepare the translation environment for others' vector, if you do not have the correct code of mapping, the manipulation will never make sense. *
 - ***The core idea (only available for translation) of computation is applying basis system from left-one so and doing the computing for right-one which others familiar with***
-- CORRECTION: Because we are NOT familiar how others represent coordinate in her system, but 
 - **And,** it's something like recursion, if you need a left solution, you must calculate the right one first, until you finished all puzzles, it's what function is doing
 	- $f(f(f(f(n))))$
 	- so, it's reasonable to understand why $A\cdot[other's\ vec]$ make sense
