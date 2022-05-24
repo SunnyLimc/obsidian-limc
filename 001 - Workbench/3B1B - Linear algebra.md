@@ -165,9 +165,10 @@ $$ \begin{bmatrix}
 - **Say something may cross the line** #caution #review-needing
 	- **DO NOT use transformation BUT translation**
 	- What we are doing is create a representation allowing us to replay manipulations from ours intuition, in other words, our basis system with $\hat{i} = 1$ and $\hat{j} = 1$
-- so, how to simulate a translation from others perspective?
+- so, how to simulate a manipulation from others perspective?
 	- basically: (undo translation) *<-* (apply Main translation from others perspective) *<-* (translate and re-simulate in our views) *<-* (other's vector)`
 	- terminologically: $A^{-1}MAX$ (which $X$ a lower rank object)
+	- compare with $MAX$, $A^{-1}MAX$ takes both input and output from others perspective
 
 - eigenvalue & eigenvector
 	- outline
@@ -177,3 +178,7 @@ $$ \begin{bmatrix}
 		- if you find out the result of complications are something **regular** during exponential calculation, it implies that you should have a try 👆
 		- and use the regular reverse push the missing results
 		- exist or not depends on whether your available eigenvector 
+		
+		> spend much time to figure out how to interpret this
+		
+		- 
