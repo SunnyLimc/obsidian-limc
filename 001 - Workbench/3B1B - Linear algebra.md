@@ -165,9 +165,9 @@ $$ \begin{bmatrix}
 - **Say something may cross the line** #caution #review-needing
 	- **DO NOT use transformation BUT translation**
 	- What we are doing is create a representation allowing us to replay manipulations from ours intuition, in other words, our basis system with $\hat{i} = 1$ and $\hat{j} = 1$
-- so, how to translate a matrix?
-	- basically: (restore *(inverse)* basic system for others) *<-* (apply main transformation) *<-* (prepare transformation basic system for others) *<-* (other's vector)`
-	- terminologically: $A^{-1}MA$
+- so, how to simulate a translation from others perspective?
+	- basically: (undo translation) *<-* (apply Main translation from others perspective) *<-* (translate and re-simulate in our views) *<-* (other's vector)`
+	- terminologically: $A^{-1}MAX$ (which $X$ a lower rank object)
 
 - eigenvalue & eigenvector
 	- outline
