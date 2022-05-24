@@ -171,4 +171,4 @@ $$ \begin{bmatrix}
 	- a transformation may leads to diagonally zeroed if you do transformation with a new basis system that the axes are correspond to eigenvectors.
 		- if you find out the result of complications are something **regular** during exponential calculation, it implies that you should have a try 👆
 		- and use the regular reverse push the missing results
-		- not all 
+		- exist or not depends on whether your available eigenvector 
