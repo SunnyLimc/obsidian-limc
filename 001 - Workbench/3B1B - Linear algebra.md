@@ -157,6 +157,7 @@ $$ \begin{bmatrix}
 		- *(my thought) thinking about it prepare the translation environment for others' vector, if you do not have the correct code of mapping, the manipulation will never make sense.*
 - ***The core idea (only available for translation) of computation is applying basis system from left-one so and doing the computing for right-one which likes simulate others manipulation from our basis system***
 	- Consider it's **basis system calculation** your viewing with a formula **without** any lower ranking object (the lower object must be appear on right). otherwise, look at it the same way as above 👆
+	- whatever what the inner value is, the result always lies on ours axes but with the meaning that formula itself given
 - **And,** it's something like recursion, if you need a left solution, you must calculate the right one first, until you finished all puzzles, it's what function is doing
 	- $f(f(f(f(n))))$ -> $f(N)$, which $N$ means a object with a lower ranking, and $f(N)$ do translation to gets it's intuitive result in ours basis system
 	- so, it's reasonable to understand why $A\cdot[other's\ vec]$ make sense
@@ -172,11 +173,11 @@ $$ \begin{bmatrix}
 
 - eigenvalue & eigenvector
 	- outline
-		- eigenvector: the vector which keeps on it's origin span space after transformation (scaling is allowed)
+		- eigenvector: the vector which keeps on it's origin span space after transformation (scaling is allowed), the rotation axis of translation
 		- eigenvalue: the scale factor (with no scaling, the factor is $1$)
 	- a transformation may leads to diagonally zeroed if you do transformation with a new basis system that the axes are correspond to eigenvectors.
 		- if you find out the result of complications are something **regular** during exponential calculation, it implies that you should have a try 👆
 		- and use the regular reverse push the missing results
 		- exist or not depends on whether your available eigenvector
-
-	- 
+	- *the essence of $AMA^{-1}$ with eigenvector is not been figured out by myself actually*, but luckily I dig out the essence of *transformation*
+	- eigenvector is the rotation axis of translation and the 
