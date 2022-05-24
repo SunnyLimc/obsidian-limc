@@ -63,7 +63,7 @@ in linear algebra perspective, a vector always will be rooted at the origin(原�
 
 In fact, the transformation (matrix) is by moving and scaling the axis, so it needs the same vectors number as the dimensions to record the result of transformation.
 
-- the `determinant` of a transformation is the special scaling factor
+- the `determinant` of a transformation is the **a special scaling factor**
 	- a factor that can be applied to **any** area transformation.
 	- if `det` is zero, means the result of transformation has squished to a smaller dimension
 		- at least two axes are located at a same line
@@ -175,10 +175,10 @@ $$ \begin{bmatrix}
 - eigenvalue & eigenvector
 	- outline
 		- eigenvector: the vector which keeps on it's origin span space after transformation (scaling is allowed), the rotation axis of translation
-			- it exist and only exist when $A\vec{v}=\lambda\vec{v}\rightarrow (A-\lambda I)\vec{v}=0$ (a set of vectors, equals to $\lambda$ times $\vec{v}$ after translation, the eigenvectors, can be calculated by figured out eigenvalue $\lambda$, **and** any  ) is true
+			- it exist and only exist when $A\vec{v}=\lambda\vec{v}\rightarrow (A-\lambda I)\vec{v}=0 \rightarrow \det(A-\lambda I)=0$  is **true** (a set of vectors, equals to $\lambda$ times $\vec{v}$ after translation. the eigenvectors, can be calculated by figured out eigenvalue $\lambda$, **and** you know, any determiner equals to zero guarantee that space will be squished during translation, assuming $x$ and $y$ and deal with the translation equation, you can get the solution of $\vec{v}$ that must be located at zero after space squishing)
 		- eigenvalue: the scale factor (with no scaling, the factor is $1$)
 	- a transformation may leads to diagonally zeroed if you do transformation with a new basis system that the axes are correspond to eigenvectors.
-		- Explanation: eigenvector is the rotation axes of transformation, if we oriented apply basis system for translation (rather than apply $\hat{i}$ and $\hat{j}$), 
+		- Explanation: eigenvector is spatial symmetry axis (it located in which will not be moved in translation) of translation, if we **oriented** (with using eigenvector) apply basis system for translation (rather than $\begin{bmatrix} 1 & 0 \\ 0 & 1\end{bmatrix}$), 
 		- if you find out the result of complications are something **regular** during exponential calculation, it implies that you should have a try 👆
 		- and use the regular observation push the missing results
 		- exist or not depends on whether your available eigenvector enough to span to whole space
