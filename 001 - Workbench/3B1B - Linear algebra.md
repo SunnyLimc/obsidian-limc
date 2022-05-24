@@ -169,6 +169,7 @@ $$ \begin{bmatrix}
 	- basically: (undo translation) *<-* (apply Main translation from others perspective) *<-* (translate and re-simulate in our views) *<-* (other's vector)`
 	- terminologically: $A^{-1}MAX$ (which $X$ a lower rank object)
 	- compare with $MAX$, $A^{-1}MAX$ takes both input and output from others perspective
+		- if you use $AMA^{-1}X$ rather than $A^{-1}MAX$, things will become worse , since you **use a wrong key to translate basis system form A to B, the result is unexpectable**
 
 - eigenvalue & eigenvector
 	- outline
@@ -178,7 +179,4 @@ $$ \begin{bmatrix}
 		- if you find out the result of complications are something **regular** during exponential calculation, it implies that you should have a try 👆
 		- and use the regular reverse push the missing results
 		- exist or not depends on whether your available eigenvector 
-		
-		> spend much time to figure out how to interpret this
-		
 		- 
