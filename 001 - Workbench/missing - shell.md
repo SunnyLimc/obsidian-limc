@@ -268,7 +268,7 @@ kREGEX_DATE='^[0-9]{2}[-/][0-9]{2}[-/][0-9]{4}$' # note use of [0-9] to avoid \d
 echo $? # 0 with the sample value, i.e., a successful match
 ```
 
-Set script execator (shebang)
+Set script executor (shebang)
 
 put it at the beginning of the file, so that the shell can identify it.
 
@@ -304,7 +304,7 @@ A bloated `man` alternative
 
 you can use `tldr` to get brief example for programs
 
-Search you file with `find`&#x20;
+Search you file with `find`;
 
 ```bash
 tldr find
