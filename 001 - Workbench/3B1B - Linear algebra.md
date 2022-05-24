@@ -156,15 +156,14 @@ $$ \begin{bmatrix}
 		- (Video) thinking about it takes our misconception of what other means (using same coordinate is our system), then transform it into the vector she really means
 		- *(my thought) thinking about it prepare the translation environment for others' vector, if you do not have the correct code of mapping, the manipulation will never make sense.*
 - ***The core idea (only available for translation) of computation is applying basis system from left-one so and doing the computing for right-one which likes simulate others manipulation from our basis system***
-	- Consider using basis system transformation as your viewing with a formula without any lower ranking object (the lower object must be appear on right). otherwise, look at it the same way as above 👆
-	- the result your getting is always from the basis system with $\hat{i} = 1$ and $\hat{j} = 1$
+	- Consider it's **basis system calculation** your viewing with a formula **without** any lower ranking object (the lower object must be appear on right). otherwise, look at it the same way as above 👆
 - **And,** it's something like recursion, if you need a left solution, you must calculate the right one first, until you finished all puzzles, it's what function is doing
-	- $f(f(f(f(n))))$ -> $f(N)$, which $N$ means a object with a lower ranking, and $f(N)$ do translation to gets it's intuitive result
+	- $f(f(f(f(n))))$ -> $f(N)$, which $N$ means a object with a lower ranking, and $f(N)$ do translation to gets it's intuitive result in ours basis system
 	- so, it's reasonable to understand why $A\cdot[other's\ vec]$ make sense
 	- $A^{-1}$ is needless, comprehend what mentioned above is enough, *just restore it by multiple $A^{-1}$ if you no longer need mapping or need to simulate our manipulation from others basic system*
 - **Say something may cross the line** #caution #review-needing
 	- **DO NOT use transformation BUT translation**
-	- What we are doing is create a representation allowing us to replay manipulations from ours intuition, in other words, our basis system with $\hat{i} = 1$ and $\hat{j} = 1$
+	- What we are doing is create a representation allowing us to replay manipulations from ours intuition
 - so, how to simulate a manipulation from others perspective?
 	- basically: (undo translation) *<-* (apply Main translation from others perspective) *<-* (translate and re-simulate in our views) *<-* (other's vector)`
 	- terminologically: $A^{-1}MAX$ (which $X$ a lower rank object)
