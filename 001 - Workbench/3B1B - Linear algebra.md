@@ -181,8 +181,7 @@ $$ \begin{bmatrix}
 		- Explanation: eigenvector is spatial symmetry axis (it located in which will not be moved in translation) of translation, if we **oriented** apply eigenvector for translation (with using the basis system which **will not be moved during translation**, rather than $\begin{bmatrix} 1 & 0 \\ 0 & 1\end{bmatrix}$), and after translation, the vectors are guaranteed to be placed at the same orientation as eigenvector, and mapping to the axes after un-translation.
 			- * *translation: the main transformation, NOT the transformation by eigenvector*
 			- you may lost metadata since it's not doing translation by the perspective from ours
-			- 
+			- but thanks for that mapping, we can easily figure out what happens (the regular) on matrix exponential computation
 		- if you find out the result of complications are something **regular** during exponential calculation, it implies that you should have a try 👆
-		- and use the regular observation push the missing results
 		- exist or not depends on whether your available eigenvector enough to span to whole space
 	- *the essence of $AMA^{-1}$ with eigenvector is not been figured out by myself actually*, but luckily I dig out the essence of *transformation*
