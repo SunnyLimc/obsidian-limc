@@ -178,7 +178,7 @@ $$ \begin{bmatrix}
 			- it exist and only exist when $A\vec{v}=\lambda\vec{v}\rightarrow (A-\lambda I)\vec{v}=0 \rightarrow \det(A-\lambda I)=0$  is **true** (a set of vectors, equals to $\lambda$ times $\vec{v}$ after translation. the eigenvectors, can be calculated by figured out eigenvalue $\lambda$, **and** you know, any determiner equals to zero guarantee that space will be squished during translation, assuming $x$ and $y$ and deal with the translation equation, you can get the solution of $\vec{v}$ that must be located at zero after space squishing)
 		- eigenvalue: the scale factor (with no scaling, the factor is $1$)
 	- a transformation may leads to diagonally zeroed if you do transformation with a new basis system that the axes are correspond to eigenvectors.
-		- Explanation: eigenvector is spatial symmetry axis (it located in which will not be moved in translation) of translation, if we **oriented** (with using eigenvector) apply basis system for translation (rather than $\begin{bmatrix} 1 & 0 \\ 0 & 1\end{bmatrix}$), and that translation will 
+		- Explanation: eigenvector is spatial symmetry axis (it located in which will not be moved in translation) of translation, if we **oriented** (with using eigenvector) apply basis system for translation (rather than $\begin{bmatrix} 1 & 0 \\ 0 & 1\end{bmatrix}$), and that translation will artificially located at the eigenvector of the specific translation
 		- if you find out the result of complications are something **regular** during exponential calculation, it implies that you should have a try 👆
 		- and use the regular observation push the missing results
 		- exist or not depends on whether your available eigenvector enough to span to whole space
