@@ -88,7 +88,7 @@ $$ \begin{bmatrix}
 	-2 & 1
 	\end{bmatrix}   
 	$$
-	- mapping from 3D to 2D, each vector of the 3 is the orientation of axis
+- mapping from 3D to 2D, each vector of the 3 is the orientation of axis
 $$ \begin{bmatrix}
 	2 & 0 & 3 \\
 	-1 & 1 & 1 \\
@@ -140,6 +140,7 @@ $$ \begin{bmatrix}
 	\end{bmatrix}
 	)}  
 	$$
+	- 
 		- the solution of $\vec{p}$ in one determinant is numerous, a bunch of evenly spaced vectors can mapping the same values to the axis perpendicular to $v$ and $w$
 		- the purpose of $det$ is to compute the volume of $v, w$ and $p$. Since it's `linear`, $det$ will evenly spaced for the same spacing #review-needing 
 	- you may think $[x, y, z]$ is do a transformation from space to line, since it takes a input and produce a **numerical output** and you **can use a linear multiplication to convert the function** $[p_1, p_2, p_3]$, and because of duality that proved above, the transformation can finally represent by a vector $\begin{bmatrix} p_1 \\ p_2 \\ p_3 \end{bmatrix}$
