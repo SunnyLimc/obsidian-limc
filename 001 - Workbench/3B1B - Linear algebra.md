@@ -153,8 +153,8 @@ $$ \begin{bmatrix}
 	 - it's simple$$A\cdot\ [other's\ vec]=[ours\ vec]$$
 	- let's see what $A$ means
 		- **A = use ours coordinate to represent other's basis system vectors, it's definitely different from the basis system by other's viewing**,
-		- (Video) thinking about it takes our misconception of what other means (using same coordinate is our system), then transform it into the vector she really means
-		- *(my thought) thinking about it prepare the translation environment for others' vector, if you do not have the correct code of mapping, the manipulation will never make sense.*
+		- (Video, also the fact) thinking about it takes our misconception of what other means (using the coordinate means by other), then translate it to the vector that ours familiar with
+		- *(my thought) thinking about it prepare the translation environment for others' vector, if you do not have the correct mapping from others to ours coordinate system, the manipulation will never make sense.*
 - ***The core idea (only available for translation) of computation is applying basis system from left-one so and doing the computing for right-one which likes simulate others manipulation from our basis system***
 	- Consider it's **basis system calculation** your viewing with a formula **without** any lower ranking object (the lower object must be appear on right). otherwise, look at it the same way as above 👆
 		- Although nothing mentioned, do NOT ignore the first translation is for the basis system $\begin{bmatrix} 1 & 0 \\ 0 & 1\end{bmatrix}$
@@ -164,8 +164,8 @@ $$ \begin{bmatrix}
 	- so, it's reasonable to understand why $A\cdot[other's\ vec]$ make sense
 	- $A^{-1}$ is needless, comprehend what mentioned above is enough, *just restore it by multiple $A^{-1}$ if you no longer need mapping or need to simulate our manipulation from others basic system*
 - **Say something may cross the line** #caution #review-needing
-	- **DO NOT use transformation BUT translation**
-	- What we are doing is create a representation allowing us to replay manipulations from ours intuition
+	- *DO NOT use transformation BUT translation
+	- **I'll try to use** ***translation*** **in the last portion of passage, and see if it works**
 - so, how to simulate a manipulation from others perspective?
 	- basically: (undo translation) *<-* (apply Main translation from others perspective) *<-* (translate and re-simulate in our views) *<-* (other's vector)`
 	- terminologically: $A^{-1}MAX$ (which $X$ a lower rank object)
