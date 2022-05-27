@@ -7,4 +7,8 @@
 	- add `&` and your prompt will not be took over by program
 	- send any signal to process `kill -[SIG] %[jobid]`
 
-- 
+- Multiplex
+	- Session
+		- Windows
+			- Panes
+
