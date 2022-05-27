@@ -60,6 +60,8 @@ fusion 流水线优化
 
 [[missing - Data Wrangling]]
 
+[[missing - Command-line Environment]]
+
 ## Linear algebra
 
 [[3B1B - Linear algebra]]
