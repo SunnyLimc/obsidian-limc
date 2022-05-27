@@ -8,7 +8,9 @@
 	- send any signal to process `kill -[SIG] %[jobid]`
 
 - Multiplex
-	- Session
-		- Windows
-			- Panes
-
+	- conception
+		- Session
+			- Windows
+				- Panes
+	- `^b + d` detach from session
+		- `tmux a` re-attach to that session
