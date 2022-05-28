@@ -22,8 +22,8 @@
 		- `^b + p` previous tab
 		- `^b + n` next window
 		- `^b + [num]` to specific window
-		- `^d` close a window
+		- `^d` close a pane (if close the last pane on the last window, it will eventually close the session)
 	- panes management
-		- `^b +"` split horizontally
-			- `^b + %` split it vertically
-		- `^b + [arrowKey]` 
+		- `^b + "` split window horizontally
+			- `^b + %` split window vertically
+		- `^b + [arrowKey]` switch between panes
