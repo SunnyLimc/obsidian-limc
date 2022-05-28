@@ -31,4 +31,6 @@
 		- `^b + z` to zoom-in a pane, and retaped it to zoom-out
 
 - giving an alias mapping for certain command with `alias [alias]=[command]`
-	- 
+	- check a alias with `alias [alias]`
+
+- `export [env]=[value]` make environment variable available for any sub-process
