@@ -41,5 +41,16 @@
 	- `ssh [user]@[url/ip]`
 	- `ssh [user]@[url/ip] [command]`execute a command directly instead of connect to shell, the **output** and **input** of that command can be used with **pipe**
 	- `ssh-copy-id [ssh_login]` install a key to remote server and do not need to tap passphrase anymore
-	- `scp [local_path] [ssh_login]:[remote_pate]` copy file from local to remote path (remote relative address start with `~`)
-	
+	- `scp [local_path] [ssh_login]:[remote_path]` copy file from local to remote path (remote relative address start with `~`)
+	- `rsync . -avP [ssh_login]:[remote_path` if you want to copy a full path to remote with breakpoint retransmission support
+	- configurate of SSH
+		- and then you can simply use `ssh vm` to establish connection to your remote host
+	```conf
+	Host vm
+		User jjgo
+		Hostname 192.168.246.142
+		identityfile ~/.ssh/id_ed25519
+		RemoteForward 9999 localhost:8888
+	```
+	- make good use of `tmux` and `tmux a`
+		- use separate key binding to control two running `tmux`, and edit the configuration to distinguish them
