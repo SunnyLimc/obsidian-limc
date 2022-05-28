@@ -14,11 +14,13 @@
 				- Panes
 	- `^b + d` detach from session
 		- `tmux a` re-attach to that session
-	- `^d` exit a session
 	- `tmux new -t [name]` start a new session
 		- `tmux a -t [name]` to re-attach
 	- `tmux ls` to list sessions
-	- `^b + c` create a new window
-	- `^b + p` previous tab
-	- `^b + n` next window
-	- `^b + [num]` to 
+	- window switcher
+		- `^b + c` create a new window
+		- `^b + p` previous tab
+		- `^b + n` next window
+		- `^b + [num]` to specific window
+		- `^d` close a window
+	
