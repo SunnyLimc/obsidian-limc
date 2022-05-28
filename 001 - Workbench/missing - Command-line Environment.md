@@ -29,3 +29,6 @@
 		- `^b + [arrowKey]` switch between panes
 		- `^b + space` rearrange panes
 		- `^b + z` to zoom-in a pane, and retaped it to zoom-out
+
+- giving an alias mapping for certain command with `alias [alias]=[command]`
+	- 
