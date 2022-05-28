@@ -23,4 +23,7 @@
 		- `^b + n` next window
 		- `^b + [num]` to specific window
 		- `^d` close a window
-	
+	- panes management
+		- `^b +"` split horizontally
+			- `^b + %` split it vertically
+		- `^b + [arrowKey]` 
