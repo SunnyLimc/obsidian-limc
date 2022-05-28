@@ -7,7 +7,7 @@
 	- add `&` and your prompt will not be took over by program
 	- send any signal to process `kill -[SIG] %[jobid]`
 
-- Multiplex
+- Multiplex - `tmux`, keeping execution although received `hangup` signal
 	- conception
 		- Session
 			- Windows
@@ -27,3 +27,5 @@
 		- `^b + "` split window horizontally
 			- `^b + %` split window vertically
 		- `^b + [arrowKey]` switch between panes
+		- `^b + space` rearrange panes
+		- `^b + z` to zoom-in a pane, and retaped it to zoom-out
