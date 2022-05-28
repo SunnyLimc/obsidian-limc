@@ -34,3 +34,5 @@
 	- check a alias with `alias [alias]`
 
 - `export [env]=[value]` make environment variable available for any sub-process
+
+- use `ln -s [filePath] [linkPath]` to create symbol link
