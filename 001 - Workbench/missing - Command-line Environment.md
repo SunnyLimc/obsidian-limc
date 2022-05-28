@@ -40,4 +40,6 @@
 - SSH - forward remote shell to local
 	- `ssh [user]@[url/ip]`
 	- `ssh [user]@[url/ip] [command]`execute a command directly instead of connect to shell, the **output** and **input** of that command can be used with **pipe**
-	- `ssh-copy-id` install a key to remote server and 
+	- `ssh-copy-id [ssh_login]` install a key to remote server and do not need to tap passphrase anymore
+	- `scp [local_path] [ssh_login]:[remote_pate]` copy file from local to remote path (remote relative address start with `~`)
+	
