@@ -36,3 +36,8 @@
 - `export [env]=[value]` make environment variable available for any sub-process
 
 - use `ln -s [filePath] [linkPath]` to create symbol link
+
+- SSH - forward remote shell to local
+	- `ssh [user]@[url/ip]`
+	- `ssh [user]@[url/ip] [command]`execute a command directly instead of connect to shell, the **output** and **input** of that command can be used with **pipe**
+	- `ssh-copy-id` install a key to remote server and 
