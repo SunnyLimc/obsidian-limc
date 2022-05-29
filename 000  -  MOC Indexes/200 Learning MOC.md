@@ -62,6 +62,8 @@ fusion 流水线优化
 
 [[missing - Command-line Environment]]
 
+[[missing - git]]
+
 ## Linear algebra
 
 [[3B1B - Linear algebra]]
