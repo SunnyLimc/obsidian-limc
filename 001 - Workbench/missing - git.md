@@ -1,8 +1,10 @@
 - introduction of version control
-	- `git` use directed acyclic graph to model history
+	- `git` use directed acyclic graph (有向无环图) to model history
+		- use hash to represent versions commit (sha-1 `hash()` mention below)
 		- use terminology to stand for the items to be stored
-		- folder -> `tree`
-		- file -> `blob` (binary large object)
+			- folder -> `tree`
+			- file -> `blob` (binary large object)
+		- the node before previous commit is immutable
 	- the model is something mentioned above
 		- surface layer
       ```python 
