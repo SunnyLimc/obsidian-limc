@@ -41,4 +41,4 @@
 
 - commands
 	- `git init` initialize git repository
-	- 
+
