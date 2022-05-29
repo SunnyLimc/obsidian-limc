@@ -37,3 +37,4 @@
 		```python
 	references = map<string, string> # mapping form hash to readable syntax 
 ```
+	- `git` manipulate reference data and object data
