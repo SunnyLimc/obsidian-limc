@@ -48,12 +48,12 @@
 		- and it will produce a hash of that certain **commit**
 		- you can print the internal metadata (eg. tree hash OR author) of commit with `git cat-file -p [commit]`, `-p` is for pretty print it
 			- actually you are allowed to print a tree with `git cat-file -p [tree]`
-			- print blob is also you can `git cat-file -p [blob]`
+			- also, you can print the blob `git cat-file -p [blob]`
 	- `git log` show the commit history
 	- git stage
 		- it gives a area for including the files need to be save in next snapshot
 		- `git add [file]` add a file to stage
 			- and also, it will add a file for **tracking**, that means, the file will be added to stage (or commit) if you do something like `add -A` or `commit -a`  files
-		
+		- 
 	
 
