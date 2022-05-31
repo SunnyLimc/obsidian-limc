@@ -62,7 +62,9 @@ fusion 流水线优化
 
 [[missing - Command-line Environment]]
 
-[[missing - git]]
+[[missing - Git]]
+
+[[missing - Debugging and Profiling]]
 
 ## Linear algebra
 
