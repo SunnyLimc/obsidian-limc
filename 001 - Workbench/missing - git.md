@@ -50,10 +50,15 @@
 			- actually you are allowed to print a tree with `git cat-file -p [tree]`
 			- also, you can print the blob `git cat-file -p [blob]`
 	- `git log` show the commit history
+		- `git log --all --graph --decorate` to list it as a graph
 	- git stage
 		- it gives a area for including the files need to be save in next snapshot
 		- `git add [file]` add a file to stage
-			- and also, it will add a file for **tracking**, that means, the file will be added to stage (or commit) if you do something like `add -A` or `commit -a`  files
-		- 
+			- and also, it will add a file for **tracking**, that means, the file will be added to stage (or commit) if you use `git commit -a` in the future
+				- NOTE: `git add -A` or `git add :/` will add all files included the one can be tracked and not staged for commit
+				- #todo tutorial of adding for line
+	- branch
+		- a branch  `master` is more likely a **pointer** to a commit
+			- `HEAD` where you currently looking right now
 	
 
