@@ -56,7 +56,7 @@
 		- `git add [file]` add a file to stage
 			- and also, it will add a file for **tracking**, that means, the file will be added to stage (or commit) if you use `git commit -a` in the future
 				- NOTE: `git add -A` or `git add :/` will add all files included the one can be tracked and not staged for commit
-				- #todo tutorial of adding for line
+			- just add a pieces(part) of file: `git add -p ...`
 	- `git branch`
 		- a branch  `master` is more likely a **pointer** to a commit
 		- `HEAD` where you currently looking right now
@@ -64,6 +64,7 @@
 		- it move `HEAD` and change your working directory contents correspond to that commit
 		- `git checkout [file]` discard the changes made in that file of current working directory and restore it to what `HEAD` is
 	- `git diff`
+		- `git diff --cached`: use **staged files** instead of working directory as the default `from-commit`
 		- diff commit: `git diff [from-commit] [to-commit]`
 		- diff current **working directory** with others: `git diff [from-commit]`
 			- you can specify file that you want to diff: `git diff [from-commit] [file]`
@@ -87,6 +88,13 @@
 			- `git branch --set-upstream-to=[remote]/[branch]`
 		- references of remote that points to a particular commit will be list in `git log`
 	- `git clone [path] [folder-name]` save a copy of repository form remote
+		- clone but avoid to include whole history of that remote repository `git clone --shallow ...`
 	- `git fetch [remote]` retrieve all changes of remote repository to local
 		- `git pull` = `git fetch` + `git merge` fetch and merge branch from remote branch
+		- `git merge` make your local branch points to the same place as remote branch
+	- `git blame [file]` figured out how the files has been modified in history and find out who made it
+	- `git show [commit]` show details of a commit
+	- `git stash` save current changes to stash and revert working directory to `HEAD`
+		- `git stash pop` retrieve from stash
+	- `git bisect` powerful tool for finding particular things from history
 	- 
