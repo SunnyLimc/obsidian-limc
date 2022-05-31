@@ -51,14 +51,42 @@
 			- also, you can print the blob `git cat-file -p [blob]`
 	- `git log` show the commit history
 		- `git log --all --graph --decorate` to list it as a graph
-	- git stage
+	- `git stage`
 		- it gives a area for including the files need to be save in next snapshot
 		- `git add [file]` add a file to stage
 			- and also, it will add a file for **tracking**, that means, the file will be added to stage (or commit) if you use `git commit -a` in the future
 				- NOTE: `git add -A` or `git add :/` will add all files included the one can be tracked and not staged for commit
 				- #todo tutorial of adding for line
-	- branch
+	- `git branch`
 		- a branch  `master` is more likely a **pointer** to a commit
-			- `HEAD` where you currently looking right now
-	
-
+		- `HEAD` where you currently looking right now
+	- `git checkout`
+		- it move `HEAD` and change your working directory contents correspond to that commit
+		- `git checkout [file]` discard the changes made in that file of current working directory and restore it to what `HEAD` is
+	- `git diff`
+		- diff commit: `git diff [from-commit] [to-commit]`
+		- diff current **working directory** with others: `git diff [from-commit]`
+			- you can specify file that you want to diff: `git diff [from-commit] [file]`
+	- `git branch` will create a new branch point to `HEAD`'s commit
+		- you can use `git checkout [branch]` make `HEAD` points to that branch
+		- to list branches `git branch -vv` and it will give you the upstream branch
+	- `git merge` to combine two commit
+		- if this branch is located at the commit which the predecessor of the branch to be merged, it can directly `Fast-Forward` without creating any snapshots and just move branch pointer to that commit
+		- `git merge --abort` abort merge and go back to the state that merge not happen
+		- if you encounter with conflicts
+			- `git mergetool` if you configure `mergetool`, you can finish merge with this command
+			- fix them manually
+				- `<< [to ours branch]` and `>> [from merge branch]`, `==` the separator of conflicts
+				- fix the conflicts, and remove the identifiers
+		- `git merge --continue` will continue that process
+	- `git remote` to list all remotes
+		- `git remote add [remote] [path]` add a remote
+			- create a path for remote locally: `git init --bare`
+		- `git push [remote] [branch]:[remote-branch]` push to remote, it will be created if the remote branch not exist,
+		- set default remote and remote branch for `git push` of a particular local branch
+			- `git branch --set-upstream-to=[remote]/[branch]`
+		- references of remote that points to a particular commit will be list in `git log`
+	- `git clone [path] [folder-name]` save a copy of repository form remote
+	- `git fetch [remote]` retrieve all changes of remote repository to local
+		- `git pull` = `git fetch` + `git merge` fetch and merge branch from remote branch
+	- 
