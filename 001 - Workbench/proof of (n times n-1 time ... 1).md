@@ -1,0 +1,1 @@
+simply told you the answer is $\frac{1}{2} \times n \times n-1$
