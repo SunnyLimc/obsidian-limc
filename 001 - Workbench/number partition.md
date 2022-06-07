@@ -3,7 +3,8 @@
 		- it has $\frac{n\times(n-1)}{2}$ elements
 	- And, what about 3?
 		- You have a ponder and find out 2 explanations
-		- firstly, $\frac{(\frac{n\times(n-1)}{2})\times(n-2)}{3}$
+		- firstly,$\frac{(\frac{n\times(n-1)}{2})\times(n-2)}{3}$
 			- because you find that
 				- 3 elements cause a same result![[Pasted image 20220607161734.png]]
-		- 
+			- another way to think about is![[Pasted image 20220607162754.png]]
+				- but that's incorrect because $n\times n-1$ is sequential, and can not be insert randomly. you use a magic trick to hide $0\ 2$ and $1\ 2$, that's unaccountably
