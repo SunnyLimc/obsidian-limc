@@ -10,3 +10,4 @@ Questioning yourself is a philosophy way to life.
 - [[segment address]]
 
 - #TODO 动态规划中关于相互独立和去除不确定性的说明
+	- 通过状态来固定条件
