@@ -1,0 +1,10 @@
+- So how many unique combination (non-repetitive) does taking 3 elements from a 4 elements array?
+	- You may think that take unique 2 elements from 3 element array
+		- it has $\frac{n\times(n-1)}{2}$ elements
+	- And, what about 3?
+		- You have a ponder and find out 2 explanations
+		- firstly,$\frac{(\frac{n\times(n-1)}{2})\times(n-2)}{3}$
+			- because you find that
+				- 3 elements cause a same result![[Pasted image 20220607161734.png | 200]]
+			- another way to think about is![[Pasted image 20220607162754.png | 200]]
+				- that's think from the result list, there are 3 combination cause one result, and that you may confused because of the calculation is **not sequential**

@@ -1,10 +1,17 @@
-- So how many unique combination (non-repetitive) does taking 3 elements from a 4 elements array?
-	- You may think that take unique 2 elements from 3 element array
-		- it has $\frac{n\times(n-1)}{2}$ elements
-	- And, what about 3?
-		- You have a ponder and find out 2 explanations
-		- firstly,$\frac{(\frac{n\times(n-1)}{2})\times(n-2)}{3}$
-			- because you find that
-				- 3 elements cause a same result![[Pasted image 20220607161734.png]]
-			- another way to think about is![[Pasted image 20220607162754.png]]
-				- that's think from the result list, there are 3 combination cause one result, and that you may confused because of the calculation is **not sequential**
+- Question is to be `yes`, if one of assignments is verified to be `true`, the whole assumption is true
+	- but if a assignments is `false`, you can't prove that.
+	- Verifying function is bias `true`
+
+- 分区问题需要将目标数组分成相同的 n 子集，你可以将从数组中**取了一个元素**之后的子集裁剪，将问题视作**装载问题** (将剩余的元素装到长度不一的两个子集中)。所以对于 subset partition 问题，贪心算法只能近似或验证，无法得到完全的解。
+	- **特殊情况**：在只有两个子集的情况下，由于子集总长度与元素的总长度一致。所以只需尽可能填充其中一个子集，若能够填充，则可以证明有解
+		- **装载问题子集长度与元素总长度并不总是一致的，所以一般情况下你不一定能装满一个子集**，当然如果能装满的话也行
+		- 如果子集数大于两个，则无法使用，原因参下
+	- 如果按照任务调度的方式放入元素，会**忽视已有元素较大的子集的剩余空间**，无法保证剩余的元素一定能放入该子集
+		- 但是能快速拟合出一个解 (或非常近似的解)
+		- 与解的总偏差值不会超过所有元素中最小的数
+			- 不要忘记元素总长度与子集总长度是一样的。如果存在比数组中最小的元素还要大的偏差，那么这个偏差一定会被最后填充，且存在能够填充的元素将其填充。
+	- 如果**优先考虑剩余空间小的子集**，其实与**先将某个子集完全填充**是一样的，因为子集的剩余长度是不断缩小的，这种方法**只能得知是否无解**，无法得到有解的结论
+		- 如果子集数大于两个，由于你并没有考虑其余子集和剩余元素之间的关系，你无法从剩余的元素中选择正确的组合添加到子集中。如 4 + 1 与 3 + 2 同样等于 5，选择其一都有可能让其他子集在需要的时候无法选择
+	- 你总可以尝试排除计算最后一个子集，正如上文所言，如果所有其他子集都有解，最后一个子集总能自动完成
+
+- 待补充
