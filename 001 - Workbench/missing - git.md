@@ -97,4 +97,3 @@
 	- `git stash` save current changes to stash and revert working directory to `HEAD`
 		- `git stash pop` retrieve from stash
 	- `git bisect` powerful tool for finding particular things from history
-	- 
