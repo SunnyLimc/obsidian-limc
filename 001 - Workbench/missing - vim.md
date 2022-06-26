@@ -43,9 +43,9 @@
 
     ***
 
-    `0` beginning of line
+    `0` beginning of line -> equipment as HOME
 
-    `$` end of line
+    `$` end of line -> equipment as END
 
     `^` first NOT empty character on a line
 
@@ -141,4 +141,4 @@
 
 *   `.` repeat the previous editing command
 
-<https://www.vimgolf.com/>
+https://www.vimgolf.com/
