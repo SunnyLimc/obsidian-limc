@@ -13,7 +13,7 @@
 
     `:` to Command-line mode
 
-    `Esc` go back dto Normal mode from any mode
+    `Esc` go back to Normal mode from any mode
 
 *   brief notation for combined key
 
