@@ -1,6 +1,7 @@
 [[000 Home|Home]]
 
 # Learning 
+
 Everything about personal learning. Learning is for enhanced personal value and needs to be separate form interests.
 
 English is better but not a optimal solution right now. Try Chinese again.
