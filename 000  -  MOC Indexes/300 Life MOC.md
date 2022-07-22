@@ -12,6 +12,7 @@ Life is the thread that enriches your horizons.
 
 	[[Drugs use report]]
 
+[[Quit form class team]]
 
 
 #### MISC
