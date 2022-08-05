@@ -1,5 +1,5 @@
-> use `most` to get a better `$PAGER` experience
-
+> ~~use `most` to get a better `$PAGER` experience~~
+> Actually `less` is the better
 
 - manage processes
 	- process's output will be ignored with using `nohup`, and will ignore `hangup` signal (e.g. program will still running after closing the terminal)
