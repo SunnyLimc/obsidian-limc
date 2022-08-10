@@ -75,3 +75,7 @@ fusion 流水线优化
 #### from videos
 
 [[Mu Li - Roadmap & Preliminlary]]
+
+## CS61C - Summer 22
+
+[[cs61c Lecture 1 - Intro, Memory]]
