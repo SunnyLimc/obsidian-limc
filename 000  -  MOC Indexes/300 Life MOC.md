@@ -16,5 +16,3 @@ Life is the thread that enriches your horizons.
 
 
 #### MISC
-
-Microsoft Ticket Number: 32029142

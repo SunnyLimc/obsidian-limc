@@ -52,7 +52,6 @@ fusion 流水线优化
 
 [[15445 - H01|CONSTRUCT THE SQL QUERIES]]
 
-
 ## Missing Semester
 
 [[missing - shell]]
