@@ -21,7 +21,7 @@ which vim
 ```
 
 ---
-
+		
 - Working Directory
 	*   rmdir → remove empty dir, use it to keep a good habit
 	*   mkdir → `space` to create multi dir, or use excape `\` or quotes to make dirname include space
@@ -167,9 +167,9 @@ mcd hello # the "hello" folder will be created and shell move into it
 
 Error code
 
-function retrun `0` for no error. `1` for errors happened.
+function return `0` for no error. `1` for errors happened.
 
-Logical expression&#x20;
+Logical expression;
 
 ```bash
 true
@@ -179,14 +179,12 @@ echo $?
 false
 echo $?
   1
-
 ```
 
 ```bash
 false || echo "Oops fail"
 # the "short-circuited" algorithm like the programming language
 # if the front is ture, the back will not be exectued
-
 ```
 
 ```bash
@@ -198,7 +196,7 @@ false ; echo "This will always print"
 
 Calculate expression
 
-use `$()` to exectue a command rather than serialize it
+use `$()` to execute a command rather than serialize it
 
 ```bash
 # you can storage a result from command to variable
@@ -238,7 +236,7 @@ done
 
 regex match
 
-we can use `?` or `*` or `{...}` **etc** to do character match.
+we can use `?` or `*` or `{...}` **etc.** to do character match.
 
 you can also combine some of them to get a powerful shell.
 
