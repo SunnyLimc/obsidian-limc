@@ -1,9 +1,18 @@
 [[000 Home]] 
 
 # Ideas
+
 Questioning yourself is a philosophy way to life.
 
-> 正在
+### Prefect idea candidates
+
+- A GUI tool for Autohotkey like Quicker
+	- electron
+
+### To-Do List
+
+
+### Thoughts
 
 - [[Number Permutation]]
 
