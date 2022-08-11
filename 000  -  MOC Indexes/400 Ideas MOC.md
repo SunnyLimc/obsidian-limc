@@ -15,6 +15,8 @@ Questioning yourself is a philosophy way to life.
 
 ### To-Do List
 
+- fix direction hotkeys can not be combining used with other modifier keys
+- try 
 
 ### Thoughts
 
