@@ -8,6 +8,10 @@ Questioning yourself is a philosophy way to life.
 
 - A GUI tool for Autohotkey like Quicker
 	- electron
+		- for the most backward windows compatibility
+	- react
+		- framework
+	- 
 
 ### To-Do List
 
