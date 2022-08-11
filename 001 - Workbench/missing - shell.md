@@ -265,7 +265,7 @@ kREGEX_DATE='^[0-9]{2}[-/][0-9]{2}[-/][0-9]{4}$' # note use of [0-9] to avoid \d
 [[ $1 =~ $kREGEX_DATE ]]
 echo $? # 0 with the sample value, i.e., a successful match
 ```
-
+	
 Set script executor (shebang)
 
 put it at the beginning of the file, so that the shell can identify it.
