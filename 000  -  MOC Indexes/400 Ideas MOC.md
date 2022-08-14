@@ -1,6 +1,6 @@
 [[000 Home]] 
 
-# Ideasj
+# Ideas
 
 Questioning yourself is a philosophy way to life.
 
