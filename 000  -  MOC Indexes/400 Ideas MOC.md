@@ -6,10 +6,10 @@ Questioning yourself is a philosophy way to life.
 
 ### To-Do List
 
-- fix direction hotkeys can not be combining used with other modifier keys.
-- try to figured out how the OCR program works and convert it to AHK.
-- fix dotfiles synchronization between Cygwin and WSL
-- improve NGINX reverse docker proxy for a future use
+- [x] fix direction hotkeys can not be combining used with other modifier keys.
+- [ ] try to figured out how the OCR program works and convert it to AHK.
+- [ ] fix dotfiles synchronization between Cygwin and WSL
+- [ ] improve NGINX reverse docker proxy for a future use
 
 ### Prefect idea candidates
 
