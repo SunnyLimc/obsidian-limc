@@ -2,7 +2,19 @@
 
 ### Practices
 
-- function
+- using as **Library are not mentioned**
+- always be functional, use `main` as the entry
+- use `""` as preferred
+- no global vars, or use `readonly` on constant
+- use `local` within function (readable)
+- lowercase variable unless export to env
+- set `set -eo pipefail`, fail fast when struggle and get exit code
+- use `||` to start prog intentionally let exit non-zero
+- no deprecate style. Always use `func() {}` and `[[]]` and `$(...)`
+- use `./` and leverage `$PWD`
+
+
+```bash
 
 ### echo
 
