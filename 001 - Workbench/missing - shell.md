@@ -1,6 +1,10 @@
-# missing
+## missing - shell
 
-### shell
+### Practices
+
+- function
+
+### echo
 
 use `\` instead of quote can continue enter as a same parameter
 
@@ -11,6 +15,7 @@ echo "Hello World"
 ```
 
 ---
+
 `$PATH` sperate by colon `:`, the path will be searched in order
 
 ```bash
@@ -20,11 +25,11 @@ which vim
   /usr/bin/vim
 ```
 
----
-		
-- Working Directory
-	*   rmdir → remove empty dir, use it to keep a good habit
-	*   mkdir → `space` to create multi dir, or use excape `\` or quotes to make dirname include space
+
+###  Working Directory
+
+* rmdir → remove empty dir, use it to keep a good habit
+* mkdir → `space` to create multi dir, or use excape `\` or quotes to make dirname include space
 
 ```bash
 pwd
@@ -47,17 +52,16 @@ ls -l
 # third cloumn means everyone else privilege
 ```
 
----
+### Permission:
 
-- Permission:
-	- User can choose group what they are
-	- only `root` user can change the owner of file
-	![[mZ6qv_8m20g8YPUC.png]]
-	- if you have a write previlege to a file but not to the directory, you **can't** remove the file but can empty the file. In opposite, you can remove it but can not write it (vim `:wq!` use this trick).
-	* if you want to exec a file, you need to get all its parent dir and parent parent etc **dir execute permission**.
-    - Otherwise, you won't even be able to access or remove the directory. (You can only list just subfolders in the directory).
+- User can choose group what they are
+- only `root` user can change the owner of file
+![[mZ6qv_8m20g8YPUC.png]]
+- if you have a write privilege to a file but not to the directory, you **can't** remove the file but can empty the file. In opposite, you can remove it but can not write it (vim `:wq!` use this trick).
+* if you want to exec a file, you need to get all its parent dir and parent parent or etc. **dir execute permission**.
+- Otherwise, you won't even be able to access or remove the directory. (You can only list just subfolders in the directory).
 
-Help
+### Helps for Usage Syntax
 
 ```bash
 man PAGE...
@@ -67,11 +71,11 @@ man PAGE...
 
 `[]` → optional
 
-Shortcut
+### Shortcuts
 
 `ctrl + L`  → clear the console and go back to top
 
-Stream
+### Stream
 
 rewrite the input of the program with `< file`
 
@@ -95,15 +99,13 @@ echo "root privilege" | sudo tee root.txt
 # take the input from input stream and write it to the file and your screen
 ```
 
-tream and write it to the file and your screen
-
-`input | output` → this named stream. It take \*\*left output result \*\*to the **right as input**. Most progrems in pipeline are run simultaneously
+`input | output` → this named stream. It take **left output result** to the **right as input**, and vice versa. Most programs in pipeline are run simultaneously
 
 > stream/input/output can apply to binary image, videos, chromecast too
 
-the progrem that actually write/read from/to stream is **the shell itself**, so `sudo` doesn't help this at all, and you may get `permission denied`, because the shell is not the program which `sudo` execute.
+the program that actually write/read from/to stream is **the shell itself**, so `sudo` doesn't help this at all, and you may get `permission denied`, because the shell is not the program which `sudo` execute.
 
-sysFS
+### sysFS
 
 `/sys` store the parameters of the running system **kernel** and you can edit it, it will take effect immediately.
 
@@ -116,7 +118,7 @@ you can also use `tee` to achieve it.
 echo 1060 | sudo tee brightness
 ```
 
-variables and quote
+### Variables and quotes
 
 ```bash
 # Right
@@ -137,7 +139,9 @@ echo 'Value is $foo'
 
 function and `source` to shell
 
-`$0` refer to the name of the script, `$1`...`$9` also refer to the first through the ninth arg. `$@` get **all** the argumens for `for-in` loop
+`$0` refer to the name of the script, `$1...$9` also refer to the first through the ninth arg
+
+`$@` get **all** the arguments (usually used in a `for-in` loop)
 
 `$?` get the error code from previous command.
 
@@ -163,9 +167,11 @@ mcd hello # the "hello" folder will be created and shell move into it
 
 ```
 
+### Misc
+
 `!!` for previous command
 
-Error code
+### Error code
 
 function return `0` for no error. `1` for errors happened.
 
@@ -194,7 +200,7 @@ false ; echo "This will always print"
 # you can use semicolon to concat the commands in a same line
 ```
 
-Calculate expression
+### Calculate expression
 
 use `$()` to execute a command rather than serialize it
 
@@ -214,7 +220,7 @@ diff <(ls dir1) <(ls dir2)
 
 ```
 
-redirect another stream
+### Redirect another stream
 
 `2` is for stderr
 
@@ -234,7 +240,7 @@ for file in "$@" do
 done
 ```
 
-regex match
+### regex match
 
 we can use `?` or `*` or `{...}` **etc.** to do character match.
 
@@ -265,8 +271,8 @@ kREGEX_DATE='^[0-9]{2}[-/][0-9]{2}[-/][0-9]{4}$' # note use of [0-9] to avoid \d
 [[ $1 =~ $kREGEX_DATE ]]
 echo $? # 0 with the sample value, i.e., a successful match
 ```
-	
-Set script executor (shebang)
+
+### Set script executor 
 
 put it at the beginning of the file, so that the shell can identify it.
 
@@ -288,21 +294,23 @@ for arg in reversed(sys.argv[1:]):
 
 ```
 
-Tool for check script
+### Tool for check script
 
 you can use `shellcheck` to check the grammar and implicit problem of script.
 
-Locally vs not locally
+### Locally vs not locally
 
 if you run script in bash `#!/usr/bin/bash`, the code will be executed in a new process, and all the environment changes inside it will never affect the shell.
 
 or you need to use `source` to run the script locally.
 
-A bloated `man` alternative
+### Miscs
 
-you can use `tldr` to get brief example for programs
+- A bloated `man` alternative
 
-Search you file with `find`;
+- you can use `tldr` to get brief example for programs
+
+- Search you file with `find`;
 
 ```bash
 tldr find
@@ -312,22 +320,21 @@ find work/ -name '*.cc' -exec rm -l {} \;
 
 ```
 
-use `fd` for regex match (alternative)
+- use `fd` for regex match (alternative)
 
 ```bash
 # the package packet named fd-find
 fdfind 'tcp(.*).cc' --exec ls -l
-
 ```
 
-search all path in the system by `locate`
+- search all path in the system by `locate`
 
 ```bash
 # you need to exec 'sudo updatedb' first
 locate libsponge
 ```
 
-use `grep` or `rg` to do search inside a file
+- use `grep` or `rg` to do search inside a file
 
 ```bash
 # recursive search the file insider the path
@@ -340,7 +347,7 @@ grep -R include work/
 
 ```
 
-> use `rg` for faster search
+- use `rg` for faster search
 
 ```bash
 # show the 5 lines around the result
@@ -348,20 +355,19 @@ rg "#include" -t md work/ -C 5
 
 ```
 
-Fancy matching `fzf`
+- Fancy matching with `fzf`
 
-use `fzf` to get it. It will scan the whole output and match what you type, and show all of the line matched **in a screen**.
+	 It will scan the whole output and match what you type, and show all of the line matched **in a screen**.
 
-shell `history`
+- shell `history`
 
-use `history` to show all the command previously exec in the shell
+	use `history` to show all the command previously exec in the shell
 
-press `CTRL + R` in shell can go through the history commands fast, press `CTRL + R` \*\*again \*\*to search next, and press `ENTER` to exec it.
+- press `CTRL + R` in shell can go through the history commands fast, press `CTRL + R` **again** to search next, and press `ENTER` to exec it.
 
-list path in a `tree` view
+- list path in a `tree` view
 
-use `tree` to get the tree list of current path
+- use `tree` to get the tree list of current path
 
-use `broot` to walk through paths in a tree view
-
-also `nnn` can do this well
+- use `broot` to walk through paths in a tree view
+	also `nnn` can do this well
