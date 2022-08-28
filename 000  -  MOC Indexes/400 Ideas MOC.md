@@ -7,8 +7,11 @@ Questioning yourself is a philosophy way to life.
 ### To-Do List
 
 - [x] fix direction hotkeys can not be combining used with other modifier keys.
-- [ ] try to figured out how the OCR program works and convert it to AHK.
+- [ ] build K30Pro for a new PE version to fix GMS issue
 - [ ] fix dotfiles synchronization between Cygwin and WSL
+	- [ ] fix `nvim` popup, suppress Enter key to confirm a autocomplete
+- [ ] make `less` colorful
+- [ ] try to figured out how the OCR program works and convert it to AHK.
 - [ ] improve NGINX reverse docker proxy for a future use
 
 ### Prefect idea candidates
