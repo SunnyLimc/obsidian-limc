@@ -10,6 +10,7 @@ Questioning yourself is a philosophy way to life.
 - [ ] build K30Pro for a new PE version to fix GMS issue
 - [ ] fix dotfiles synchronization between Cygwin and WSL
 	- [ ] fix `nvim` popup, suppress Enter key to confirm a autocomplete
+		- fixed, it has hidden in snippets/vim-cmp
 - [ ] make `less` colorful
 - [ ] try to figured out how the OCR program works and convert it to AHK.
 - [ ] improve NGINX reverse docker proxy for a future use
