@@ -12,9 +12,12 @@
 - use `||` to start prog intentionally let exit non-zero
 - no deprecate style. Always use `func() {}` and `[[]]` and `$(...)`
 - use `./` and leverage `$PWD`
-
-
-```bash
+- use declare before calling function like `declare arg1="$1" arg2="$2$"` when function are more than 2 lines
+- use `mktemp` to create tmp files and use `trap` to ensure it will be removed when script exit
+	```bash
+trap 'rm -rf -- "$MYTMPDIR"' EXIT
+```
+- warns and errors should be direct to `stderr`
 
 ### echo
 
