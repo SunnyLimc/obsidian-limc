@@ -2,22 +2,61 @@
 
 ### Practices
 
+- enclose `cd` with parenthesis `()`
+- `pushd` and `popd`
+- always use `${var}`
 - using as **Library are not mentioned**
 - always be functional, use `main` as the entry
 - use `""` as preferred
 - no global vars, or use `readonly` on constant
 - use `local` within function (readable)
-- lowercase variable unless export to env
-- set `set -eo pipefail`, fail fast when struggle and get exit code
+- lowercase variable unless it **export** to env
+- set `set -euo pipefail`, fail fast when struggle and get exit code
 - use `||` to start prog intentionally let exit non-zero
 - no deprecate style. Always use `func() {}` and `[[]]` and `$(...)`
 - use `./` and leverage `$PWD`
-- use declare before calling function like `declare arg1="$1" arg2="$2$"` when function are more than 2 lines
+- use declare before using function like `declare arg1="$1" arg2="$2"` when function are more than 2 lines
 - use `mktemp` to create tmp files and use `trap` to ensure it will be removed when script exit
 	```bash
 trap 'rm -rf -- "$MYTMPDIR"' EXIT
 ```
 - warns and errors should be direct to `stderr`
+- **always** check syntax with `bash -n`
+- use `echo` and `$(func)` as return or use `$?` to refer that (exit or return from function both left script itself still alive)
+
+### String concatenation
+
+```bash
+# use
+string3+=${str1}
+# or
+string4=${str1}${str2}
+```
+
+### for loop
+
+```bash
+for arg in "$@" do
+done
+```
+
+### if else
+
+```bash
+if [ ${n} -eq 101] then
+elif [${n} -eq 102] then
+else
+fi
+```
+
+### case
+
+```bash
+case "${n}" in
+	\+86*) c=china ;;
+	\+1*) c=us ;;
+esac
+```
 
 ### echo
 
@@ -67,7 +106,7 @@ ls -l
 # third cloumn means everyone else privilege
 ```
 
-### Permission:
+### Permission
 
 - User can choose group what they are
 - only `root` user can change the owner of file
@@ -286,6 +325,8 @@ kREGEX_DATE='^[0-9]{2}[-/][0-9]{2}[-/][0-9]{4}$' # note use of [0-9] to avoid \d
 [[ $1 =~ $kREGEX_DATE ]]
 echo $? # 0 with the sample value, i.e., a successful match
 ```
+
+use `${BASH_REMATCH[i]` to retrieve the result
 
 ### Set script executor 
 
