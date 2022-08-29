@@ -270,7 +270,6 @@ use `<()` to save the execute result **list**(line by line) to a temporary file,
 ```bash
 # concat ls and ls.. output
 diff <(ls dir1) <(ls dir2)
-
 ```
 
 ### Redirect another stream
