@@ -263,7 +263,6 @@ use `$()` to execute a command rather than serialize it
 dr=$(pwd)
 echo $dr
   /home/limc
-
 ```
 
 use `<()` to save the execute result **list**(line by line) to a temporary file, to solve the problem that `|` can not solve
@@ -283,7 +282,11 @@ diff <(ls dir1) <(ls dir2)
 grep foobar "$file" > /dev/null 2> /dev/null
 ```
 
+### test
+
 run `test` in script
+
+> there some differences between single square quote and double
 
 ```bash
 for file in "$@" do
