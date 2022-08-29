@@ -36,7 +36,8 @@ string4=${str1}${str2}
 ### for loop
 
 ```bash
-for arg in "$@" do
+for arg in "$@"
+do
 done
 ```
 
