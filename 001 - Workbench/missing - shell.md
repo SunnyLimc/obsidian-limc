@@ -42,9 +42,13 @@ done
 
 ### if else
 
+use `then` in **newline** is extremely important
+
 ```bash
-if [ ${n} -eq 101] then
-elif [${n} -eq 102] then
+if [ ${n} -eq 101]
+then
+elif [${n} -eq 102]
+then
 else
 fi
 ```
