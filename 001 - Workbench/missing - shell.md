@@ -280,7 +280,12 @@ diff <(ls dir1) <(ls dir2)
 ```bash
 # if we only care about the return value, we can redirect stdout and stderr to null
 grep foobar "$file" > /dev/null 2> /dev/null
+
+# redirect output STDOUT to STDERR
+cat out.txt || grep "ERROR" 1>&2 
 ```
+
+**use `&` instead of a single number to reference IO, since it's not a particular file**
 
 ### test
 
