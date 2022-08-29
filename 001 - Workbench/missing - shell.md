@@ -311,9 +311,9 @@ cat 1.*
 cat 1.??
   /15 # from 1.sh
 cat 1.{,sh,bash} # leave comma itself empty to point to just empty (1.)
-  cat: 1.: No such file or directory
-  /15
-  /22
+cat: 1.: No such file or directory
+/15
+/22
 ```
 
 and bash has it's own regex-matching operator `=~`
