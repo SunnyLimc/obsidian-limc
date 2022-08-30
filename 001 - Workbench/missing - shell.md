@@ -3,7 +3,9 @@
 ### Practices
 
 >  should be escaped from regex:
-> 	 **. ^ $ * + ? ( 
+> 	 inside cc[]: `. ^ $ * + ? ( ) [ { \ |`
+> 	 outside: `^ - ] \`
+	
 
 - enclose `cd` with parenthesis `()`
 - `pushd` and `popd`
