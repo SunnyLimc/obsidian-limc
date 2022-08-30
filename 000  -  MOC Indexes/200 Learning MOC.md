@@ -60,7 +60,7 @@ fusion 流水线优化
 
 [[missing - Data Wrangling (Regex)]]
 
-[[missing - Command-line Environment]]
+[[missing - Command-line Environment (tmux)]]
 
 [[missing - Git]]
 
