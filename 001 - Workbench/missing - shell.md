@@ -12,6 +12,9 @@
 - use `local` within function (readable)
 - lowercase variable unless it **export** to env
 - set `set -euo pipefail`, fail fast when struggle and get exit code
+	- `-e` stand for stop script when get a non-zero exit code
+	- `-u` stand for detecting undefined variables and stop the script
+	- `-E` lead bash trap ERR inherit to its shell function (i.e. make `pipefail` aware in error msg of the shell)
 - use `||` to start prog intentionally let exit non-zero
 - no deprecate style. Always use `func() {}` and `[[]]` and `$(...)`
 - use `./` and leverage `$PWD`
@@ -23,6 +26,10 @@ trap 'rm -rf -- "$MYTMPDIR"' EXIT
 - warns and errors should be direct to `stderr`
 - **always** check syntax with `bash -n`
 - use `echo` and `$(func)` as return or use `$?` to refer that (exit or return from function both left script itself still alive)
+
+### Tricks
+
+- `${var-}` append a dash at variable ending can bypass **`set -u`, the unset variable aborting**
 
 ### String concatenation
 
