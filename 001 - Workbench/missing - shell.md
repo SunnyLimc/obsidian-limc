@@ -2,6 +2,9 @@
 
 ### Practices
 
+>  should be escaped from regex:
+> 	 **. ^ $ * + ? ( 
+
 - enclose `cd` with parenthesis `()`
 - `pushd` and `popd`
 - always use `${var}`
@@ -20,6 +23,7 @@
 - use `./` and leverage `$PWD`
 - use declare before using function like `declare arg1="$1" arg2="$2"` when function are more than 2 lines
 - use `mktemp` to create tmp files and use `trap` to ensure it will be removed when script exit
+
 	```bash
 trap 'rm -rf -- "$MYTMPDIR"' EXIT
 ```
