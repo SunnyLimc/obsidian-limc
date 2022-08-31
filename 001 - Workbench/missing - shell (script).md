@@ -6,10 +6,6 @@
 
 ### Practices
 
->  should be escaped from regex:
-> 	 inside cc\[ ]: `. ^ $ * + ? ( ) [ { \ |`
-> 	 outside: `^ - ] \`
-	
 - enclose `cd` with parenthesis `()`
 - `pushd` and `popd`
 - always use `${var}`
@@ -35,6 +31,50 @@ trap 'rm -rf -- "$MYTMPDIR"' EXIT
 - warns and errors should be direct to `stderr`
 - **always** check syntax with `bash -n`
 - use `echo` and `$(func)` as return or use `$?` to refer that (exit or return from function both left script itself still alive)
+
+### regex match
+
+ - should be escaped from regex:
+	- inside cc\[ ]: `. ^ $ * + ? ( ) [ { \ |`
+	- outside: `^ - ] \`
+
+Be aware that you can use **nesting** regex match.
+
+```bash
+[[]]
+```
+
+we can use `?` or `*` or `{...}` **etc.** to do character match.
+
+you can also combine some of them to get a powerful shell.
+
+> you can press `TAB` to expand the command needed to exec
+
+```bash
+ls 1.*
+  1.sh 1.bash
+cat 1.*
+  /15 # from 1.sh
+  /22 # from 1.bash
+cat 1.??
+  /15 # from 1.sh
+cat 1.{,sh,bash} # leave comma itself empty to point to just empty (1.)
+cat: 1.: No such file or directory
+/15
+/22
+```
+
+and bash has it's own regex-matching operator `=~`
+
+```bash
+set -- '12-34-5678' # set $1 to sample value
+
+kREGEX_DATE='^[0-9]{2}[-/][0-9]{2}[-/][0-9]{4}$' # note use of [0-9] to avoid \d
+[[ $1 =~ $kREGEX_DATE ]]
+echo $? # 0 with the sample value, i.e., a successful match
+```
+
+use `${BASH_REMATCH[i]` to retrieve the result
 
 ### Tricks
 
@@ -334,40 +374,6 @@ for file in "$@" do
   fi
 done
 ```
-
-### regex match
-
-we can use `?` or `*` or `{...}` **etc.** to do character match.
-
-you can also combine some of them to get a powerful shell.
-
-> you can press `TAB` to expand the command needed to exec
-
-```bash
-ls 1.*
-  1.sh 1.bash
-cat 1.*
-  /15 # from 1.sh
-  /22 # from 1.bash
-cat 1.??
-  /15 # from 1.sh
-cat 1.{,sh,bash} # leave comma itself empty to point to just empty (1.)
-cat: 1.: No such file or directory
-/15
-/22
-```
-
-and bash has it's own regex-matching operator `=~`
-
-```bash
-set -- '12-34-5678' # set $1 to sample value
-
-kREGEX_DATE='^[0-9]{2}[-/][0-9]{2}[-/][0-9]{4}$' # note use of [0-9] to avoid \d
-[[ $1 =~ $kREGEX_DATE ]]
-echo $? # 0 with the sample value, i.e., a successful match
-```
-
-use `${BASH_REMATCH[i]` to retrieve the result
 
 ### Set script executor 
 
