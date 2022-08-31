@@ -1,5 +1,9 @@
 ## missing - shell
 
+### Useful links
+
+[What is IFS=, and how `read` acting it with](https://unix.stackexchange.com/questions/209123/understanding-ifs-read-r-line?newreg=f58934a5dd5645d986ab46eb411e2056)
+
 ### Practices
 
 >  should be escaped from regex:
