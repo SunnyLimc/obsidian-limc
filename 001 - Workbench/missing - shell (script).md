@@ -172,9 +172,22 @@ echo "root privilege" | sudo tee root.txt
 
 `input | output` → this named stream. It take **left output result** to the **right as input**, and vice versa. Most programs in pipeline are run simultaneously
 
-> stream/input/output can apply to binary image, videos, chromecast too
+> stream/input/output can apply to binary image, videos, chrome-cast too
 
 the program that actually write/read from/to stream is **the shell itself**, so `sudo` doesn't help this at all, and you may get `permission denied`, because the shell is not the program which `sudo` execute.
+
+#### from a temporary file 
+
+In bash-like shell, you can use `<<<` or `<()` to create a temporary file, and redirect the content to another program
+
+usage:
+
+```bash
+cat <<< this is content
+  this is content
+cat < <(another content)
+  another content
+```
 
 ### sysFS
 

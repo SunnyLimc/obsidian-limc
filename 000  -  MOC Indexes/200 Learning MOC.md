@@ -54,7 +54,7 @@ fusion 流水线优化
 
 ## Missing Semester
 
-[[missing - shell]]
+[[missing - shell (script)]]
 
 [[missing - vim]]
 
