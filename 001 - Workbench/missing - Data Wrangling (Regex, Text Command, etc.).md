@@ -1,3 +1,12 @@
+## Common `regex` practices
+
+- multiple match conditions at one time with addition restrict
+
+```bash
+(^|, )(part1|part2|part3)
+# it will match "partX" start with line beginning or ", "
+```
+
 ## Use `grep` for search
 
  ```bash
@@ -65,7 +74,6 @@ normally you may want to use `sed -nE '/{pattern}/p'` to print what the pattern 
 	- `/p` print the modified line
 	- `/g` replace as many times as it can in one line
 	- `/I` ignore cases
-
 
 - Syntax
 	- `?` match zero or once {pattern}

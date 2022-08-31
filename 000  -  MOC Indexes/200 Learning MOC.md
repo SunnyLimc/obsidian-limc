@@ -58,7 +58,7 @@ fusion 流水线优化
 
 [[missing - vim]]
 
-[[missing - Data Wrangling (Regex)]]
+[[missing - Data Wrangling (Regex, Text Command, etc.)]]
 
 [[missing - Command-line Environment (tmux)]]
 
