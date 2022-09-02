@@ -7,10 +7,12 @@ Questioning yourself is a philosophy way to life.
 ### To-Do List
 
 - [x] fix direction hotkeys can not be combining used with other modifier keys.
-- [ ] build K30Pro for a new PE version to fix GMS issue
-- [ ] fix dotfiles synchronization between Cygwin and WSL
-	- [ ] fix `nvim` popup, suppress Enter key to confirm a autocomplete
-		- fixed, it has hidden in snippets/vim-cmp
+- [x] build K30Pro for a new PE version to fix GMS issue
+	- [x] FAIL: boot stuck. Workaround: back to MIUI
+- [x] fix dotfiles synchronization between Cygwin and WSL
+	- [x] fix `nvim` popup, suppress Enter key to confirm a autocomplete
+		- [x] fixed, it has hidden in snippets/vim-cmp extra lua script
+- [ ] synchronize SSH key between WSL and Windows
 - [ ] make `less` colorful
 - [ ] try to figured out how the OCR program works and convert it to AHK.
 - [ ] improve NGINX reverse docker proxy for a future use
