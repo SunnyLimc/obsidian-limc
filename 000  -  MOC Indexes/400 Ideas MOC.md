@@ -12,7 +12,7 @@ Questioning yourself is a philosophy way to life.
 - [x] fix dotfiles synchronization between Cygwin and WSL
 	- [x] fix `nvim` popup, suppress Enter key to confirm a autocomplete
 		- [x] fixed, it has hidden in snippets/vim-cmp extra lua script
-- [ ] synchronize SSH key between WSL and Windows
+- [x] synchronize SSH key between WSL and Windows
 - [ ] make `less` colorful
 - [ ] try to figured out how the OCR program works and convert it to AHK.
 - [ ] improve NGINX reverse docker proxy for a future use
