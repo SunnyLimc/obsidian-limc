@@ -116,6 +116,18 @@ How represents the Data in files on disk
 		- or **external file storage** but can not be manipulate and no protection
 		- store cache thumbnail to database up to 1mb may faster load
 	- Online Query
-		- OLTP
-		- OLAP
+		- OLTP row update
+		- OLAP column query
 		- HTAP
+	- N-ARY column
+		- use slot to store a bunch of continual data
+		- compare with row, fast insert, update and remove, good for query **tuple**
+		- disadvantage is large portion of data scan is slow, can hard to get subset of attributes
+		- basically the storage structure is different
+	- decomposition store module (store all in one table)
+		- store
+			- store tuple id each entity
+			- or use a same offset
+		- column
+		- vs to N-ARY -> no index of slot? but save memory
+	- OTP (frontend) and some time after stream to Backend Database
