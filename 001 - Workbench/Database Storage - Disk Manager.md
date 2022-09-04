@@ -110,7 +110,12 @@ How represents the Data in files on disk
 		- most store in it self
 		- ASCII INFORMATION_SCHEMA
 			- but systems have own shortcuts to access it
+		- use live compile to make interpret catalog faster
 	- large value
 		- overflow **storage page** that value point to VARCHAR DATA
 		- or **external file storage** but can not be manipulate and no protection
 		- store cache thumbnail to database up to 1mb may faster load
+	- Online Query
+		- OLTP
+		- OLAP
+		- HTAP
