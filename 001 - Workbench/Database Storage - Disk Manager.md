@@ -90,9 +90,14 @@ How represents the Data in files on disk
 		- visibility info for concurrency control
 		- bit map for `NULL` values
 		- store high-level metadata (and low-level such as column info is useless)
-	- tuple data
-		- typically stored in order
-	- THE REASON that only same table of tuples will go to the same page is named DENORMALIZED
-		- we could simply concatenate (`pre join`) two table with adding a new field of metadata to prevent from expensive updates
-		- BUT, it will cause amount of I/O for common workload patterns, especially for reading
-		- so, it needs a trade-off when you design the system itself.
+		- tuple data
+			- typically stored in order
+		- THE REASON that only same table of tuples will go to the same page is named DENORMALIZED
+			- we could simply concatenate (`pre join`) two table with adding a new field of metadata to prevent from expensive updates
+			- BUT, it will cause amount of I/O for common workload patterns, especially for reading
+			- so, it needs a trade-off when you design the system itself.
+	- log structure
+		- store whole log how it constructed
+		- update fast compare of update cross page, just append is enough
+		- read is slow
+		- compact periodically to increase speed with ID
