@@ -105,3 +105,12 @@ How represents the Data in files on disk
 		- ieee-754
 		- CPU instructor not accurate, but system side is slow
 		- type affect speed real 2x than decimal
+		- fix point decimal to ensure data not lose
+		- metadata
+		- most store in it self
+		- ASCII INFORMATION_SCHEMA
+			- but systems have own shortcuts to access it
+	- large value
+		- overflow **storage page** that value point to VARCHAR DATA
+		- or **external file storage** but can not be manipulate and no protection
+		- store cache thumbnail to database up to 1mb may faster load
