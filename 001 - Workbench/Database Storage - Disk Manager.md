@@ -101,3 +101,7 @@ How represents the Data in files on disk
 		- update fast compare of update cross page, just append is enough
 		- read is slow
 		- compact periodically to increase speed with ID
+	- catalog
+		- ieee-754
+		- CPU instructor not accurate, but system side is slow
+		- type affect speed real 2x than decimal
