@@ -116,9 +116,9 @@ How represents the Data in files on disk
 		- or **external file storage** but can not be manipulate and no protection
 		- store cache thumbnail to database up to 1mb may faster load
 	- Online Query
-		- OLTP row update
-		- OLAP column query
-		- HTAP
+		- OLTP transaction row update
+		- OLAP analytical column query
+		- HTAP same database instance
 	- N-ARY column
 		- use slot to store a bunch of continual data
 		- compare with row, fast insert, update and remove, good for query **tuple**
@@ -130,4 +130,4 @@ How represents the Data in files on disk
 			- or use a same offset
 		- column
 		- vs to N-ARY -> no index of slot? but save memory
-	- OTP (frontend) and some time after stream to Backend Database
+	- OLTP (frontend) and some time after stream to OLAP Backend Database
