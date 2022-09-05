@@ -132,9 +132,27 @@ How represents the Data in files on disk
 		- vs to N-ARY -> no index of slot? but save memory
 	- OLTP (frontend) and some time after stream to OLAP Backend Database
 	- buffer pool <-> execution server
-		- take **page** memory fixed-size **frame** (array entry of buffer pool) then access it
+		- take **page** from disk to memory fixed-size **frame** (array entry of buffer pool) then access it
 		- pagetable <-> buffer pool	
 			- page in use
 			- metadata
 			- dirty flag
 			- pin/ref counter
+			- **latch** before update pagetable
+	- lock vs latches
+		 - latch: protecting internal critical section, no need to rollback, actually **mutex** spin lock
+		 - lock: protect logical content, need to rollback
+	- page directory vs page table
+		- directory: id <-> database, durable
+		- table: page <-> buffer pool, in-memory, not durable
+	- global policies vs local policies
+		- local: particular query like for single buffer pool
+	- buffer pool opti:
+		- multiple buffer pools
+			- different pool different polices opti for diff workload
+			- thread not contend -> but still depend on disk
+			- hash and mod for a record to log
+		- pre fetching
+			- based on a query plan and prefetching a bunch of **pages**
+		- scan sharing
+		- buffer pool bypass
