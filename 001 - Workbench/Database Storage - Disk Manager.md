@@ -131,3 +131,9 @@ How represents the Data in files on disk
 		- column
 		- vs to N-ARY -> no index of slot? but save memory
 	- OLTP (frontend) and some time after stream to OLAP Backend Database
+	- buffer pool <-> execution server
+		- take **page** memory fixed-size **frame** (array entry of buffer pool) then access it
+		- pagetable <-> buffer pool	
+			- page in use
+			- dirty flag
+			- pin/ref counter
