@@ -135,5 +135,6 @@ How represents the Data in files on disk
 		- take **page** memory fixed-size **frame** (array entry of buffer pool) then access it
 		- pagetable <-> buffer pool	
 			- page in use
+			- metadata
 			- dirty flag
 			- pin/ref counter
