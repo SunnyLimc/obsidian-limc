@@ -155,4 +155,17 @@ How represents the Data in files on disk
 		- pre fetching
 			- based on a query plan and prefetching a bunch of **pages**
 		- scan sharing
+			- reuse one page for one thread and another at diff query
+			- intermediate result
+			- second query cursor -> keep tracking where the second query joined with the first
+			- q2 follow q1 using a occupied slot of buffer pool, finally scan the remaining ignore at the start
+				- database is unordered
+		buffer pool <-> disk page, replacement
 		- buffer pool bypass
+			- avoid buffer pool overhead
+			- not huge thing
+			- contiguous thing read on disk may good
+		- bypass OS side cache, use DBMS direct IO it self
+			- redundant copies of page (yours and OSs) for cross system using
+			- eviction policy
+			- not to cache anything from system
