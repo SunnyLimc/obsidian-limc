@@ -169,3 +169,10 @@ How represents the Data in files on disk
 			- redundant copies of page (yours and OSs) for cross system using
 			- eviction policy
 			- not to cache anything from system
+	- buffer replacement policies
+		- correctness
+		- accuracy
+		- speed
+		- meta-data overhead
+		- strategy
+			- LRU FIFO
