@@ -198,3 +198,14 @@ Relational Language SQL: DML, DDL, DCL, View definition, Integrity & Referential
 		- `NOT EXIST`: `SELECT * FROM course WHERE NOT EXISTS( SELECT * FROM enrolled WHERE course.cid = enrolled.cid )`
 
 - window function
+	- Aggregation Func
+	- Special window Func
+		- `ROW_NUMBER()` : # of current row
+		- `RANK()` : order position of the current row
+		- `OVER()`: **blank** do aggregation with function over all the results currently, **or specify** the **grouped** tuples
+			- like `ROW_NUMBER() OVER(ORDER BY cid)`
+		- `PARTITION BY()` to partition tuples and generate groups
+			- `SELECT cid, sid, ROW_NUMBER() OVER (PARTITION BY cid) FROM enrolled ORDER BY cid`
+			- partition and order: `RANK() OVER ( PARTITION BY cid ORDER BY grade ASC )`
+			- use it with `min`: `SELECT *, min(grade) OVER (PARTITION BY cid) AS rank FROM enrolled`
+- common table expression 
