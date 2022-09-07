@@ -133,10 +133,18 @@ Relational Language SQL: DML, DDL, DCL, View definition, Integrity & Referential
 	- list - defined order
 	- bag - no order, allow duplicates
 
-- aggregation: take multiple from output list an aggregate to one input
+- aggregation: take multiple from **only the output list** for aggregating input to one
+	- If you put it in input list, it doesn't make sense to constrain input
 	- AVG
 	- MIN
 	- MAX
 	- SUM
 	- COUNT
-- 
+		- `login` the attr named 'login'
+		- `*` all attributes
+		- `1` plus one for each match #q
+		- `DISTINCT login` only count for **unique** 'login'
+	- multiple aggregation supported
+- limitation for aggregation
+	- use `GROUP BY` to collect extra information from table and avoid **single** confused and undefined output for the aggregation, due to no coordinate entry correspond to that aggregation. `GROUP BY` buck entity together and use those group to aggregate
+- `HAVING` reference anything from your **output** list, whereas `WHERE` refer to the **input** list
