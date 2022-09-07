@@ -191,4 +191,4 @@ Relational Language SQL: DML, DDL, DCL, View definition, Integrity & Referential
 		- `IN`, `SELECT name FROM stu WHERE sid IN ( SELECT ... )`, any tuple matching is acceptable
 		- `ANY` = `IN`, the syntax is usually `WHERE sid = ANY( SELECT sid FROM xxx )`
 	- allow almost **everywhere**
-		- **output statements**
+		- **output statements**: `SELECT ( SELECT S.name FROM stu AS S WHERE S.sid = E.sid ) AS sname FROM enrolled AS E WHERE cid = '15-445'`, can actually **handle the output**
