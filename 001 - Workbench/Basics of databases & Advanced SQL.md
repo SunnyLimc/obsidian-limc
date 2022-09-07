@@ -41,7 +41,7 @@
 - Procedural have basically 7 operation
 	- select -> filter tuples
 	- projection -> remap result in a scheduled way
-	- union -> take two tuple with the **same  type** and combine to one
+	- union -> take two tuple with the **same type** and combine to one
 	- intersection
 	- difference	
 	- produce -> concatenate one tuple and a one form another relation to produce a unique new tuple
