@@ -23,7 +23,7 @@
 		- Network
 
 - Relational Model:
-	- unordered set of elements have attributes that represent instances of entities
+	- unordered **set** of elements have attributes that represent instances of entities
 	- refer a record in relational data model as a **tuple**
 	- support varieties of data type and it's implement with many way in underlying
 	- Values are (normally) atomic/scalar
