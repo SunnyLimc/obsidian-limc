@@ -129,6 +129,6 @@ SQL-92 to SQL:2016 standard
 Relational Language SQL: DML, DDL, DCL, View definition, Integrity & Referential Constraints, Transactions
 
 - type
-	- set unorder
-	- list defined order
-	- bag
+	- set - unorder, no duplicates
+	- list - defined order
+	- bag - no order, allow duplicates
