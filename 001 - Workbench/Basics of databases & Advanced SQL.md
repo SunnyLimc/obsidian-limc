@@ -148,3 +148,47 @@ Relational Language SQL: DML, DDL, DCL, View definition, Integrity & Referential
 - limitation for aggregation
 	- use `GROUP BY` to collect extra information from table and avoid **single** confused and undefined output for the aggregation, due to no coordinate entry correspond to that aggregation. `GROUP BY` buck entity together and use those group to aggregate
 - `HAVING` reference anything from your **output** list, whereas `WHERE` refer to the **input** list
+- I you can peek ahead for SQL, like what DBMS needs is to **optimize query plan** and you'll get a shorter time. Like throw out the tuple not **in accordance with** the `HAVING` clause during I do `GROUP BY` or `AGGREGATE` computation. (NOT need to wait until handling the output list and do a bunch of wasted work)
+
+- case **sensitive** string
+	- expect MySQL it's case insensitive
+	- use **single quote** (some of them support double)
+- **string matching**
+	- use `LIKE` for matching
+	- `%` **any** substring and included the **empty**
+	- `_` **any one** character
+- string operation
+	- **allow** in **output** and **predicates**, not like aggregation, it almost everywhere
+	- `SUBSTRING(str, pos, len)` and `UPPER`
+	- `str1 || str2` is **standard** to concatenate, and `+` in MS SQL, and `CONCAT(str1, str2)` in MySQL
+
+- DATE/TIME
+	- **allow** in **output** and **predicates**, it almost everywhere
+	- `NOW()` is **standard**, `CURRENT_TIMESTAMP` is various from func to keyword
+	- `EXTRACT(1 FROM 2)` extract from field calculate date EXCEPT SQLite, subtract `-` `DATE(n)` ONLY correctly work in pavlo
+		- use `julianday` in SQLite and subtraction and cast it to INT. (**most used**)
+
+- DUMP result
+	- with `INTO`, you can dump your result to a **NOT already defined** table with same `#` of columns, is the **standard**
+		- `SELECT DISTINCT cid INTO xx FROM xxx`
+		- use `CREATE TABLE xx (SELECT DISTINCT cid FROM xxx)` in **MySQL**
+	- with `insert`, you can append results to an existing table, **must** with the same column scheme
+		- `INSERT INTO xx (SELECT * FROM xxx)`
+		- be aware of **violate** unique primary key principle
+
+- **OUTPUT** Control
+	- **sort output** by `ORDER BY <column*> [ASC|DESC]` and the default is ASC
+		- no restriction **unlike** `group by`, it will find the needed data
+	- `LIMIT` the counts returned to output
+		- `LIMIT 20 OFFSET 10` you can set an offset
+		- if the result is **unsorted**, the result is not guaranteed the same
+
+- nested queries
+	- Most DBMS would optimize it to **`JOIN`**, you won't double LOOP, cuz inner query should be **run once**
+	- You have:
+		- `ALL`
+		- `EXISTS`, only return **ONE tuple** wherever it exists
+		- `IN`, `SELECT name FROM stu WHERE sid IN ( SELECT ... )`, any tuple matching is acceptable
+		- `ANY` = `IN`, the syntax is usually `WHERE sid = ANY( SELECT sid FROM xxx )`
+	- allow almost **everywhere**
+		- **output statements**
