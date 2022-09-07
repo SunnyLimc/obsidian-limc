@@ -192,3 +192,4 @@ Relational Language SQL: DML, DDL, DCL, View definition, Integrity & Referential
 		- `ANY` = `IN`, the syntax is usually `WHERE sid = ANY( SELECT sid FROM xxx )`
 	- allow almost **everywhere**
 		- **output statements**: `SELECT ( SELECT S.name FROM stu AS S WHERE S.sid = E.sid ) AS sname FROM enrolled AS E WHERE cid = '15-445'`, can actually process the output
+	- handle aggregation without `GROUP BY`
