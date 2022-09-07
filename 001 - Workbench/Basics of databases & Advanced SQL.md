@@ -212,3 +212,13 @@ Relational Language SQL: DML, DDL, DCL, View definition, Integrity & Referential
 	- like a query before your regular query
 	- the output will be map to the regular query
 	- usage: `WITH cteName (col1, col2) AS ( SELECT 1, 2 ) SELECT col1 + col2 FROM cteName`
+- another usage is CTE Recursion, AND try to comprehend this
+	 ```sql 
+	WITH RECURSIVE cteSource (counter) AS (
+		(SELECT 1)
+		UNION ALL
+		(SELECT counter + 1 FROM cteSource
+		WHERE counter < 10) /* the line of recursive statement */
+	)
+	SELECT * FROM cteSource;
+	 ``` 
