@@ -8,7 +8,7 @@ English is better but not a optimal solution right now. Try Chinese again.
 
 ***Blog is to write down something value for logging***
 
-***good stuffs desired to be read again***
+**good stuffs desired to be read again***
 
 ## Scattered Posts
 
