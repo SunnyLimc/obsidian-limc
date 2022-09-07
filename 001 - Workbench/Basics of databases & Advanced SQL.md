@@ -209,3 +209,6 @@ Relational Language SQL: DML, DDL, DCL, View definition, Integrity & Referential
 			- partition and order: `RANK() OVER ( PARTITION BY cid ORDER BY grade ASC )`
 			- use it with `min`: `SELECT *, min(grade) OVER (PARTITION BY cid) AS rank FROM enrolled`
 - common table expression 
+	- like a query before your regular query
+	- the output will be map to the regular query
+	- usage: `WITH cteName (col1, col2) AS ( SELECT 1, 2 ) SELECT col1 + col2 FROM cteName`
