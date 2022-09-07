@@ -24,7 +24,17 @@ Questioning yourself is a philosophy way to life.
 		- for the most backward windows compatibility
 	- react
 		- framework
-	- 
+
+### Helpful practices 
+
+- sign all your commit 
+
+````bash
+git filter-branch --commit-filter 'if [ "$GIT_COMMITTER_EMAIL" = "limc@limcode.cn" ];
+then git commit-tree -S "$@";
+else git commit-tree "$@";
+fi' HEAD
+````
 
 ### Thoughts
 
