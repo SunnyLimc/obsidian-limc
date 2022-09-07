@@ -44,7 +44,7 @@ fusion 流水线优化
 
 ## 15-445 Database
 
-[[15 445 Basics of databases & Advanced SQL (L1, L2)]]
+[[15-445 Basics of databases & Advanced SQL (L1, L2)]]
 
 [[Database Storage - Disk Manager]]
 
