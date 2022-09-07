@@ -122,3 +122,13 @@ Furthermore Reading:
 
 ## L2 (new)
 
+for build relational algebra system for programming yesterday
+
+SQL-92 to SQL:2016 standard
+
+Relational Language SQL: DML, DDL, DCL, View definition, Integrity & Referential Constraints, Transactions
+
+- type
+	- set unorder
+	- list defined order
+	- bag
