@@ -88,6 +88,10 @@ Relational Language SQL: DML, DDL, DCL, View definition, Integrity & Referential
 - `HAVING` reference anything from your **output** list, whereas `WHERE` refer to the **input** list
 - I you can peek ahead for SQL, like what DBMS needs is to **optimize query plan** and you'll get a shorter time. Like throw out the tuple not **in accordance with** the `HAVING` clause during I do `GROUP BY` or `AGGREGATE` computation. (NOT need to wait until handling the output list and do a bunch of wasted work)
 
+- Basic Syntax
+	- Compare: `WHERE age > 25`
+	- Join: `SELECT s.name FROM enrolled AS e, student AS s WHERE e.grade ='A' AND e.cid = '15-721' AND e.sid = s.sid` and the last AND condition actually finish the JOIN
+
 - case **sensitive** string
 	- expect MySQL it's case insensitive
 	- use **single quote** (some of them support double)
