@@ -97,13 +97,13 @@
 	- `PARTITION BY` AND `ORDER BY`
 	- Try to comprehend this :
 		```sql
-		SELECT * FROM (
-			SELECT *,
-			RANK() OVER (PARTITION BY cid
-			ORDER BY grade ASC)
-			AS rank
-			FROM enrolled) AS ranking
-		WHERE ranking.rank = 1
+	SELECT * FROM (
+		SELECT *,
+		RANK() OVER (PARTITION BY cid
+		ORDER BY grade ASC)
+		AS rank
+		FROM enrolled) AS ranking
+	WHERE ranking.rank = 1
 		```
 	- `WITH ... AS ...` do a temporary calculation ![[Pasted image 20220507144249.png]]
 	- one use is CTE Recursion, AND try to comprehend this
