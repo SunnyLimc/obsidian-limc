@@ -187,9 +187,14 @@ Relational Language SQL: DML, DDL, DCL, View definition, Integrity & Referential
 	- Most DBMS would optimize it to **`JOIN`**, you won't double LOOP, cuz inner query should be **run once**
 	- You have:
 		- `ALL`
-		- `EXISTS`, only return **ONE tuple** wherever it exists
+		- `EXISTS`, only return **one tuple (emphasize tuple)** wherever it exists
 		- `IN`, `SELECT name FROM stu WHERE sid IN ( SELECT ... )`, any tuple matching is acceptable
 		- `ANY` = `IN`, the syntax is usually `WHERE sid = ANY( SELECT sid FROM xxx )`
 	- allow almost **everywhere**
 		- **output statements**: `SELECT ( SELECT S.name FROM stu AS S WHERE S.sid = E.sid ) AS sname FROM enrolled AS E WHERE cid = '15-445'`, can actually process the output
 	- handle aggregation without `GROUP BY`
+		- `ALL` Math manipulation: `SELECT sid, name FROM student WHERE sid = > ALL( SELECT sid FROM enrolled )`
+		- `IN` : with aggregation `SELECT sid, name FROM student WHERE sid IN ( SELECT MAX(sid) FROM enrolled )`, and with order by, `SELECT sid, name FROM student WHERE sid IN ( SELECT sid FROM enrolled ORDERED BY sid DESC LIMIT 1) `
+		- `NOT EXIST`: `SELECT * FROM course WHERE NOT EXISTS( SELECT * FROM enrolled WHERE course.cid = enrolled.cid )`
+
+- window function
