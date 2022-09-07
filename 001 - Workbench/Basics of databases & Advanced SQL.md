@@ -132,3 +132,11 @@ Relational Language SQL: DML, DDL, DCL, View definition, Integrity & Referential
 	- set - unorder, no duplicates
 	- list - defined order
 	- bag - no order, allow duplicates
+
+- aggregation: take multiple from output list an aggregate to one input
+	- AVG
+	- MIN
+	- MAX
+	- SUM
+	- COUNT
+- 
