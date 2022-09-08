@@ -112,12 +112,12 @@ Relational Language SQL: DML, DDL, DCL, View definition, Integrity & Referential
 	- `EXTRACT(1 FROM 2)` extract from field calculate date EXCEPT SQLite, subtract `-` `DATE(n)` ONLY correctly work in pavlo
 		- use `julianday` in SQLite and subtraction and cast it to INT. (**most used**)
 
-- DUMP result
+- DUMP result - Also **Outer Join**
 	- with `INTO`, you can dump your result to a **NOT already defined** table with same `#` of columns, is the **standard**
-		- `SELECT DISTINCT cid INTO xx FROM xxx`
-		- use `CREATE TABLE xx (SELECT DISTINCT cid FROM xxx)` in **MySQL**
+		- `SELECT DISTINCT cid INTO CourseIds FROM enrolled`
+		- use `CREATE TABLE CourseIds (SELECT DISTINCT cid FROM enrolled)` in **MySQL**
 	- with `insert`, you can append results to an existing table, **must** with the same column scheme
-		- `INSERT INTO xx (SELECT * FROM xxx)`
+		- `INSERT INTO CourseIds (SELECT cid FROM enrolled)`
 		- be aware of **violate** unique primary key principle
 
 - **OUTPUT** Control
