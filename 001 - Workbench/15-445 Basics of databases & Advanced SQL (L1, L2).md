@@ -112,13 +112,21 @@ Relational Language SQL: DML, DDL, DCL, View definition, Integrity & Referential
 	- `EXTRACT(1 FROM 2)` extract from field calculate date EXCEPT SQLite, subtract `-` `DATE(n)` ONLY correctly work in pavlo
 		- use `julianday` in SQLite and subtraction and cast it to INT. (**most used**)
 
-- DUMP result - Also **Outer Join**
+- DUMP result 
 	- with `INTO`, you can dump your result to a **NOT already defined** table with same `#` of columns, is the **standard**
 		- `SELECT DISTINCT cid INTO CourseIds FROM enrolled`
 		- use `CREATE TABLE CourseIds (SELECT DISTINCT cid FROM enrolled)` in **MySQL**
 	- with `insert`, you can append results to an existing table, **must** with the same column scheme
 		- `INSERT INTO CourseIds (SELECT cid FROM enrolled)`
 		- be aware of **violate** unique primary key principle
+
+- **JOIN**
+	- `LEFT OUTER JOIN .. [ON] <cond*>` take tuples on RIGHT and join to LEFT.
+		- If the tuples not exist on right but on left, the missing attribute will be set to NULL. 
+		- If the tuples not exist on left but on right, the tuple will be drop.
+	- `RIGHT OUTER JOIN ... [ON] <cond*>` vice versa
+	- `JOIN ... [ON] <cond*>` = `INNER JOIN ... [ON] <cond*>`, both should contains each or be drop
+	- use **FROM** take the same result as **JOIN**: `FROM <tb*> WHERE <conds*>`
 
 - **OUTPUT** Control
 	- **sort output** by `ORDER BY <column*> [ASC|DESC]` and the default is ASC
@@ -127,13 +135,15 @@ Relational Language SQL: DML, DDL, DCL, View definition, Integrity & Referential
 		- `LIMIT 20 OFFSET 10` you can set an offset
 		- if the result is **unsorted**, the result is not guaranteed the same
 
-- nested queries
+- **nested** queries
 	- Most DBMS would optimize it to **`JOIN`**, you won't double LOOP, cuz inner query should be **run once**
 	- You have:
 		- `ALL`
 		- `EXISTS`, only return **one tuple (emphasize tuple)** wherever it exists
 		- `IN`, `SELECT name FROM stu WHERE sid IN ( SELECT ... )`, any tuple matching is acceptable
 		- `ANY` = `IN`, the syntax is usually `WHERE sid = ANY( SELECT sid FROM xxx )`
+		- EXIST vs IN ?
+			- Use IN when the tuples is in a small bulk, use EXIST when it bulky, [ref link](https://asktom.oracle.com/pls/asktom/f?p=100:11:::::P11_QUESTION_ID:953229842074)
 	- **allow almost everywhere**
 		- like output statements: `SELECT ( SELECT S.name FROM stu AS S WHERE S.sid = E.sid ) AS sname FROM enrolled AS E WHERE cid = '15-445'`, can actually process the output
 	- handle aggregation without `GROUP BY`
