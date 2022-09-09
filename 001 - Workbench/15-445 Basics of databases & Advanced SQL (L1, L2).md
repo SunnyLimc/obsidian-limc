@@ -109,6 +109,8 @@ Relational Language SQL: DML, DDL, DCL, View definition, Integrity & Referential
 	- `str1 || str2` is **standard** to concatenate, and `+` in MS SQL, and `CONCAT(str1, str2)` in MySQL
 	- `INSTR(str, pattern)` return the first **pos** of pattern
 
+- `IFNULL(expr, value)` specify another value if the value from expression is NULL
+
 - DATE/TIME
 	- **allow** in **output** and **predicates**, it almost everywhere
 	- `NOW()` is **standard**, `CURRENT_TIMESTAMP` is various from func to keyword
@@ -149,6 +151,7 @@ Relational Language SQL: DML, DDL, DCL, View definition, Integrity & Referential
 			- Use IN when the tuples is in a small bulk, use EXIST when it bulky, [ref link](https://asktom.oracle.com/pls/asktom/f?p=100:11:::::P11_QUESTION_ID:953229842074)
 	- **allow almost everywhere**
 		- like output statements: `SELECT ( SELECT S.name FROM stu AS S WHERE S.sid = E.sid ) AS sname FROM enrolled AS E WHERE cid = '15-445'`, can actually process the output
+		- or input statements: `FROM`
 	- handle aggregation without `GROUP BY`
 		- `ALL` Math manipulation: `SELECT sid, name FROM student WHERE sid = > ALL( SELECT sid FROM enrolled )`
 		- `IN` : with aggregation `SELECT sid, name FROM student WHERE sid IN ( SELECT MAX(sid) FROM enrolled )`, and with order by, `SELECT sid, name FROM student WHERE sid IN ( SELECT sid FROM enrolled ORDERED BY sid DESC LIMIT 1) `
@@ -164,12 +167,17 @@ Relational Language SQL: DML, DDL, DCL, View definition, Integrity & Referential
 			- use `expr` to know which attribute to be used, simply is the column name
 			- `offset` defaults to 1, the offset based on current row
 			- `default` the value RETURN if the `expr` at `offset` is NULL, defaults to NULL
+		- `NTILE()`: split tuples to group (by number and non-invasive)
+			- `NTILE(expr)`, and return the value of group, `expr` is the divisor.
+			- if divisor equals to 4, with 10 rows, it will be split to 3, 3, 2, 2 (and 3 is the first group)
+			- will be applied to each `PARTITION BY` group individually
 		- `OVER()`: **blank** do aggregation with function over all the results currently, **or specify** the **grouped** tuples
 			- like `ROW_NUMBER() OVER(ORDER BY cid)`
 		- `PARTITION BY()` to partition tuples and generate as a group of tuples (different from `group` which only generate one row)
 			- `SELECT cid, sid, ROW_NUMBER() OVER (PARTITION BY cid) FROM enrolled ORDER BY cid`
 			- partition and order: `RANK() OVER ( PARTITION BY cid ORDER BY grade ASC )`
 			- use it with `min`: `SELECT *, min(grade) OVER (PARTITION BY cid) AS rank FROM enrolled`
+		- if the window function is **aggregate** you can use `FILTER` on it like `HAVING`, usage: `MAX(numb) FILTER WHERE numb < 10 OVER(...)`, but consider always using CTE if you are confused
 - common table expression 
 	- like a query before your regular query
 	- the output will be map to the regular query
