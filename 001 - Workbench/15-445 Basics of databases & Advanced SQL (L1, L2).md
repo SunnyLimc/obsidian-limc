@@ -88,7 +88,9 @@ Relational Language SQL: DML, DDL, DCL, View definition, Integrity & Referential
 - `HAVING` reference anything from your **output** list, whereas `WHERE` refer to the **input** list, **only apply for aggregate query**
 - I you can peek ahead for SQL, like what DBMS needs is to **optimize query plan** and you'll get a shorter time. Like throw out the tuple not **in accordance with** the `HAVING` clause during I do `GROUP BY` or `AGGREGATE` computation. (NOT need to wait until handling the output list and do a bunch of wasted work)
 
-**** The sequence will be applied: FROM *named as input below* -> WHERE -> GROUP BY -> HAVING -> SELECT *named as output below* -> ORDER BY -> OFFSET, FETCH [(reference)](https://www.itprotoday.com/sql-server/logical-query-processing-what-it-and-what-it-means-you)****
+**** The query should be defined as below: SELECT -> FROM -> JOIN -> WHERE -> GROUP BY -> HAVING -> ORDER BY ****
+
+**** The sequence will be applied logically: FROM *named as input below* -> WHERE -> GROUP BY -> HAVING -> SELECT *named as output below* -> ORDER BY -> OFFSET, FETCH [(reference)](https://www.itprotoday.com/sql-server/logical-query-processing-what-it-and-what-it-means-you)****
 
 - Basic Syntax
 	- Compare: `WHERE age > 25`
