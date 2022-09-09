@@ -90,7 +90,6 @@ Relational Language SQL: DML, DDL, DCL, View definition, Integrity & Referential
 
 **** The sequence will be applied: FROM *named as input below* -> WHERE -> GROUP BY -> HAVING -> SELECT *named as output below* -> ORDER BY -> OFFSET, FETCH [(reference)](https://www.itprotoday.com/sql-server/logical-query-processing-what-it-and-what-it-means-you)****
 
-
 - Basic Syntax
 	- Compare: `WHERE age > 25`
 	- Join: `SELECT s.name FROM enrolled AS e, student AS s WHERE e.grade ='A' AND e.cid = '15-721' AND e.sid = s.sid` and the last AND condition actually finish the JOIN
