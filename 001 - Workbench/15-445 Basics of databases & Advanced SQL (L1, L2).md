@@ -78,15 +78,18 @@ Relational Language SQL: DML, DDL, DCL, View definition, Integrity & Referential
 	- MAX
 	- SUM
 	- COUNT
-		- `login` the attr named 'login'
-		- `*` all attributes
-		- `1` plus one for each match #q
+		- `login (or another str)` the attr named 'login'
+		- `*` all column(attributes)
+		- `1 (or another NUM)`  a specific column index, and calculate the count of rows **NOT NULL** on that column
 		- `DISTINCT login` only count for **unique** 'login'
 	- multiple aggregation supported
 - limitation for aggregation
 	- use `GROUP BY` to collect extra information from table and avoid **single** confused and undefined output for the aggregation, due to no coordinate entry correspond to that aggregation. `GROUP BY` buck entity together and use those group to aggregate
-- `HAVING` reference anything from your **output** list, whereas `WHERE` refer to the **input** list
+- `HAVING` reference anything from your **output** list, whereas `WHERE` refer to the **input** list, **only apply for aggregate query**
 - I you can peek ahead for SQL, like what DBMS needs is to **optimize query plan** and you'll get a shorter time. Like throw out the tuple not **in accordance with** the `HAVING` clause during I do `GROUP BY` or `AGGREGATE` computation. (NOT need to wait until handling the output list and do a bunch of wasted work)
+
+**** The sequence will be applied: FROM *named as input below* -> WHERE -> GROUP BY -> HAVING -> SELECT *named as output below* -> ORDER BY -> OFFSET, FETCH [(reference)](https://www.itprotoday.com/sql-server/logical-query-processing-what-it-and-what-it-means-you)****
+
 
 - Basic Syntax
 	- Compare: `WHERE age > 25`
@@ -138,8 +141,8 @@ Relational Language SQL: DML, DDL, DCL, View definition, Integrity & Referential
 - **nested** queries
 	- Most DBMS would optimize it to **`JOIN`**, you won't double LOOP, cuz inner query should be **run once**
 	- You have:
-		- `ALL`
-		- `EXISTS`, only return **one tuple (emphasize tuple)** wherever it exists
+		- `ALL`, **lacking in SQLite**, consider `SELETE ... WHERE number >= (SELECT ... WHERE NOT EXISTS ( SELECT * FROM ... WHERE number < X)` as alternative
+		- `<IS|NOT> EXISTS`, only return **one tuple (emphasize tuple)** if it exists, or NULL, generally used to **compare whole row**, use **`IN`** to compare attributes
 		- `IN`, `SELECT name FROM stu WHERE sid IN ( SELECT ... )`, any tuple matching is acceptable
 		- `ANY` = `IN`, the syntax is usually `WHERE sid = ANY( SELECT sid FROM xxx )`
 		- EXIST vs IN ?
@@ -154,11 +157,16 @@ Relational Language SQL: DML, DDL, DCL, View definition, Integrity & Referential
 - window function
 	- Aggregation Func
 	- Special window Func
-		- `ROW_NUMBER()` : # of current row
-		- `RANK()` : order position of the current row
+		- `ROW_NUMBER()`: # (real index) of current row
+		- `RANK()`: order position of the current row (**order followed by partition by**)
+		- `LAG()`: grab previous rows
+			- `LAG(expr, [offset, default)`
+			- use `expr` to know which attribute to be used, simply is the column name
+			- `offset` defaults to 1, the offset based on current row
+			- `default` the value RETURN if the `expr` at `offset` is NULL, defaults to NULL
 		- `OVER()`: **blank** do aggregation with function over all the results currently, **or specify** the **grouped** tuples
 			- like `ROW_NUMBER() OVER(ORDER BY cid)`
-		- `PARTITION BY()` to partition tuples and generate groups
+		- `PARTITION BY()` to partition tuples and generate as a group of tuples (different from `group` which only generate one row)
 			- `SELECT cid, sid, ROW_NUMBER() OVER (PARTITION BY cid) FROM enrolled ORDER BY cid`
 			- partition and order: `RANK() OVER ( PARTITION BY cid ORDER BY grade ASC )`
 			- use it with `min`: `SELECT *, min(grade) OVER (PARTITION BY cid) AS rank FROM enrolled`
@@ -166,6 +174,7 @@ Relational Language SQL: DML, DDL, DCL, View definition, Integrity & Referential
 	- like a query before your regular query
 	- the output will be map to the regular query
 	- usage: `WITH cteName (col1, col2) AS ( SELECT 1, 2 ) SELECT col1 + col2 FROM cteName`
+	- you can use multiple CTE function: `WITH cte1 AS (), cte2 AS (), ... SELECT ..`
 - another usage is CTE Recursion, AND try to comprehend this
 	 ```sql 
 	WITH RECURSIVE cteSource (counter) AS (
@@ -175,7 +184,7 @@ Relational Language SQL: DML, DDL, DCL, View definition, Integrity & Referential
 		WHERE counter < 10) /* the line of recursive statement */
 	)
 	SELECT * FROM cteSource;
-	 ``` 
+``` 
 
 Furthermore Reading:
 	[[15445 - H01|CONSTRUCT THE SQL QUERIES]]
