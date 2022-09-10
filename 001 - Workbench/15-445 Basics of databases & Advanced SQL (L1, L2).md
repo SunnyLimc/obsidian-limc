@@ -184,7 +184,12 @@ Relational Language SQL: DML, DDL, DCL, View definition, Integrity & Referential
 	- the output will be map to the regular query
 	- usage: `WITH cteName (col1, col2) AS ( SELECT 1, 2 ) SELECT col1 + col2 FROM cteName`
 	- you can use multiple CTE function: `WITH cte1 AS (), cte2 AS (), ... SELECT ..`
-- another usage is CTE Recursion, AND try to comprehend this
+- another usage is **CTE Recursion**, AND try to comprehend this
+	- **combining usage**: just put the `RECURSIVE`  tag at start (the first CTE function) whatever the function is 
+	- it perform as
+		- take the **left** expr of `UNION` as the first result of output
+		- take the results to the **right** expr and use it as the new result of output
+		- if the result of `WHERE` clause is NULL, the recursion will end.
 	 ```sql 
 	WITH RECURSIVE cteSource (counter) AS (
 		(SELECT 1)
