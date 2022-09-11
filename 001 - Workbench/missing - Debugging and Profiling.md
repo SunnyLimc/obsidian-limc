@@ -18,6 +18,22 @@
 	- `q` quit
 	- `b [line]` set breakpoint
 - `locals()` print all local variables in dictionary
+- static analyze piece of code
+	- `pyflakes`
+	- `mypy` is another checker
+	- integrate with vim
+
+- use `tac`(the reversion of `cat`) to reverse output
+
+- check time period with `time command &> /dev/null`
+	- real time
+		- in python
+		- `start = time.time()`
+		- `print(time.time() - start)`
+	- user time
+	- system time
+
+- English grammar analyzer `writegood`
 
 - use GDB debugging for binary
 	- example:
@@ -25,3 +41,16 @@
 		- `run`
 		- press `^c`
 		- gdb will show the info of prog
+
+- trace the used system call of prog
+	- `sudo strace [-e look_specific_func] command > /dev/null`
+		- `man starce` is usually helpful
+
+- tracing profiling, to get the **bottleneck** of program
+	- time
+		- use a python module `python -m CProfile pyfile`
+		- another human readable one `python -m kernprof -l -v pyfile`
+		- rem that you need to add `@profile` for func
+	- memory
+		- `valgrind` for C language
+		- `python -m memory_profile pyfile`
