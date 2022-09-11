@@ -54,4 +54,26 @@
 	- memory
 		- `valgrind` for C language
 		- `python -m memory_profile pyfile`
-	- 
+	- intrinsic info
+		- `sudo perf stat command`
+			- CPU usage
+			- Memory usage
+		- record running info, find out the **func overhead**
+			- `sudo perf record`
+			- `sudo perf report`
+- sampling profiler
+	- Flame Graph to check the time each func took from x-axis
+	- Call Graph
+
+- `HTOP`
+
+- folder analyzer
+	- `du -h path`
+	- `ncdu` 
+
+- check which process occupied the file
+	- **network port** is also included
+	- `sudo lsof` list all handler
+
+- compare the time usage of different command
+	- `hyperfine cmd1 cmd2`
