@@ -87,13 +87,18 @@
 		- set default remote and remote branch for `git push` of a particular local branch
 			- `git branch --set-upstream-to=[remote]/[branch]`
 		- references of remote that points to a particular commit will be list in `git log`
-	- `git clone [path] [folder-name]` save a copy of repository form remote
+	- `git clone [link] [folder-name]` save a copy of repository form remote
 		- clone but avoid to include whole history of that remote repository `git clone --shallow ...`
 	- `git fetch [remote]` retrieve all changes of remote repository to local
 		- `git pull` = `git fetch` + `git merge` fetch and merge branch from remote branch
 		- `git merge` make your local branch points to the same place as remote branch
 	- `git blame [file]` figured out how the files has been modified in history and find out who made it
-	- `git show [commit]` show details of a commit
+	- `git show [commit]` show details of a commit, instead of using `git checkout`
 	- `git stash` save current changes to stash and revert working directory to `HEAD`
 		- `git stash pop` retrieve from stash
 	- `git bisect` powerful tool for finding particular things from history
+
+- file
+	- `.gitignore`
+		- add a file, path or **regex pattern** once a line if you don't want git to notice you to trace the file, just ignore it
+		- if you are already add something to be tracked, you need to remove them from the cache first `git rm --cached [file]`
