@@ -35,3 +35,19 @@
 	- `decrypt(cipertext, key)` - convert to plaintext
 	- given ciphertext can not figure out plaintext without key
 	- `decrypt(encrypt(m, k), k) = m`
+- to avoid in case losing key, **key dividing** func can use the following
+	- **passphrase** -> KDF -> key (with plaintext) -> encrypt -> ciphertext
+	- a way is using `aes-256-cbc`
+		- `openssl aes-256-cbc -salt -in file -out file.enc`
+		- `openssl aes-256-cbc -d -in file -out file.enc`
+- store highly random salt along side with password to avoid **rainbow table** attacking
+
+### **A**symmetric key cryptography
+
+- function
+	- `keygen()` - generate **public** key and **private** key
+	- `encrypt(ptext, public key)` 
+	- `decrypt(ctext, private key)`
+	- given ciphertext can not figure out plaintext without **private key**
+	- everyone can use **public key** to encrypt
+	- `decrypt(encrypt(m, k), k) = m`
