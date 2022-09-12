@@ -44,10 +44,13 @@
 
 ### **A**symmetric key cryptography
 
-- function
+- encrypt/decrypt
 	- `keygen()` - generate **public** key and **private** key
 	- `encrypt(ptext, public key)` 
 	- `decrypt(ctext, private key)`
 	- given ciphertext can not figure out plaintext without **private key**
 	- everyone can use **public key** to encrypt
-	- `decrypt(encrypt(m, k), k) = m`
+- verification
+	- `sign(message, private key)` produce signature
+	- `verify(message, sign, public key)` return if OK?
+	
