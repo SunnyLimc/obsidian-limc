@@ -48,9 +48,12 @@
 	- `keygen()` - generate **public** key and **private** key
 	- `encrypt(ptext, public key)` 
 	- `decrypt(ctext, private key)`
-	- given ciphertext can not figure out plaintext without **private key**
+	- given a ciphertext, you can not figure out plaintext without **private key**
 	- everyone can use **public key** to encrypt
 - verification
 	- `sign(message, private key)` produce signature
 	- `verify(message, sign, public key)` return if OK?
+	- given a message and sign with a public key, you can not reproduce the signed signature of any other message without the **private key**
+	- everyone can use **public key** to verify
+	- it basically seems apply **private key** to do decrypt for particular plaintext and **public key** to encrypt it and verify if the same
 	
