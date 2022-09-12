@@ -66,6 +66,8 @@ fusion 流水线优化
 
 [[missing - Debugging and Profiling]]
 
+[[missing - MetaProgramming]]
+
 ## Linear algebra
 
 [[3B1B - Linear algebra]]
