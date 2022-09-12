@@ -66,7 +66,9 @@ fusion 流水线优化
 
 [[missing - Debugging and Profiling]]
 
-[[missing - MetaProgramming]]
+[[missing - Meta Programming]]
+
+[[missing - Security and Cryptography]]
 
 ## Linear algebra
 
