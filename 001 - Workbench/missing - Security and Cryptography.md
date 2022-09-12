@@ -22,5 +22,16 @@
 - key derivation function (KDF)
 	- PBKDF
 	- **slow to calculate** - prevent attacker from brute-force original data
-		- in this case, your data is small enough that everyone can hast it in instant
-		- so people add a extra work to make it slow to calculate
+		- in this case, your data is small enough that everyone can hash it in instant
+		- so people add a extra work to the cryptography make sure it's slow to calculate
+		- to increase the calculation overhead of invert hacking
+
+
+### symmetric key cryptography
+
+- function
+	- `keygen()` - generate key
+	- `encrypt(plaintext, key)` - convert to ciphertext
+	- `decrypt(cipertext, key)` - convert to plaintext
+	- given ciphertext can not figure out plaintext without key
+	- `decrypt(encrypt(m, k), k) = m`
