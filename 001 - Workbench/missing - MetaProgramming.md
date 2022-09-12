@@ -4,6 +4,7 @@ this lesson is about how to build your system, add your dependencies, or compose
 
 - always try to build the **first** target by default
 - only build for **latest** changes (once file is up-to-date since last build, the program will stop)
+- use tab rather than 4 spaces
 
 ```shell
 # define default target [target: dependencies target (will be run if the file is missing)]
