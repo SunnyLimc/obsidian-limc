@@ -55,5 +55,8 @@
 	- `verify(message, sign, public key)` return if OK?
 	- given a message and sign with a public key, you can not reproduce the signed signature of any other message without the **private key**
 	- everyone can use **public key** to verify
-	- it basically seems apply **private key** to do decrypt for particular plaintext and **public key** to encrypt it and verify if the same
-	
+	- it basically seems apply **private key** to do decrypt for particular plaintext and **public key** to encrypt it and verify if the same #q
+- verify public key
+	- out-of-band communication (by offline exchange)
+	- pinning public key (warn if it changed)
+- GPG has a chain trusting model
