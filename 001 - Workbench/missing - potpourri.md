@@ -119,7 +119,7 @@
 
 - **VIM**
 	- leader key
-	- macros
+	- **macros**
 	- use `mX` (X stand for [A-Za-z]) to mark page
 		- [a-z] is a particular identifier for **the specific file**
 		- [A-Z] is a global set, allowed to be used everywhere
@@ -128,5 +128,11 @@
 	- `ctrl+o` go to previous place
 	- `ctrl+i` go forward
 	- `:earlier` rescue you from overwrite undo history and can not **redo**
-		- `undo-tree` plugin
-		- 
+		- `undotree` plugin
+		- persistent undo history
+		- `auto-save`
+		- and finally, disable `swapfile`
+	- registers
+		- OS-keyboard
+
+- 
