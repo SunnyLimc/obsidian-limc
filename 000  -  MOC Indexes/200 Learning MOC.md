@@ -70,7 +70,7 @@ fusion 流水线优化
 
 [[missing - Security and Cryptography]]
 
-[[missing - potpourri]]
+[[missing - Potpourri]]
 
 ## Linear algebra
 
