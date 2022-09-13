@@ -129,3 +129,4 @@
 	- `ctrl+i` go forward
 	- `:earlier` rescue you from overwrite undo history and can not **redo**
 		- `undo-tree` plugin
+		- 
