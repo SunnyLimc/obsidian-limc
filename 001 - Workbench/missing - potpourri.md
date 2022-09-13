@@ -1,3 +1,5 @@
+### from lecture
+
 - key remapping
 	- long / short press
 
@@ -60,3 +62,9 @@
 	- fork repository
 	- modify something
 	- pull request
+
+### from QA
+
+- `./script` vs `source ./script`
+	- invoke use a separate new shell session
+	- `source` execute command with current shell session
