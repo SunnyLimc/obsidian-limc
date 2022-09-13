@@ -116,3 +116,16 @@
 - Docker vs VM
 	- the shared kernel mechanism saved your memory (low over-head)
 	- storage persistence
+
+- **VIM**
+	- leader key
+	- macros
+	- use `mX` (X stand for [A-Za-z]) to mark page
+		- [a-z] is a particular identifier for **the specific file**
+		- [A-Z] is a global set, allowed to be used everywhere
+		- `'X` jump to there marked place
+		- for more visit [Using Marks](https://vim.fandom.com/wiki/Using_marks)
+	- `ctrl+o` go to previous place
+	- `ctrl+i` go forward
+	- `:earlier` rescue you from overwrite undo history and can not **redo**
+		- `undo-tree` plugin
