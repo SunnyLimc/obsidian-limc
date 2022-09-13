@@ -68,3 +68,36 @@
 - `./script` vs `source ./script`
 	- invoke use a separate new shell session
 	- `source` execute command with current shell session
+
+- path
+	- conventions
+		- `/user/local/bin` user compiled programs
+		- `/usr/bin` user program
+		- `/usr/sbin` for sudo-user only
+		- `/bin` essential system utils
+	- `/lib` libraries that progs linked to
+	- `/opt` third-party software installation (usually with the software that ported to Linux)
+	- `/tmp` temporary files and clear every boot
+	- `/etc` configurations
+	- `/var` files will be changed over time (like .lock files package management, process IDs)
+	- `/dev` for devices
+	- `/sys` 
+
+- pip vs apt-get
+	- apt one-place management with apt-get but some out-of-date packages
+	- pip is usually up-to-date
+	- avoid compile from scratch
+	- multi-version control of python packets with `virtualenv`
+
+- profiling programming
+	- print stuff with `time` to increase program performance
+	- Valgrind - cache-grind
+	- Flamegraphs
+	- Check the minimum amount of time - time that depend on external operation
+	- **BPF** or EBPF kernel time tracing
+
+- extension
+	- ublock origin
+		- network filtering
+	- stylus
+	- multi account container
