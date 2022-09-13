@@ -101,3 +101,18 @@
 		- network filtering
 	- stylus
 	- multi account container
+
+- data wrapping
+	- perl
+		- processing text
+	- python, pandas (for table)
+	- `column -t`
+	- `grep`, `sed` etc.
+	- vim record
+	- `pandoc` conversion documents
+	- statistic and plotting with R lang
+	- `ggplot2`
+
+- Docker vs VM
+	- the shared kernel mechanism saved your memory (low over-head)
+	- storage persistence
