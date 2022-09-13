@@ -1,4 +1,4 @@
-- **every trade-off is based on your security model**
+- **every trade-off is based on your security (threat) model**
 
 - how much entropy is needed depends on your security model
 	- entropy: $\log{_2}(possibility)$, with coin flip, the possibility is 2
@@ -60,3 +60,10 @@
 	- out-of-band communication (by offline exchange)
 	- pinning public key (warn if it changed)
 - GPG has a chain trusting model
+
+
+### hybrid encryption
+
+1. symmetric encryption is fast
+2. asymmetric encryption is slow
+- we can use the 1. generate **key** to encrypt files, and encrypt the **key** with 2. **public key**, and retriever and retrieve the **key** with **private key**, then decrypt the files with the retrieved **key**
