@@ -134,5 +134,3 @@
 		- and finally, disable `swapfile`
 	- registers
 		- OS-keyboard
-
-- 
