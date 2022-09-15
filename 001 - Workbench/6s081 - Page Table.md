@@ -83,5 +83,11 @@
 	- treat address as integer to perform arithmetic on them
 		- `freerange`
 		- `run`
+
 - `kfree` setting every byte in memory to value 1
 	- cause such code to break faster? #q
+
+- How to protect user program?
+	- do not add `PTE_W` for program **text** address
+	- do not add `PTE_X` for program **data** address
+	- what actually is improved? #q
