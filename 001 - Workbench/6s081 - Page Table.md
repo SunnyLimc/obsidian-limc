@@ -10,6 +10,9 @@
 	- one PTE required 4096-byte to store 512 entries of PTEs (the top needs 4096-byte itself)
 		- 54bit * 512 / 8 = 3456-byte - **whole 512-bit final-PTE is used for a specific block**
 	- kernel to handle PTE not present that paging hardware raised #qa
+- Bytes vs Bits?
+	- Although the address we used in virtual address is united by Bit, each Bit definitely refer to 1-Byte in the physical memory that the way it constructed.
+- What is page?
 - Three layers of table?
 	- top(top 9-bit)-middle-final
 	- memory-efficient
@@ -21,10 +24,10 @@
 	- pagetable is a private address space for each CPU? #q
 - Typically kernel mapping all p memory to it's pagetable
 	- is it enough space to store? #q
-	- or just mapping it each boot? #q
-	- any conflicts to it's memory efficient model? #q
+		- a page table refer to the whole 2^27 entries
 - one page table per process
 	- 512 entries of PTE? #q
 	- plus a page for kernel's address space
 - Instructions use only virtual address.
 - Pagetable vs Virtual Address?
+	- 
