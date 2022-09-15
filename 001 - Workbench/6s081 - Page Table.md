@@ -23,4 +23,8 @@
 	- is it enough space to store? #q
 	- or just mapping it each boot? #q
 	- any conflicts to it's memory efficient model? #q
+- one page table per process
+	- 512 entries of PTE? #q
+	- plus a page for kernel's address space
 - Instructions use only virtual address.
+- Pagetable vs Virtual Address?
