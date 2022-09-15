@@ -94,3 +94,7 @@
 - To prevent form stackoverflow, add a guard page below the stack and clear the `PTE_U` flag.
 - Give each process a whole pagetable.
 	- [[6s081 - Page Table#^e34ac5|for more, see here]]
+- Note that pagetable contains the ONLY record of where the physical memory goes.
+	- Scan whole pagetable before free it, to prevent any memory leaks.
+
+- `exec()` will create a pagetable for process with `proc_pagetable`
