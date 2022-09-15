@@ -3,12 +3,10 @@
 - What is PTE?
 	- a 56-bit value mapping vaddr(index) to paddr and contains control bits(Flags)
 	- 44bit + 10bit(Flags)
-	- 2^27 PTEs available
+	- 2^27 PTEs available,
 	- vaddr is just a value you should not needing care of
-- Where are the pagetable saved?
+- Where are the page table saved?
 	- in physical memory
-	- one PTE required 4096-byte to store 512 entries of PTEs (the top needs 4096-byte itself)
-		- 54bit * 512 / 8 = 3456-byte - **whole 512-bit final-PTE is used for a specific block**
 	- kernel to handle PTE not present that paging hardware raised #qa
 - Bytes vs Bits?
 	- Although the address we used in virtual address is united by Bit, each Bit definitely refer to 1-Byte in the physical memory that the way it constructed.
@@ -16,11 +14,17 @@
 	- you have noticed that distinct PPN distribute to each PTE
 	- a page is a **single** entry of PTE
 	- it consist 12-bit offset retrieved from VA and point to 2^12 bytes of PA
+- What is page directory?
+	- It consist 512 PTEs confirms to 3-levels structure. 
+	- A **intermediate** PTE required 4096-byte to store 512 entries of PTEs, a page directory
+		- 54bit * 512 / 8 = 3456-byte - **consist PPNs and Flags**
+	- **AKA page table** (split with whitespace)
+	- differentiate PPN and PTE
 - Three layers of table?
 	- top(top 9-bit)-middle-final
 	- memory-efficient
-		- if the application memory using is unknown to you, you do not have to allocate a bunch of memory for it. #qa
-		- keep memory sequence and continual for specific app. #qa
+		- if the application memory using is unknown to you, you do not have to allocate a bunch of memory for it.
+		- keep VA sequence and continual for specific app.
 - What is TLB (Translation Look-aside Buffer) ? #q
 	> To avoid the cost of loading PTEs from physical memory, a RISC-V CPU caches page table entries in a Translation Look-aside Buffer (TLB).
 - CPU is using page table by reading `satp` reg. Each has one.
