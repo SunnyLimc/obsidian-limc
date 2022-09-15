@@ -91,3 +91,5 @@
 	- do not add `PTE_W` for program **text** address
 	- do not add `PTE_X` for program **data** address
 	- what actually is improved? #q
+
+- To prevent form stackoverflow, add a guard page below the stack and clear the `PTE_U` flag.
