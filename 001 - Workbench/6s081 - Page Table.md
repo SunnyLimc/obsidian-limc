@@ -31,8 +31,7 @@
 - CPU is using page table by reading `satp` reg. Each has one.
 	- pagetable is a private address space for each CPU? #q
 - Typically kernel mapping all physical memory to it's pagetable
-	- is it enough space to store? #q
-	- root page-table page (bingo)
+	- give each process a whole page-table with from 0 through MAXVA would not interfere to ANY OTHER VAs, since the instructions is use `satp` to locate physical memory. You just ensure each page-table has been correctly mapped.  ^e34ac5
 - one page table per process
 	- 512 entries of PTE? #q
 	- plus a page for kernel's address space
@@ -84,7 +83,7 @@
 		- `freerange`
 		- `run`
 
-- `kfree` setting every byte in memory to value 1
+- `kfree` setting every byte in physical memory to value 1
 	- cause such code to break faster? #q
 
 - How to protect user program?
@@ -93,3 +92,5 @@
 	- what actually is improved? #q
 
 - To prevent form stackoverflow, add a guard page below the stack and clear the `PTE_U` flag.
+- Give each process a whole pagetable.
+	- [[6s081 - Page Table#^e34ac5|for more, see here]]
