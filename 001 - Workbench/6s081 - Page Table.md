@@ -13,6 +13,9 @@
 - Bytes vs Bits?
 	- Although the address we used in virtual address is united by Bit, each Bit definitely refer to 1-Byte in the physical memory that the way it constructed.
 - What is page?
+	- you have noticed that distinct PPN distribute to each PTE
+	- a page is a **single** entry of PTE
+	- it consist 12-bit offset retrieved from VA and point to 2^12 bytes of PA
 - Three layers of table?
 	- top(top 9-bit)-middle-final
 	- memory-efficient
