@@ -98,3 +98,8 @@
 	- Scan whole pagetable before free it, to prevent any memory leaks.
 
 - `exec()` will create a pagetable for process with `proc_pagetable`
+
+### Lab
+
+#### kernel page table per process
+
