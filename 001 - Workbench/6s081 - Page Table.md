@@ -103,5 +103,5 @@
 
 #### kernel page table per process
 
-make each process have a copy of kernel stack
+make each process have a copy of global kernel stack
 
