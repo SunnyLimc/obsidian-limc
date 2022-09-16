@@ -105,3 +105,4 @@
 
 make each process have a copy of global kernel stack
 
+Why needs the multiple (distinct by process) stacks lies in kernel?
