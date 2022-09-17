@@ -124,3 +124,6 @@ make each process have a copy of global kernel stack
 	- instead raising `panic("kvmmap")`
 
 - gracefully use binary number for counting or distinction (all the number power of 2)
+
+- control pre-page size happened to enough contain 4096-byte of physical memory and 512(round down) page table entries, is a better way to control fine-grinded and per-process memory mutually
+	- it indeed normalize the page table
