@@ -122,3 +122,5 @@ make each process have a copy of global kernel stack
 
 - do not allocate memory for kernel mapping when memory is in short
 	- instead raising `panic("kvmmap")`
+
+- gracefully use binary number for counting or distinction (all the number power of 2)
