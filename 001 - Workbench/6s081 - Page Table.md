@@ -105,4 +105,20 @@
 
 make each process have a copy of global kernel stack
 
-Why needs the multiple (distinct by process) stacks lies in kernel?
+- Why needs the multiple (distinct by process) stacks lies in kernel?
+	- provide a isolated storage to store data for diff process when system in kernel side
+
+- Should I allocate a new kernel page table for each new process? Or just keep it for each processor?
+	- Up to yourself. But actually each process needs neat pagetable. Discussion lies below.
+	- Is it feasible to do walk clean in a pagetable but not fully free it for reusing?
+		- `PTE_U` is needed to be NOT set for guaranteeing kernel can read specific page. BUT without `PTE_U` you can not discriminate which page is created by user.
+		- Luckily, you may said that you can only check for the memory beneath `0xC000000`, that's no problem. BUT, the kernel may left a bunch of garbage in kernel stack.
+		- So should I clear the kernel stack? #q
+			- It's left for question, but try a general way to finish the lab at first.
+
+- since default kernel pagetable is used in kernel side while no specific proc is running, we should not concern the moment that process specific kernel page-table created.
+
+- `memset` to 0 may be mandatory
+
+- do not allocate memory for kernel mapping when memory is in short
+	- instead raising `panic("kvmmap")`
