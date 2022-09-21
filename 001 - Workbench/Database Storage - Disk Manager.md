@@ -181,6 +181,7 @@ How represents the Data in files on disk
 				- date is put like a circled ring
 				- if the accessed bit is set, remove it at the next time the clock tick it
 			- Easy to get sequential flooding
-				- a bunch of page with newer timestamp that CANNOT be evicted
+				- read a bunch of page with newer timestamp that CANNOT be evicted
 				- those page maybe one-time use
-				- 
+				- can not evict page effectively
+			-
