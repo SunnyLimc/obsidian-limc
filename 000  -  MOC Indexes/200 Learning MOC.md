@@ -27,9 +27,9 @@ English is better but not a optimal solution right now. Try Chinese again.
 
 ## 6. S081
 
-[[6s081 - Isolation & System Call Entry and Exit]]
+[[6s081 - (Notes) System Call]]
 
-[[6s081 - Page Table]]
+[[6s081 - Page Table & Syscall Supplement]]
 
 ## Big Data & ML
 
