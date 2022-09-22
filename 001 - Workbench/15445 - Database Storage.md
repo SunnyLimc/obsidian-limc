@@ -1,9 +1,19 @@
+## Overview
+
 - Course Outline
-	- [[Query Planning]]
-	- [[Operator Execution]]
-	- [[Access Methods]]
-	- [[Buffer Pool Manager]]
-	- 👉 Disk Manager
+	- [[15445 - Database Storage#^bb5709|Disk Manager]]
+	- [[15445 - Database Storage#^6485ad|Buffer Pool Manager]]
+	- Access Methods
+	- Operator Execution
+	- Query Planning
+
+- Lab
+	- Lab1 (till [[15445 - Database Storage#^6485ad|Buffer Pool Manager]])
+
+## Course
+
+### Disk Manager
+^bb5709
 
 - move from volatile and non-volatile storage
 	- Volatile (Random Access Byte-Addressable), a directly storage
@@ -129,59 +139,99 @@ How represents the Data in files on disk
 			- store tuple id each entity
 			- or use a same offset
 		- column
-		- vs to N-ARY -> no index of slot? but save memory
+		- vs to N-ARY -> no index of slot but save memory
 	- OLTP (frontend) and some time after stream to OLAP Backend Database
-	- buffer pool <-> execution server
-		- take **page** from disk to memory fixed-size **frame** (array entry of buffer pool) then access it
-		- pagetable <-> buffer pool	
-			- page in use
-			- metadata
-			- dirty flag
-			- pin/ref counter
-			- **latch** before update pagetable
-	- lock vs latches
-		 - latch: protecting internal critical section, no need to rollback, actually **mutex** spin lock
-		 - lock: protect logical content, need to rollback
-	- page directory vs page table
-		- directory: id <-> database, durable
-		- table: page <-> buffer pool, in-memory, not durable
-	- global policies vs local policies
-		- local: particular query like for single buffer pool
-	- buffer pool opti:
-		- multiple buffer pools
-			- different pool different polices opti for diff workload
-			- thread not contend -> but still depend on disk
-			- hash and mod for a record to log
-		- pre fetching
-			- based on a query plan and prefetching a bunch of **pages**
-		- scan sharing
-			- reuse one page for one thread and another at diff query
-			- intermediate result
-			- second query cursor -> keep tracking where the second query joined with the first
-			- q2 follow q1 using a occupied slot of buffer pool, finally scan the remaining ignore at the start
-				- database is unordered
-		buffer pool <-> disk page, replacement
-		- buffer pool bypass
-			- avoid buffer pool overhead
-			- not huge thing
-			- contiguous thing read on disk may good
-		- bypass OS side cache, use DBMS direct IO it self
-			- redundant copies of page (yours and OSs) for cross system using
-			- eviction policy
-			- not to cache anything from system
-	- buffer replacement policies
-		- correctness
-		- accuracy
-		- speed
-		- meta-data overhead
-		- strategy
-			- LRU (one-time)
-				- use CLOCK (a ring click) to **approximate** it
-					- but in fact, you should using timestamp to trace it
-				- a reference bit indicate if access since last check
-				- data is put like a circled ring
-				- if the accessed bit is set, remove it at the next time the clock tick it
-				- CONS: Easy to get sequential flooding
-					- read a bunch of page with newer timestamp
-						- but it CANNOT be evicted
-					- and those new-stamp page maybe one-time use
+
+### Buffer Pool
+
+^6485ad
+
+- buffer pool <-> execution server
+	- take **page** from disk to memory fixed-size **frame** (array entry of buffer pool) then access it
+	- pagetable <-> buffer pool	
+		- page in use
+		- metadata
+		- dirty flag
+		- pin/ref counter
+		- **latch** before update pagetable
+- lock vs latches
+	 - latch: protecting internal critical section, no need to rollback, actually **mutex** spin lock
+	 - lock: protect logical content, need to rollback
+- page directory vs page table
+	- directory: id <-> database, durable
+	- table: page <-> buffer pool, in-memory, not durable
+- global policies vs local policies
+	- local: particular query like for single buffer pool
+- buffer pool opti:
+	- multiple buffer pools
+		- different pool different polices opti for diff workload
+		- thread not contend -> but still depend on disk
+		- hash and mod for a record to log
+	- pre fetching
+		- based on a query plan and prefetching a bunch of **pages**
+	- scan sharing
+		- reuse one page for one thread and another at diff query
+		- intermediate result
+		- second query cursor -> keep tracking where the second query joined with the first
+		- q2 follow q1 using a occupied slot of buffer pool, finally scan the remaining ignore at the start
+			- database is unordered
+	buffer pool <-> disk page, replacement
+	- buffer pool bypass
+		- avoid buffer pool overhead
+		- not huge thing
+		- contiguous thing read on disk may good
+	- bypass OS side cache, use DBMS direct IO it self
+		- redundant copies of page (yours and OSs) for cross system using
+		- eviction policy
+		- not to cache anything from system
+- buffer replacement policies
+	- correctness
+	- accuracy
+	- speed
+	- meta-data overhead
+	- strategy
+		- LRU (one-time)
+			- use CLOCK (a ring click) to **approximate** it
+				- but in fact, you should using timestamp to trace it
+			- a reference bit indicate if access since last check
+			- data is put like a circled ring
+			- if the accessed bit is set, remove it at the next time the clock tick it
+			- CONS: Easy to get sequential flooding
+				- read a bunch of page with newer timestamp
+					- but it CANNOT be evicted (waiting the click)
+				- and those new-stamp page maybe one-time use
+			- CONS PLUS: Not Precisely
+				- the page evicted may seems to be used later
+		- alternative: LRU-K
+			- base on multi-timestamp and check the timestamp interval
+		- better: Localization
+			- keep queries distinct and private from buffer pool
+		- better: priority hint
+			- DBMS know each query and have a **importance priority** on each buffered page
+			- e. g.
+				- `INSERT` just increase the id, so keep the page from right subtree (the DB-page-index tree node) higher importance
+				- `WHERE` always PIN the top node of DB-page-index tree
+	- Dirty Page
+		- FAST: simply drop the page that has not marked as dirty (modified)
+		- SLOW: if so, must write back to disk and ensure changes persisted
+			- contains OUT write and IN read, two I/O operation
+		- trade-off: if it read again in the future?
+		- flip flag or evict when done
+		- periodically scan (a thread) though the buffer pool to evict dirty page
+		- NOTE: a log must have been written before we writing back the dirty page
+	- Some memory pools may persist in memory and no-write-back
+
+## LAB
+
+### LAB 1
+
+- overview
+	- clock replacement
+	- buffer pool manager
+		- pin page with a correct order
+		- multiple thread
+	- cumulative
+	- syntax
+		- google C++ style guide
+		- Doxygen Javadoc style
+		- `make format` or something else
