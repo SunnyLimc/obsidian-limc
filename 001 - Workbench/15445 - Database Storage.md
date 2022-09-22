@@ -85,7 +85,7 @@ How represents the Data in files on disk
 			- keep tuples in sequence (BAD idea)
 				- insert tuple one after another, and track the number of tuples
 				- ~~**if you need to delete a tuple, you should move everything, or leave with a external fragmentation which can not be tracked**~~
-				- (correction) what he want to illustrate here is to demonstrate that a it have **serious drawbacks** if we just track the number of tuples, since the high-level needs to care about where the tuple it need are put. (if some tuple was deleted)
+				- (correction) what he want to illustrate here is to demonstrate that it have **serious drawbacks** if we just track the number of tuples, since the high-level needs to care about where the tuple it need are put. (if some tuple was deleted)
 			- slotted pages
 				- pic ![[Pasted image 20220515134440.png | 150]] 
 				- map slots to the **offset** of each tuples
