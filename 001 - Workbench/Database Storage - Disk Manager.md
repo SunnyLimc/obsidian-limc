@@ -175,13 +175,13 @@ How represents the Data in files on disk
 		- speed
 		- meta-data overhead
 		- strategy
-			- LRU
-				- use CLOCK to approximate it
+			- LRU (one-time)
+				- use CLOCK (a ring click) to **approximate** it
+					- but in fact, you should using timestamp to trace it
 				- a reference bit indicate if access since last check
-				- date is put like a circled ring
+				- data is put like a circled ring
 				- if the accessed bit is set, remove it at the next time the clock tick it
-			- Easy to get sequential flooding
-				- read a bunch of page with newer timestamp that CANNOT be evicted
-				- those page maybe one-time use
-				- can not evict page effectively
-			-
+				- CONS: Easy to get sequential flooding
+					- read a bunch of page with newer timestamp
+						- but it CANNOT be evicted
+					- and those new-stamp page maybe one-time use
