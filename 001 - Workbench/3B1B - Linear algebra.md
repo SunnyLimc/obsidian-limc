@@ -117,6 +117,8 @@ $$
 	- it result in that **`dot product` is equals to `matrix multiplication`**
 
 - cross product
+	- Just the intuition and inspiration
+		- it's easy to prove ANY $\vec{v}\times\vec{w} = 0$ demonstrated that $\vec{v}$ and $\vec{w}$ is linear independent, and which meet with 
 	- usually $\vec{v}\cdot\vec{w}=\vec{p}$ to calculate the $\vec{p}$ that perpendicular to $\vec{v}$ and $\vec{w}$, the sign of $\vec{p}$ indicate whether the vectors conforms to the right-hand rule
 	- actually, the formula is try to find a series of $\vec{p}$ that can express a certain determinant 
 		$$
