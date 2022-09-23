@@ -25,7 +25,7 @@ in linear algebra perspective, a vector always will be rooted at the origin(原�
 		- if one of vectors located at which plane of `span` create by the other two ones, the `span` of those 3 vectors can only be a specific plane
 		- in other words, if the third vector can be formed by scaling and adding other two vectors, then any two vectors can form another vector by scaling and adding, since the relationship of addition between them are fixed and no matter with any dimensions you add.
 		- in other other word: if three vectors are in the same line, the `span` of them is a line.
-		- if a vector that can not be form from any another (`one`, `two` .. `dimension - 1`) vector(s), the dimension of `span` will increased by 1. This relationship named with the terminology: `Linearly independent (线性无关)`  officially written as $\vec{u} \neq b\vec{w}+c\vec{u}$ in three dimension and $\vec{u} \neq a\vec{w}$ in the case of two dimension
+		- if a vector that can not be form from any another (`one`, `two` .. `dimension - 1`) vector(s), the dimension of `span` will increased by 1. This relationship named with the terminology: `Linearly independent (线性无关)`  officially written as $\vec{u} \neq b\vec{w}+c\vec{u}$ in three dimension and $\vec{u} \neq a\vec{w}$ in the case of two dimension ^33b084
 		- a terminology to describe the situation that a redundant vector (two vector are in the same line) exist is: `Linearly dependent (线性相关)`
 		- the **`basis`** is a set of linearly independent vectors that can span the full space.
 
@@ -118,7 +118,7 @@ $$
 
 - cross product
 	- Just the intuition and inspiration
-		- it's easy to prove ANY $\vec{v}\times\vec{w} = 0$ demonstrated that $\vec{v}$ and $\vec{w}$ is linear independent, and which meet with 
+		- it's easy to prove ANY $\vec{v}\times\vec{w} = 0$ ($\vec{v},\vec{w}\neq0$, [proof](https://math.stackexchange.com/questions/409810/orthogonality-and-linear-independence)) demonstrated that $\vec{v}$ and $\vec{w}$ are linear independent ( [[3B1B - Linear algebra#^33b084]] ), and which meet with condition that they are perpendicular (orthogonality)
 	- usually $\vec{v}\cdot\vec{w}=\vec{p}$ to calculate the $\vec{p}$ that perpendicular to $\vec{v}$ and $\vec{w}$, the sign of $\vec{p}$ indicate whether the vectors conforms to the right-hand rule
 	- actually, the formula is try to find a series of $\vec{p}$ that can express a certain determinant 
 		$$
