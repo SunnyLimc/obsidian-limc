@@ -1,3 +1,5 @@
+### Incoming from 6.s081
+
 - compile code with `gdb`
 	```shell
 gcc -Wall -ggdb -o <program> <source>
@@ -103,7 +105,7 @@ gdb program
 	- may add `-static` option will do helps with debugging
 
 - use `x` to examine memory
-	- `x/..` eg `x/2c $a1`
+	- `x/..` e.g. `x/2c $a1`
 		- `x/6i 0x3ffffff000` -> `TRAML`
 		- `x/4i $t0`
 
