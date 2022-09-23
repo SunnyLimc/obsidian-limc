@@ -56,7 +56,7 @@ in linear algebra perspective, a vector always will be rooted at the origin(åŽŸç
 	   \end{bmatrix} $$
 		- if two transformed `i` and `j` in `matrix` are `Linearly dependent`, the `span` that transformation generate is a one-dimension line. It technically named `Linearly dependent columns`.
 
-$$\$$
+
 
 - composite transformations
 	- written provisions
