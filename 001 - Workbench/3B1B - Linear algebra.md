@@ -95,25 +95,31 @@ $$ \begin{bmatrix}
 	$$
 - mapping from 3D to 2D, each vector of the 3 is the orientation of axis
 	- basically a 2D-plane with a particular offset and orientation
-$$ \begin{bmatrix}
+	$$ \begin{bmatrix}
 	2 & 0 & 3 \\
 	-1 & 1 & 1 \\
 	\end{bmatrix}   
+$$
+	- **Although it does not satisfied the high-dimension condition, but still contains meaningfulness in high-dimension from the low-dimension viewing**
+	$$\begin{bmatrix}
+	1\\
+	2\\
+	\end{bmatrix}
 	$$
-
 - dot product
 	- sequence irrelevant
 	- we all know that $[u_x, u_y]$ is the transformation result of $[\hat{i}, \hat{j}]$ AKA $(1, 1)$, and in the case we want to calculate $u_x$, we should map $\hat{i}$ to the axis, the same true to $\hat{j}$ and then you can get $[u_x, u_y]$. If $\hat{u}$ equals to 1, remap $\hat{u}$ to axis x and y, **You will wondrously finding that remapping $u_x$ and $u_y$ from $\hat{u}$ to $[x, y]$ are the same as to $[u_x, u_y]$.**
-	- so if you know the values of $[u_x, u_y]$, you can directly know the solution $(x ,y)$ of remapping form $\hat{u}$ $\begin{bmatrix} x \\ y \\ \end{bmatrix}$ to current $x, y$ axes . we call it **`duality`**
+	- so if you know the values of $[u_x, u_y]$, you can directly know the point $(x ,y)$ from remapping $\hat{u}$ $\begin{bmatrix} x \\ y \\ \end{bmatrix}$ to current $(x, y)$ axes . we call it **`duality`**
 		- $v_x, v_y$ is technologically separate
 		- the result can be expressed numerically because it's one dimension
-		- the axis can be put into the space since it's one-dimension and can be orientated represent in space 
+		- the axis can be put into the space since it's one-dimension and can be **orientated** represent in space 
 		- the purpose of this proof is to prove 👇
-	- and it result in that `dot product` is equals to `matrix multiplication`
+	- it result in that **`dot product` is equals to `matrix multiplication`**
 
 - cross product
 	- usually $\vec{v}\cdot\vec{w}=\vec{p}$ to calculate the $\vec{p}$ that perpendicular to $\vec{v}$ and $\vec{w}$, the sign of $\vec{p}$ indicate whether the vectors conforms to the right-hand rule
-	- actually, the formula is try to find a series of $\vec{p}$ that can express a certain determinant $$
+	- actually, the formula is try to find a series of $\vec{p}$ that can express a certain determinant 
+		$$
 	[p_1\ p_2\ p_3]
 	\begin{bmatrix}
 	x \\
@@ -146,11 +152,11 @@ $$ \begin{bmatrix}
 	\end{bmatrix}
 	)}  
 	$$
-	- 
 		- the solution of $\vec{p}$ in one determinant is numerous, a bunch of evenly spaced vectors can mapping the same values to the axis perpendicular to $v$ and $w$
-		- the purpose of $det$ is to compute the volume of $v, w$ and $p$. Since it's `linear`, $det$ will evenly spaced for the same spacing #review-needing 
-	- you may think $[x, y, z]$ is do a transformation from space to line, since it takes a input and produce a **numerical output** and you **can use a linear multiplication to convert the function** $[p_1, p_2, p_3]$, and because of duality that proved above, the transformation can finally represent by a vector $\begin{bmatrix} p_1 \\ p_2 \\ p_3 \end{bmatrix}$
-		- and with the formula we can know
+		- the purpose of $det$ is to compute the volume of $v, w$ and $p$. Since it's `linear`, $det$ will evenly spaced for the same spacing
+	- you can consider $[x, y, z]$ is do a transformation from space to line, since it takes a input and produce a numerical output and you can use a linear multiplication to convert the function $[p_1, p_2, p_3]$, and because of duality that proved above, the transformation can finally represent by a vector $\begin{bmatrix} p_1 \\ p_2 \\ p_3 \end{bmatrix}$
+		- it's definitely true by hand-calculation reviewing
+		- and with the formula
 			- $p_{1}=v_{2} \cdot w_{3}-v_{3} \cdot w_{2}$ 
 			- $p_{2}=v_{3} \cdot w_{1}-v_{1} \cdot w_{3}$
 			- $p_{3}=v_{1} \cdot w_{2}-v_{2} \cdot w_{1}$
