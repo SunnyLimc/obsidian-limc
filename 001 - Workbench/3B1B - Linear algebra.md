@@ -29,7 +29,7 @@ in linear algebra perspective, a vector always will be rooted at the origin(原�
 		- a terminology to describe the situation that a redundant vector (two vector are in the same line) exist is: `Linearly dependent (线性相关)`
 		- the **`basis`** is a set of linearly independent vectors that can span the full space.
 
-- linear transformation
+- linear **transformation**
 	- Principles
 		- Lines remain lines
 		- Origin remains fixed
