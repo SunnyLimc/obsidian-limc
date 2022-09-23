@@ -71,7 +71,7 @@ In fact, the transformation (matrix) is by moving and scaling the axis, so it ne
 		- at least two axes are located at a same line
 	- a negative `det` means to invert the orientation (in 3D you can give the judgement by left-handed rule)
 		- you can perfectly get two separate representing of 3D shape by rotating your left hand with left-handed rule
-	- you do not need to comprehend why $ad-bc$ can calculate the scalar of 2D 
+	- you do not need to comprehend why $ad-bc$ can calculate the scalar of 2D
 		- just a image to explain why![[Pasted image 20220522205434.png | 500]]
 	- an interesting fact: $\det(M_1M_2)=\det(M_1)\det(M_2)$
 		- **scaling is just a property of transformation**, so whatever scaling follow by transforming ($\det(M_1M_2)$), or just scaling ($\det(M_1)\det(M_2)$), both it represent the same thing -- do $M_1$ transform from the basic $\hat{i}\hat{j}\hat{k}$ follow by $M_2$
@@ -80,8 +80,11 @@ In fact, the transformation (matrix) is by moving and scaling the axis, so it ne
 	- it's obviously that you **can't undo** a transformation which leads to dimension squishing
 		- $A^{-1}A\ \vec{x}=A^{-1}\ \vec{v}$
 		- but sometimes $\vec{v}$ come across to the same dimension as $\vec{x}$, solution is exist
+		- apply $A^{-1}$ to scheme $\vec{v}$ to realize the transformation from $\vec{v}$ to $A^{-1}$
 - we describe the dimension of spanning the columns of matrix as `column space`
-- you may noticed that if it's a non-full-rank transformation, dimensions are squished to a particular point. Vectors that lands on the $\vec{v}$ (if $\vec{v}$ is zero, it terminology called `null space`), **it gives you all of the possible solutions to the equation**.
+
+- the rank of a matrix is the maximum number of linearly independent column vectors(or row vectors)
+- you may noticed that if it's a non-full-rank transformation, dimensions are **squished to a** particular point. Vectors that lands on the $\vec{v}$ (if $\vec{v}$ is zero, it terminology called `null space`), **it gives you all of the possible solutions to the equation**.
 	- an important property: if a function (take one input and give one output) is **`linear`**, give a series of points that evenly spaced, they will **evenly spaced yet** after transformation.
 	- this vector is still full-rank, since it's column space equals to the span of columns - the plane - it just map a 2D plane to 3D space - with 2 input (basis) vectors
 $$ \begin{bmatrix}
@@ -91,6 +94,7 @@ $$ \begin{bmatrix}
 	\end{bmatrix}   
 	$$
 - mapping from 3D to 2D, each vector of the 3 is the orientation of axis
+	- basically a 2D-plane with a particular offset and orientation
 $$ \begin{bmatrix}
 	2 & 0 & 3 \\
 	-1 & 1 & 1 \\
@@ -99,7 +103,7 @@ $$ \begin{bmatrix}
 
 - dot product
 	- sequence irrelevant
-	- we all know that $[u_x, u_y]$ is the transformation result of $[\hat{i}, \hat{j}]$ (1, 1), and in the case we want to calculate $u_x$, we should map $\hat{i}$ to the axis, the same true of $\hat{j}$ and then you can get $[u_x, u_y]$. And if your set $\hat{u}$ equals to 1, remap $\hat{u}$ to axis x and y, **You will wondrously finding that remapping $u_x$ and $u_y$ from $\hat{u}$ to $[x, y]$ are the same as to $[u_x, u_y]$.**
+	- we all know that $[u_x, u_y]$ is the transformation result of $[\hat{i}, \hat{j}]$ AKA $(1, 1)$, and in the case we want to calculate $u_x$, we should map $\hat{i}$ to the axis, the same true to $\hat{j}$ and then you can get $[u_x, u_y]$. If $\hat{u}$ equals to 1, remap $\hat{u}$ to axis x and y, **You will wondrously finding that remapping $u_x$ and $u_y$ from $\hat{u}$ to $[x, y]$ are the same as to $[u_x, u_y]$.**
 	- so if you know the values of $[u_x, u_y]$, you can directly know the solution $(x ,y)$ of remapping form $\hat{u}$ $\begin{bmatrix} x \\ y \\ \end{bmatrix}$ to current $x, y$ axes . we call it **`duality`**
 		- $v_x, v_y$ is technologically separate
 		- the result can be expressed numerically because it's one dimension
