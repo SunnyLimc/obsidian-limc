@@ -117,9 +117,13 @@ $$
 	- it result in that **`dot product` is equals to `matrix multiplication`**
 
 - cross product
-	- Just the intuition and inspiration
-		- it's easy to prove ANY $\vec{v}\times\vec{w} = 0$ ($\vec{v},\vec{w}\neq0$) demonstrated that $\vec{v}$ and $\vec{w}$ are linear independent (treated as the projection, [proof](http://www.math.oregonstate.edu/bridge/papers/dot+cross.pdf), [[3B1B - Linear algebra#^33b084|definition]]), and which meet with condition that they are perpendicular (aka. orthogonality, [proof](https://math.stackexchange.com/questions/409810/orthogonality-and-linear-independence))
-	- usually $\vec{v}\cdot\vec{w}=\vec{p}$ to calculate the $\vec{p}$ that perpendicular to $\vec{v}$ and $\vec{w}$, the sign of $\vec{p}$ indicate whether the vectors conforms to the right-hand rule (index finger points to $\vec{v}$ and middle finger points to $\vec{w}$)
+	- Just the intuition and inspiration (*added in self-review*)
+		- preparation material: [The Geometry of the Dot and Cross Products](zotero://select/library/items/RJWP8A3E)
+			- to use $\vec{v}\cdot\vec{w}=v_xw_x+v_yw_y$, you should first prove that $
+		- non-zero cross product will generate a vector that orthogonal to $\vec{v}, \vec{w}$, **by cross product definition itself**
+			- try expand $(v_x\hat{i}+v_y\hat{j}+v_z\hat{k})\times(w_x\hat{i}+w_y\hat{j}+w_z\hat{k})$, and you will get $$\left(v_{y} w_{z}-v_{z} w_{y}\right) \hat{\imath}+\left(v_{z} w_{x}-v_{x} w_{z}\right) \hat{\jmath}+\left(v_{x} w_{y}-v_{y} w_{x}\right) \hat{k}$$
+		- ANY $\vec{v}\times\vec{w} = 0$ ($\vec{v},\vec{w}\neq0$) demonstrated that $\vec{v}$ and $\vec{w}$ are linear independent ([[3B1B - Linear algebra#^33b084|definition]])
+	- usually $\vec{v}\cdot\vec{w}=\vec{p}$ to calculate the $\vec{p}$ that perpendicular to $\vec{v}$ and $\vec{w}$, the sign of $\vec{p}$ follow the right-hand rule (index finger points to $\vec{v}$ and middle finger points to $\vec{w}$)
 	- the non-zero cross product indicate the **square area** constitute by $\vec{v}, \vec{w}$, which the length of the product
 	- actually, the formula is try to find **a series of $\vec{p}$ that can express a certain determinant $$
 	[p_1\ p_2\ p_3]
