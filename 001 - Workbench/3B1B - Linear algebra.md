@@ -118,7 +118,7 @@ $$
 
 - cross product
 	- Just the intuition and inspiration
-		- it's easy to prove ANY $\vec{v}\times\vec{w} = 0$ ($\vec{v},\vec{w}\neq0$) demonstrated that $\vec{v}$ and $\vec{w}$ are linear independent ([[3B1B - Linear algebra#^33b084|see above]]), and which meet with condition that they are perpendicular (aka. orthogonality, [proof](https://math.stackexchange.com/questions/409810/orthogonality-and-linear-independence))
+		- it's easy to prove ANY $\vec{v}\times\vec{w} = 0$ ($\vec{v},\vec{w}\neq0$) demonstrated that $\vec{v}$ and $\vec{w}$ are linear independent (treated as the projection, [proof](http://www.math.oregonstate.edu/bridge/papers/dot+cross.pdf), [[3B1B - Linear algebra#^33b084|definition]]), and which meet with condition that they are perpendicular (aka. orthogonality, [proof](https://math.stackexchange.com/questions/409810/orthogonality-and-linear-independence))
 	- usually $\vec{v}\cdot\vec{w}=\vec{p}$ to calculate the $\vec{p}$ that perpendicular to $\vec{v}$ and $\vec{w}$, the sign of $\vec{p}$ indicate whether the vectors conforms to the right-hand rule (index finger points to $\vec{v}$ and middle finger points to $\vec{w}$)
 	- the non-zero cross product indicate the **square area** constitute by $\vec{v}, \vec{w}$, which the length of the product
 	- actually, the formula is try to find **a series of $\vec{p}$ that can express a certain determinant $$
