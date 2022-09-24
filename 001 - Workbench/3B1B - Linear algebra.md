@@ -108,8 +108,7 @@ $$
 	$$
 - dot product
 	- sequence irrelevant
-	- we all know t
-	at $[u_x, u_y]$ is the transformation result of $[\hat{i}, \hat{j}]$ AKA $(1, 1)$, and in the case we want to calculate $u_x$, we should map $\hat{i}$ to the axis, the same true to $\hat{j}$ and then you can get $[u_x, u_y]$. If $\hat{u}$ equals to 1, remap $\hat{u}$ to axis x and y, **You will wondrously finding that remapping $u_x$ and $u_y$ from $\hat{u}$ to $[x, y]$ are the same as to $[u_x, u_y]$.**
+	- we all know that $[u_x, u_y]$ is the transformation result of $[\hat{i}, \hat{j}]$ AKA $(1, 1)$, and in the case we want to calculate $u_x$, we should map $\hat{i}$ to the axis, the same true to $\hat{j}$ and then you can get $[u_x, u_y]$. If $\hat{u}$ equals to 1, remap $\hat{u}$ to axis x and y, **You will wondrously finding that remapping $u_x$ and $u_y$ from $\hat{u}$ to $[x, y]$ are the same as to $[u_x, u_y]$.**
 	- so if you know the values of $[u_x, u_y]$, you can directly know the point $(x ,y)$ from remapping $\hat{u}$ $\begin{bmatrix} x \\ y \\ \end{bmatrix}$ to current $(x, y)$ axes . we call it **`duality`**
 		- $v_x, v_y$ is technologically separate
 		- the result can be expressed numerically because it's one dimension
