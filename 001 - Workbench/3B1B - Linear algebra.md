@@ -69,8 +69,8 @@ In fact, the transformation (matrix) is by moving and scaling the axis, so it ne
 	- a factor that can be applied to **any** area transformation.
 	- if `det` is zero, means the result of transformation has squished to a smaller dimension
 		- at least two axes are located at a same line
-	- a negative `det` means to invert the orientation (in 3D you can give the judgement by left-handed rule)
-		- you can perfectly get two separate representing of 3D shape by rotating your left hand with left-handed rule
+	- a negative `det` means to **invert the orientation** (in 3D you can give the judgement by left-handed rule)
+		- you can perfectly get two separate representing of 3D shape by rotating your left hand
 	- you do not need to comprehend why $ad-bc$ can calculate the scalar of 2D
 		- just a image to explain why![[Pasted image 20220522205434.png | 500]]
 	- an interesting fact: $\det(M_1M_2)=\det(M_1)\det(M_2)$
@@ -118,10 +118,10 @@ $$
 
 - cross product
 	- Just the intuition and inspiration
-		- it's easy to prove ANY $\vec{v}\times\vec{w} = 0$ ($\vec{v},\vec{w}\neq0$, [proof](https://math.stackexchange.com/questions/409810/orthogonality-and-linear-independence)) demonstrated that $\vec{v}$ and $\vec{w}$ are linear independent ( [[3B1B - Linear algebra#^33b084]] ), and which meet with condition that they are perpendicular (orthogonality)
-	- usually $\vec{v}\cdot\vec{w}=\vec{p}$ to calculate the $\vec{p}$ that perpendicular to $\vec{v}$ and $\vec{w}$, the sign of $\vec{p}$ indicate whether the vectors conforms to the right-hand rule
-	- actually, the formula is try to find a series of $\vec{p}$ that can express a certain determinant 
-		$$
+		- it's easy to prove ANY $\vec{v}\times\vec{w} = 0$ ($\vec{v},\vec{w}\neq0$) demonstrated that $\vec{v}$ and $\vec{w}$ are linear independent ([[3B1B - Linear algebra#^33b084|see above]]), and which meet with condition that they are perpendicular (aka. orthogonality, [proof](https://math.stackexchange.com/questions/409810/orthogonality-and-linear-independence))
+	- usually $\vec{v}\cdot\vec{w}=\vec{p}$ to calculate the $\vec{p}$ that perpendicular to $\vec{v}$ and $\vec{w}$, the sign of $\vec{p}$ indicate whether the vectors conforms to the right-hand rule (index finger points to $\vec{v}$ and middle finger points to $\vec{w}$)
+	- the non-zero cross product indicate the **square area** constitute by $\vec{v}, \vec{w}$, which the length of the product
+	- actually, the formula is try to find **a series of $\vec{p}$ that can express a certain determinant $$
 	[p_1\ p_2\ p_3]
 	\begin{bmatrix}
 	x \\
