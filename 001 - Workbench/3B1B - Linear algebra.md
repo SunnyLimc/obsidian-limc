@@ -119,14 +119,16 @@ $$
 - cross product
 	- Just the intuition and inspiration (*added in self-review*)
 		- preparation material: [The Geometry of the Dot and Cross Products](zotero://select/library/items/RJWP8A3E)
-			- we use $\vec{v}\times\vec{w}=v_{x}w_{x}\hat{i}\times\hat{i}+\dots$, implied that dot product is distributes over **addition**, to *affirm* it, we should first prove that **cross product is linear** #qa
+			- we use $\vec{v}\times\vec{w}=v_{x}w_{x}\hat{i}\times\hat{i}+\dots$, implied that dot product is distributes over **addition**, to *affirm* it, we should first prove that **cross product is linear** (for more details, read [Linear map](https://en.wikipedia.org/wiki/Linear_map))
 				- a further reading from the reference book may help to you
-				- the proof is to prove $\vec{w}\times(\vec{v}+\vec{u})=\vec{w}\times\vec{v}+\vec{w}\times\vec{u}$, which the cross product is proportional coordinate to the sum of each projection component of vectors
+				- the proof is to prove $\vec{w}\times(\vec{v}+\vec{u})=\vec{w}\times\vec{v}+\vec{w}\times\vec{u}$, which the cross product is **proportional coordinate** to the sum of each projection component of vectors
+		- cross product is to calculate the area of parallelogram
+			- there's why $\hat{i}\times\hat{i}$ is equals to zero
 		- non-zero cross product will generate a vector that orthogonal to $\vec{v}, \vec{w}$, **by cross product definition itself**
 			- try expand $(v_x\hat{i}+v_y\hat{j}+v_z\hat{k})\times(w_x\hat{i}+w_y\hat{j}+w_z\hat{k})$, and you will get $$\left(v_{y} w_{z}-v_{z} w_{y}\right) \hat{\imath}+\left(v_{z} w_{x}-v_{x} w_{z}\right) \hat{\jmath}+\left(v_{x} w_{y}-v_{y} w_{x}\right) \hat{k}$$
 		- ANY $\vec{v}\times\vec{w} = 0$ ($\vec{v},\vec{w}\neq0$) demonstrated that $\vec{v}$ and $\vec{w}$ are linear independent ([[3B1B - Linear algebra#^33b084|definition]])
 	- usually $\vec{v}\cdot\vec{w}=\vec{p}$ to calculate the $\vec{p}$ that perpendicular to $\vec{v}$ and $\vec{w}$, the sign of $\vec{p}$ follow the right-hand rule (index finger points to $\vec{v}$ and middle finger points to $\vec{w}$)
-	- the non-zero cross product indicate the **square area** constitute by $\vec{v}, \vec{w}$, which the length of the product
+	- the non-zero cross product indicate the **square area** constitute by $\vec{v}, \vec{w}$, which the length of the vector of product
 	- actually, the formula is try to find **a series of $\vec{p}$ that can express a certain determinant $$
 	[p_1\ p_2\ p_3]
 	\begin{bmatrix}
