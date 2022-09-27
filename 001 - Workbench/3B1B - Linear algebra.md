@@ -165,6 +165,7 @@ $$
 		- the solution of $\vec{p}$ in one determinant is numerous, a bunch of evenly spaced vectors can mapping the same values to the axis perpendicular to $v$ and $w$
 		- the purpose of $det$ is to compute the volume of $v, w$ and $p$. Since it's `linear`, $det$ will evenly spaced for the same spacing
 	- you can consider $[x, y, z]$ is do a transformation from space to line, since it takes a input and produce a numerical output and you can use a **linear** multiplication to convert the function $[p_1, p_2, p_3]$, and because of duality that proved above, the transformation can finally represent by a vector $\begin{bmatrix} p_1 \\ p_2 \\ p_3 \end{bmatrix}$
+		- take a 
 		- it's definitely true by hand-calculation reviewing
 		- and with the formula
 			- $p_{1}=v_{2} \cdot w_{3}-v_{3} \cdot w_{2}$ 
