@@ -129,7 +129,7 @@ $$
 		- ANY $\vec{v}\times\vec{w} = 0$ ($\vec{v},\vec{w}\neq0$) demonstrated that $\vec{v}$ and $\vec{w}$ are linear independent ([[3B1B - Linear algebra#^33b084|definition]])
 	- usually $\vec{v}\cdot\vec{w}=\vec{p}$ to calculate the $\vec{p}$ that perpendicular to $\vec{v}$ and $\vec{w}$, the sign of $\vec{p}$ follow the right-hand rule (index finger points to $\vec{v}$ and middle finger points to $\vec{w}$)
 	- the non-zero cross product indicate the **square area** constitute by $\vec{v}, \vec{w}$, which the length of the vector of product
-	- actually, the formula is try to find **a series of $\vec{p}(\hat{i},\hat{j},\hat{k})$ that can express a certain determinant $$
+	- actually, the formula is try to find **a series of $\vec{p}\ (\vec{i},\vec{j},\vec{k})$ that can express a certain determinant $$
 	\begin{bmatrix}
 	x \\
 	y \\
@@ -163,10 +163,10 @@ $$
 	\end{bmatrix}
 	)}  
 	$$
+		- consider that $\begin{bmatrix} p_1 & p_2 & p_3 \end{bmatrix}$ stands for **scalar factor**, and $\begin{bmatrix} x \\ y \\ z\end{bmatrix}$ stands for a certain **vector**, *scalar factor* in each row from *top to bottom* correspond to the *vectors* in columns from *left to right*, if we compound 
 		- the solution of $\vec{p}$ in one determinant is numerous, a bunch of evenly spaced vectors can mapping the same values to the axis perpendicular to $v$ and $w$
-		- the purpose of $det$ is to compute the volume of $v, w$ and $p$. Since it's `linear`, $det$ will evenly spaced for the same spacing
+		- the purpose of $det$ is to compute the volume (area) of $v, w$ and $p$. Since it's `linear`, $det$ will evenly spaced for the same spacing
 	- you can consider $[x, y, z]$ is do a transformation from space to line, since it takes a input and produce a numerical output and you can use a **linear** multiplication to convert the function $[p_1, p_2, p_3]$, and because of duality that proved above, the transformation can finally represent by a vector $\begin{bmatrix} p_1 \\ p_2 \\ p_3 \end{bmatrix}$
-		- take a 
 		- it's definitely true by hand-calculation reviewing
 		- and with the formula
 			- $p_{1}=v_{2} \cdot w_{3}-v_{3} \cdot w_{2}$ 
