@@ -130,12 +130,13 @@ $$
 	- usually $\vec{v}\cdot\vec{w}=\vec{p}$ to calculate the $\vec{p}$ that perpendicular to $\vec{v}$ and $\vec{w}$, the sign of $\vec{p}$ follow the right-hand rule (index finger points to $\vec{v}$ and middle finger points to $\vec{w}$)
 	- the non-zero cross product indicate the **square area** constitute by $\vec{v}, \vec{w}$, which the length of the vector of product
 	- actually, the formula is try to find **a series of $\vec{p}(\hat{i},\hat{j},\hat{k})$ that can express a certain determinant $$
-	[p_1\ p_2\ p_3]
 	\begin{bmatrix}
 	x \\
 	y \\
 	z
-	\end{bmatrix} =
+	\end{bmatrix} 
+	[p_1\ p_2\ p_3]
+	=
 	f(\begin{bmatrix}
 	x \\
 	y \\
