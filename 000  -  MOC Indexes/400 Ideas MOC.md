@@ -44,8 +44,14 @@ we should only keep track of the matrix {a_11, a_12, .., a1n} (is described in b
 
 in this way, we can concrete T into a specific language, assume there is a vector we want to transform {x_1, x_2, ... x_n}^t (the transpose vector), we just need taking a composition of {a_in} and {x_1, ...}^t
 
-we describe $R^n$ -> $R^m$ as a $m \times n$ matrix
+we describe the transformation process T as $R^n$ -> $R^m$ with a $m \times n$ matrix
+
+> why mathematician write down as n -> m
+
+It basically a process take *n-row as input* and with doing the *m-row transformation* (with n-column scalar factors for the corresponding n-row) and producing a m-row output
+
 $\left(\begin{array}{cccc}a_{11} & a_{12} & \cdots & a_{1 n} \\ a_{21} & a_{22} & \cdots & a_{2 n} \\ \vdots & \vdots & \ddots & \vdots \\ a_{m 1} & a_{m 2} & \cdots & a_{m n}\end{array}\right)$
+
 
 ### Thoughts
 
