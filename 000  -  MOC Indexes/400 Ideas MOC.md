@@ -50,7 +50,21 @@ we describe the transformation process T as $R^n$ -> $R^m$ with a $m \times n$ m
 
 It basically a process take *n-row as input* and with doing the *m-row transformation* (with n-column scalar factors for the corresponding n-row) and producing a m-row output
 
-$\left(\begin{array}{cccc}a_{11} & a_{12} & \cdots & a_{1 n} \\ a_{21} & a_{22} & \cdots & a_{2 n} \\ \vdots & \vdots & \ddots & \vdots \\ a_{m 1} & a_{m 2} & \cdots & a_{m n}\end{array}\right)$
+$$\left(\begin{array}{cccc}
+a_{11} & a_{12} & \cdots & a_{1n} \\
+a_{21} & a_{22} & \cdots & a_{2n} \\
+ \vdots & \vdots & \ddots & \vdots \\
+ a_{m1} & a_{m2} & \cdots & a_{mn} 
+\end{array}\right)
+\left(\begin{array}{cccc}
+x_{1} \\
+x_{2}  \\
+\vdots \\
+ x_{n}
+\end{array}\right)
+=
+
+$$
 
 
 ### Thoughts
