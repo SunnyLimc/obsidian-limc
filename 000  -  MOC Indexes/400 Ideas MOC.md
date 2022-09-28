@@ -36,6 +36,14 @@ else git commit-tree "$@";
 fi' HEAD
 ````
 
+### Draft
+
+ei(vector) follow a transform **T** and create a vector {a_1i, ...}, and {e_1, ...} is the scalar of t_i in this transition, if we take {k_1, ...} into this transform **T**, instead of know what the transform is, we just need to know what {e_1, ...} as scalar vectors, so the multiply k_1 by {a_1n...} and calculate the sum of k
+
+we should only keep track of the matrix {a_11, a_12, .., a1n} (is described in below as a_in) to describe the transform
+
+in this way, we can concrete T into a specific language, assume there is a vector we want to transform {x_1, x_2, ... x_n}^t (the transpose vector), we just need taking a composition of {a_in} and {x_1, ...}^t
+
 ### Thoughts
 
 > Things can not be archived in a specific subject
