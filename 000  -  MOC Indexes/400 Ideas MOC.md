@@ -46,10 +46,8 @@ in this way, we can concrete T into a specific language, assume there is a vecto
 
 we describe the transformation process T as $R^n$ -> $R^m$ with a $m \times n$ matrix
 
-> why mathematician write down as n -> m
-
+why mathematician write down as n -> m?
 It basically a process take *n-row as input* and with doing the *m-row transformation* (with n-column scalar factors for the corresponding n-row) and producing a m-row output
-
 $$\left(\begin{array}{cccc}
 a_{11} & a_{12} & \cdots & a_{1n} \\
 a_{21} & a_{22} & \cdots & a_{2n} \\
@@ -59,6 +57,7 @@ a_{21} & a_{22} & \cdots & a_{2n} \\
 \left(\begin{array}{cccc}x_{1} \\x_{2}  \\\vdots \\ x_{n}\end{array}\right)
 =
 \left(\begin{array}{c}{{a_{11}x_{1}+a_{12}x_{2}+\cdot\cdot\cdot+a_{1n}x_{n}}}\\ {{a_{21}x_{1}+a_{22}x_{2}+\cdot\cdot\cdot+a_{2n}x_{n}}}\\ {{\vdots}}\\ {{a_{m1}x_{1}+a_{m2}x_{2}+\cdot\cdot\cdot+a_{m n}x_{n}}}\end{array}\right)$$
+
 
 
 ### Thoughts
