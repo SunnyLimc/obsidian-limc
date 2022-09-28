@@ -63,7 +63,6 @@ x_{2}  \\
  x_{n}
 \end{array}\right)
 =
-
 $$
 
 
