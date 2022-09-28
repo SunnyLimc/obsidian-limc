@@ -56,14 +56,9 @@ a_{21} & a_{22} & \cdots & a_{2n} \\
  \vdots & \vdots & \ddots & \vdots \\
  a_{m1} & a_{m2} & \cdots & a_{mn} 
 \end{array}\right)
-\left(\begin{array}{cccc}
-x_{1} \\
-x_{2}  \\
-\vdots \\
- x_{n}
-\end{array}\right)
+\left(\begin{array}{cccc}x_{1} \\x_{2}  \\\vdots \\ x_{n}\end{array}\right)
 =
-$$
+\left(\begin{array}{c}{{a_{11}x_{1}+a_{12}x_{2}+\cdot\cdot\cdot+a_{1n}x_{n}}}\\ {{a_{21}x_{1}+a_{22}x_{2}+\cdot\cdot\cdot+a_{2n}x_{n}}}\\ {{\vdots}}\\ {{a_{m1}x_{1}+a_{m2}x_{2}+\cdot\cdot\cdot+a_{m n}x_{n}}}\end{array}\right)$$
 
 
 ### Thoughts
