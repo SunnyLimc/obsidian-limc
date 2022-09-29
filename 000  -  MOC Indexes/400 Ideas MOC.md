@@ -38,7 +38,7 @@ fi' HEAD
 
 ### Draft
 
-ei(vector) follow a transform **T** and create a vector {a_1i, ...}, and {e_1, ...} is the scalar of t_i in this transition, if we take {k_1, ...} into this transform **T**, instead of know what the transform is, we just need to know what {e_1, ...} as scalar vectors, so the multiply k_1 by {a_1n...} and calculate the sum of k
+$k_i$(vector) follow a transform **T** and create a vector $\left(a_{1i}, \cdots\right)$, and $\left(e_{1,}\cdots \right)$ is the scalar of $k_i$ in this transition, if we take $\left(k_1, \cdots \right)$ into this transform **T**, instead of know what the transform is, we just need to know what $\left(e_1, \cdots \right)$ as scalar vectors, so the multiply $k_1$ by $\left(e_{1}, \cdots\right)$ and calculate the sum
 
 we should only keep track of the matrix {a_11, a_12, .., a1n} (is described in below as a_in) to describe the transform
 
