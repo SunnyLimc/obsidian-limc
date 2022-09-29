@@ -42,6 +42,7 @@ Assuming that we have $\left(\begin{matrix} k_1 \\ k_2 \\ \vdots \\ k_n \end{mat
 
 Instead of telling you what **T** is. I can just describe the result of $T(e_i)$, which $e_i$ is the $i_{th}$ column of the *E matrix*, contains $0s$ in each index whereas the $i_{th}$ has a $1$, for example $e_1$ is alike $\left(\begin{matrix} 1_1 \\ 0_2 \\ \vdots \\ 0_n \end{matrix}\right)$, and the $T(e_i)$ is alike $\left(\begin{matrix} a_{1i} \\ a_{2i} \\ \vdots \\ a_{ni} \end{matrix}\right)$, just a transformation of $e_i$
 
+if you associate 
 
 
 and create a vector $\left(a_{1i}, \cdots\right)$, and $\left(e_{1,}\cdots \right)$ is the scalar of $k_i$ in this transition, if we take $\left(k_1, \cdots \right)$ into this transform **T**, instead of know what the transform is, we just need to know what $\left(e_1, \cdots \right)$ as scalar vectors, so the multiply $k_1$ by $\left(e_{1}, \cdots\right)$ and calculate the sum
