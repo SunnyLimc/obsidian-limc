@@ -71,6 +71,7 @@ we will get the *composed linear transformation* matrix
 $$\left(\begin{array}{l l l l}{b_{11}}&{b_{12}}&{\cdot\cdot}&{b_{1p}}\\ {b_{21}}&{b_{22}}&{\cdot\cdot}&{b_{2p}}\\ {\vdots}&{\vdots}&{\cdot\cdot}&{\vdots}\\ {b_{m1}}&{b_{m2}}&{\cdot\cdot}&{b_{m p}}\end{array}\right)$$
 
 
+
 ### Thoughts
 
 > Things can not be archived in a specific subject
