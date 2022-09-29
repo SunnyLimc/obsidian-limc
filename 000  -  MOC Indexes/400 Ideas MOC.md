@@ -46,11 +46,13 @@ in this way, we can concrete T into a specific language, assume there is a vecto
 
 we describe the transformation process T as $R^n$ -> $R^m$ with a $m \times n$ matrix
 
-So, why mathematician write down as n -> m?
+#### So, why mathematician write down as n -> m?
 
 Every time we describe the $m \times n$ matrix as a transformation T.
 
-It basically a process take **n-row as input** and with doing the *m-row transformation* (with the *nth-column transformation* corresponding to *nth-row*) and producing a **m-row output**. And named $m \times n$
+It basically a process take **n-row as input** and with doing the *m-row transformation* (with the *nth-column transformation* corresponding to *nth-row*) and producing a **m-row output**.
+
+If I am pushed to say, it's because the *input matrix* laid at the right whereas the *output matrix* laid at the left.
 
 $$\left(\begin{array}{cccc}
 a_{11} & a_{12} & \cdots & a_{1n} \\
@@ -61,9 +63,12 @@ a_{21} & a_{22} & \cdots & a_{2n} \\
 \left(\begin{array}{cccc}x_{1} \\x_{2}  \\\vdots \\ x_{n}\end{array}\right)
 =
 \left(\begin{array}{c}{{a_{11}x_{1}+a_{12}x_{2}+\cdot\cdot\cdot+a_{1n}x_{n}}}\\ {{a_{21}x_{1}+a_{22}x_{2}+\cdot\cdot\cdot+a_{2n}x_{n}}}\\ {{\vdots}}\\ {{a_{m1}x_{1}+a_{m2}x_{2}+\cdot\cdot\cdot+a_{m n}x_{n}}}\end{array}\right)$$
+So, what about the composition?
 
+If define $T\colon\mathbb{R}^{n}\to\mathbb{R}^{m}$ and $S\colon\mathbb{R}^{p}\to\mathbb{R}^{n}$, the combination is $T\circ S$ ($S\colon\mathbb{R}^{p}\to\mathbb{R}^{m}$), which calculate the same as above from *the right to the left*
 
-
+we will get the *composed linear transformation* matrix
+$$\left(\begin{array}{l l l l}{b_{11}}&{b_{12}}&{\cdot\cdot}&{b_{1p}}\\ {b_{21}}&{b_{22}}&{\cdot\cdot}&{b_{2p}}\\ {\vdots}&{\vdots}&{\cdot\cdot}&{\vdots}\\ {b_{m1}}&{b_{m2}}&{\cdot\cdot}&{b_{m p}}\end{array}\right)$$
 
 
 ### Thoughts
