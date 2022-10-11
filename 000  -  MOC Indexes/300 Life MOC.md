@@ -2,17 +2,20 @@
 
 # Life
 
-Life is the thread that enriches your horizons.
+Life is more than ADHD and Jealousy, being the happy one.
+
+
+
+### DIY
+
+[[My modified Windows low-level settings]]
 
 ### ADHD
 
-[[My List for proving ADHD]]
+[[My personal list of proving ADHD]]
 
-	[[My List for proving ADHD - Print Version]]
+	[[My personal list of proving ADHD - Printable Ver]]
 
-	[[Drugs use report]]
+	[[Drugs using report]]
 
 [[Quit form class team]]
-
-
-#### MISC
