@@ -13,6 +13,8 @@ Questioning yourself is a philosophy way to life.
 	- [x] fix `nvim` popup, suppress Enter key to confirm a autocomplete
 		- [x] fixed, it has hidden in snippets/vim-cmp extra lua script
 - [x] synchronize SSH key between WSL and Windows
+- [ ] Use Arch Linux as my default distribution
+	- [ ] fork repo and edit it
 - [ ] make `less` colorful
 - [ ] try to figured out how the OCR program works and convert it to AHK.
 - [ ] improve NGINX reverse docker proxy for a future use
@@ -24,6 +26,10 @@ Questioning yourself is a philosophy way to life.
 		- for the most backward windows compatibility
 	- react
 		- framework
+
+### temporary
+
+[[temp]]
 
 ### Helpful practices 
 

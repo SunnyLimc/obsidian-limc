@@ -1,5 +1,3 @@
-## missing - shell
-
 ### Useful links
 
 - How parameters are divided (split)
@@ -228,10 +226,17 @@ In bash-like shell, you can use `<<<` or `<()` to create a temporary file, and r
 usage:
 
 ```bash
-cat <<< this is content
-  this is content
-cat < <(another content)
-  another content
+# create a temp file with text, then redirect as input stream
+cat < <(echo 123)
+  123
+  
+# create a temp file with text, then use it as name
+cat <(echo 123)
+  123
+  
+# directly use text as input stream
+cat <<< 123
+  123
 ```
 
 ### sysFS

@@ -121,6 +121,9 @@ normally you may want to use `sed -nE '/{pattern}/p'` to print what the pattern 
 
 #### Flexible usage
 
+- use `head -n[-]NUM` to diminish output to the first N line (or print with first N line **excluded**)
+	- use `tail -n[-]NUM` to set a boundary limit that outputs only the last N lime
+
 * use `wc` to count words
     - `wc -l` to count lines
 

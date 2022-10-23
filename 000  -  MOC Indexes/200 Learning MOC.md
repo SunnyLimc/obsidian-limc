@@ -55,9 +55,9 @@ fusion 流水线优化
 
 ## Missing Semester
 
-[[missing - shell (script)]]
+[[missing - Shell (script)]]
 
-[[missing - vim]]
+[[missing - Vim]]
 
 [[missing - Data Wrangling (Regex, Text Command, etc.)]]
 
