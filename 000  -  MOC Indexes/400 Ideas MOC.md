@@ -4,7 +4,10 @@
 
 Questioning yourself is a philosophy way to life.
 
+### An immediately impulsive action for changing myself
 
+- do not procrastinate
+- listen to the class carefully
 
 ### To-Do List
 
