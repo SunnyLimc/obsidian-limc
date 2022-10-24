@@ -4,6 +4,8 @@
 
 Questioning yourself is a philosophy way to life.
 
+
+
 ### To-Do List
 
 - [x] fix direction hotkeys can not be combining used with other modifier keys.
@@ -41,6 +43,12 @@ then git commit-tree -S "$@";
 else git commit-tree "$@";
 fi' HEAD
 ````
+
+- find the final URL by curl
+
+```bash
+curl -Ls -o /dev/null -w %{url_effective} http://google.com
+```
 
 ### Draft
 
